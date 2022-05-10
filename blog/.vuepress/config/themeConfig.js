@@ -1,4 +1,5 @@
 module.exports = {
+  hostname: 'http://shangxiaojin.xyz:8088',
   siteName: '殇晓瑾、',
   logo: 'https://surplus-1311636487.cos.ap-beijing.myqcloud.com/logo1.jpg',
   siteDesc: '一个00后的在校大学生 -- 喜爱魔[术]、数[学]、运[动]、游[戏]的新人。（拥有一个喜欢在[斗地主]里破产的女朋友）',
@@ -19,17 +20,21 @@ module.exports = {
     },
     {
       type: 'github',
-      link: 'https://github.com/'
+      link: 'https://github.com/Silence020922'
     },
     {
       type: 'qq',
       link: 'tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=1367896482&website=www.oicqzone.com'
     },
-    {
-      type: 'feed',
-      link: '/rss.xml'
-    }
+    // {
+    //   type: 'feed',
+    //   link: '/rss.xml'
+    // }
   ],
+  // themeConfig: {
+  //   // lastUpdated: 'Last Updated', // string | boolean
+  //   hostname: 'http://shangxiaojin.xyz:8088/'
+  // },
   reward: {
     text: 'Buy me a cup of coffee ☕.',
     // 是否启用
@@ -85,13 +90,12 @@ module.exports = {
       }
     ],
     sitemap: {
-      hostname: '',
+      hostname: 'http://shangxiaojin.xyz:8088',
       exclude: ['/404.html']
     },
     feed: {
       canonical_base: '',
     },
-    palette: {},
-    comment: {}
+
   }
 }

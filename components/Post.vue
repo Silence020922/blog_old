@@ -34,10 +34,10 @@
         <Content class="article-content" :class="{'copy-code-enabled': $themeConfig.copy}" itemprop="articleBody" />
         <div class="article-copyright">
           <ul>
-            <li class="article-copyright__item">
+            <!-- <li class="article-copyright__item">
               <strong class="article-copyright__title">Last-updated<span>:</span></strong>
               <p class="article-copyright__text">{{$page.lastUpdated}}</p>
-            </li>
+            </li> -->
             <li class="article-copyright__item">
               <strong class="article-copyright__title">Copyright<span>:</span></strong>
                <p class="article-copyright__text">自由转载-非商用</p>
