@@ -17,7 +17,8 @@
   "scripts": {
     "blog:dev": "vuepress dev blog",
     "blog:build": "vuepress build blog",
-    "deploy": "sh deploy.sh"
+    "deploy": "sh deploy.sh",
+    "test": "exit 0"
   },
   "author": "80maker<cmgddd@126.com>",
   "license": "MIT",
