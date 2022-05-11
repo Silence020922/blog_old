@@ -29,7 +29,7 @@ module.exports = {
     },
     {
       type: 'feed',
-      link: '/rss.xml'
+      link: 'https://raw.githubusercontent.com/Silence020922/blog/main/rss.xml'
     }
   ],
   // themeConfig: {
