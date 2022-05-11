@@ -23,5 +23,5 @@ jobs:
         with:
           version: latest
       - run: pnpm i --frozen-lockfile
-      - name: Build blog
+      - name: Build docs
         run: npm run blog:build

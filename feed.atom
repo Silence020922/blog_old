@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://shangxiaojin.xyz</id>
+    <title>殇晓瑾、</title>
+    <updated>2022-05-11T11:19:23.432Z</updated>
+    <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
+    <link rel="alternate" href="http://shangxiaojin.xyz"/>
+    <link rel="self" href="http://shangxiaojin.xyz/feed.atom"/>
+    <subtitle>一个00后的在校大学生 -- 喜爱魔[术]、数[学]、运[动]、游[戏]的新人（拥有一个喜欢在[斗地主]里破产的女朋友）</subtitle>
+    <entry>
+        <title type="html"><![CDATA[亲爱的妈妈，节日快乐！]]></title>
+        <id>http://shangxiaojin.xyz/post/2022/05/08/theme-morther-1.html</id>
+        <link href="http://shangxiaojin.xyz/post/2022/05/08/theme-morther-1.html">
+        </link>
+        <updated>2022-05-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[五月的第二个星期日——母亲节（Mother's Day)是一个感恩的节日。]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[如梦令-归醉]]></title>
+        <id>http://shangxiaojin.xyz/post/2021/03/18/theme-poem-1.html</id>
+        <link href="http://shangxiaojin.xyz/post/2021/03/18/theme-poem-1.html">
+        </link>
+        <updated>2021-03-18T00:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[正能量分享——咸鱼翻身?双面焦罢了]]></title>
+        <id>http://shangxiaojin.xyz/post/2022/05/06/theme-sharing-0.html</id>
+        <link href="http://shangxiaojin.xyz/post/2022/05/06/theme-sharing-0.html">
+        </link>
+        <updated>2022-05-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[人如果没有梦想，和咸鱼有什么区别?这句打鸡血的话，激励了多少青年在追逐梦想的路上一条道走到黑。]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[正能量分享——努力拼搏才算成功？]]></title>
+        <id>http://shangxiaojin.xyz/post/2022/05/05/theme-sharing-1.html</id>
+        <link href="http://shangxiaojin.xyz/post/2022/05/05/theme-sharing-1.html">
+        </link>
+        <updated>2022-05-05T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[一份工作， 每天工作八小时能收获八十分的业绩，每天工作十二小时大概也只能把业绩提升到九十分。]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[歌单分享]]></title>
+        <id>http://shangxiaojin.xyz/post/2022/05/06/theme-sharing-2.html</id>
+        <link href="http://shangxiaojin.xyz/post/2022/05/06/theme-sharing-2.html">
+        </link>
+        <updated>2022-05-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[- 放飞 -- 许嵩]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[正能量分享——最好的都是想象，得到的不过如此。]]></title>
+        <id>http://shangxiaojin.xyz/post/2022/05/07/theme-sharing-3.html</id>
+        <link href="http://shangxiaojin.xyz/post/2022/05/07/theme-sharing-3.html">
+        </link>
+        <updated>2022-05-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[不是因为我们太不容易满足,而是世界上没有什么事物，能比我们在长久的期待中所勾勒出的那个幻象更美。]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[隔离的生活]]></title>
+        <id>http://shangxiaojin.xyz/post/2022/05/07/theme-sharing-life-0.html</id>
+        <link href="http://shangxiaojin.xyz/post/2022/05/07/theme-sharing-life-0.html">
+        </link>
+        <updated>2022-05-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[外衣、洗漱用品、水杯、拖鞋、毛巾、卫生用品、方便食品等。
+  转运途中，请大家遵守纪律、服从安排，牢记自己的编号、车牌号，不发表不实言论。
+  到达转运地点后，同学们按照要求分配房间，检查房间床褥、配电、用水情况，如有特殊需求及时反馈。
+`]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[隔离生活——离开方舱]]></title>
+        <id>http://shangxiaojin.xyz/post/2022/05/10/theme-sharing-life-1.html</id>
+        <link href="http://shangxiaojin.xyz/post/2022/05/10/theme-sharing-life-1.html">
+        </link>
+        <updated>2022-05-10T00:00:00.000Z</updated>
+    </entry>
+</feed>

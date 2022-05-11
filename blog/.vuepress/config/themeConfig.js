@@ -27,10 +27,10 @@ module.exports = {
       type: 'qq',
       link: 'tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=1367896482&website=www.oicqzone.com'
     },
-    // {
-    //   type: 'feed',
-    //   link: '/rss.xml'
-    // }
+    {
+      type: 'feed',
+      link: '/rss.xml'
+    }
   ],
   // themeConfig: {
   //   // lastUpdated: 'Last Updated', // string | boolean
@@ -95,7 +95,7 @@ module.exports = {
       exclude: ['/404.html']
     },
     feed: {
-      canonical_base: '',
+      canonical_base: 'http://shangxiaojin.xyz',
     },
 
   }
