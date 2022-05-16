@@ -21,7 +21,7 @@ module.exports = {
     },
     {
       type: 'github',
-      link: 'https://github.com/Silence020922'
+      link: 'Silence020922'
     },
     {
       type: 'qq',
