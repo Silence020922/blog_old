@@ -30,7 +30,7 @@ module.exports = {
     {
       type: 'feed',
       link: 'https://raw.githubusercontent.com/Silence020922/blog/main/rss.xml'
-    }
+    },
   ],
   // themeConfig: {
   //   // lastUpdated: 'Last Updated', // string | boolean
@@ -50,7 +50,7 @@ module.exports = {
       }
     ]
   },
-  copyright: '',
+  copyright: '<a href="https://beian.miit.gov.cn/" target="_blank">鲁ICP备2022016289号</a>',
   blog: {
     directories: [
       {
