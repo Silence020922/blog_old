@@ -4,45 +4,48 @@
         <title>殇晓瑾、</title>
         <link>http://shangxiaojin.xyz</link>
         <description>一个00后的在校大学生 -- 喜爱魔[术]、数[学]、运[动]、游[戏]的新人（拥有一个喜欢在[斗地主]里破产的女朋友）</description>
-        <lastBuildDate>Mon, 16 May 2022 14:48:32 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 19 May 2022 11:14:36 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
         <atom:link href="http://shangxiaojin.xyz/feed.atom" rel="self" type="application/rss+xml"/>
         <item>
-            <title><![CDATA[亲爱的妈妈，节日快乐！]]></title>
-            <link>http://shangxiaojin.xyz/post/2022/05/08/theme-morther-1.html</link>
-            <guid>http://shangxiaojin.xyz/post/2022/05/08/theme-morther-1.html</guid>
-            <pubDate>Sun, 08 May 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[五月的第二个星期日——母亲节（Mother's Day)是一个感恩的节日。]]></description>
-            <enclosure url="https://surplus-1311636487.cos.ap-beijing.myqcloud.com/theme-mother-1.png">
-            </enclosure>
+            <title><![CDATA[蝶恋花]]></title>
+            <link>http://shangxiaojin.xyz/post/2020/10/19/theme-poem-0.html</link>
+            <guid>http://shangxiaojin.xyz/post/2020/10/19/theme-poem-0.html</guid>
+            <pubDate>Mon, 19 Oct 2020 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[如梦令-归醉]]></title>
             <link>http://shangxiaojin.xyz/post/2021/03/18/theme-poem-1.html</link>
             <guid>http://shangxiaojin.xyz/post/2021/03/18/theme-poem-1.html</guid>
             <pubDate>Thu, 18 Mar 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[几盏清茶又醉
+月半辗转未寐
+才道不关心
+梦里无限拭泪
+还睡、还睡
+也怕醒时滋味]]></description>
         </item>
         <item>
             <title><![CDATA[正能量分享——咸鱼翻身?双面焦罢了]]></title>
             <link>http://shangxiaojin.xyz/post/2022/05/06/theme-sharing-0.html</link>
             <guid>http://shangxiaojin.xyz/post/2022/05/06/theme-sharing-0.html</guid>
             <pubDate>Fri, 06 May 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[人如果没有梦想，和咸鱼有什么区别?这句打鸡血的话，激励了多少青年在追逐梦想的路上一条道走到黑。]]></description>
+            <description><![CDATA[我身边有很多人，都觉得自己的人生值得扼腕叹息。有人喜欢文科，却因为社会上重理轻文的偏见，被家长强迫要求选择了学理。最后学不进去，只考了二流大学， 混着日子。他们总爱幻想要是当初选了文科会怎样，好像只要读文科就一定能考上重本。]]></description>
         </item>
         <item>
             <title><![CDATA[正能量分享——努力拼搏才算成功？]]></title>
             <link>http://shangxiaojin.xyz/post/2022/05/05/theme-sharing-1.html</link>
             <guid>http://shangxiaojin.xyz/post/2022/05/05/theme-sharing-1.html</guid>
             <pubDate>Thu, 05 May 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[一份工作， 每天工作八小时能收获八十分的业绩，每天工作十二小时大概也只能把业绩提升到九十分。]]></description>
+            <description><![CDATA[为什么不追求一下性价比?]]></description>
         </item>
         <item>
             <title><![CDATA[歌单分享]]></title>
             <link>http://shangxiaojin.xyz/post/2022/05/06/theme-sharing-2.html</link>
             <guid>http://shangxiaojin.xyz/post/2022/05/06/theme-sharing-2.html</guid>
             <pubDate>Fri, 06 May 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[- 放飞 -- 许嵩]]></description>
+            <description><![CDATA[- 夏天 -- 李玖哲]]></description>
         </item>
         <item>
             <title><![CDATA[正能量分享——最好的都是想象，得到的不过如此。]]></title>
@@ -52,35 +55,10 @@
             <description><![CDATA[不是因为我们太不容易满足,而是世界上没有什么事物，能比我们在长久的期待中所勾勒出的那个幻象更美。]]></description>
         </item>
         <item>
-            <title><![CDATA[隔离的生活]]></title>
-            <link>http://shangxiaojin.xyz/post/2022/05/07/theme-sharing-life-0.html</link>
-            <guid>http://shangxiaojin.xyz/post/2022/05/07/theme-sharing-life-0.html</guid>
-            <pubDate>Sat, 07 May 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[外衣、洗漱用品、水杯、拖鞋、毛巾、卫生用品、方便食品等。
-  转运途中，请大家遵守纪律、服从安排，牢记自己的编号、车牌号，不发表不实言论。
-  到达转运地点后，同学们按照要求分配房间，检查房间床褥、配电、用水情况，如有特殊需求及时反馈。
-`]]></description>
-        </item>
-        <item>
-            <title><![CDATA[隔离生活——离开方舱]]></title>
-            <link>http://shangxiaojin.xyz/post/2022/05/10/theme-sharing-life-1.html</link>
-            <guid>http://shangxiaojin.xyz/post/2022/05/10/theme-sharing-life-1.html</guid>
-            <pubDate>Tue, 10 May 2022 00:00:00 GMT</pubDate>
-            <enclosure url="https://surplus-1311636487.cos.ap-beijing.myqcloud.com/theme-sharing-life-0.jpg">
-            </enclosure>
-        </item>
-        <item>
-            <title><![CDATA[宿舍七天隔离——第七天]]></title>
-            <link>http://shangxiaojin.xyz/post/2022/05/16/theme-sharing-life-2.html</link>
-            <guid>http://shangxiaojin.xyz/post/2022/05/16/theme-sharing-life-2.html</guid>
-            <pubDate>Mon, 16 May 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[2022-05-15
- >面临七天居家健康观察期将满，却迟迟没有等来校方院方的具体通知，以及对下一阶段的安排，一时间，微博、
- >知乎上风声四起。将会按照原计划逐步放开或是再次进入七天宿舍隔离冲上热点。
-5-15大事记
-上午9.50:洪楼校区外国语学院疫情动员大会——年级会议正式开始，会议期间同学们就以下决策表示不满：]]></description>
-            <enclosure url="https://surplus-1311636487.cos.ap-beijing.myqcloud.com/QQ图片20220516160254.png">
-            </enclosure>
+            <title><![CDATA[春天——孕育无限可能]]></title>
+            <link>http://shangxiaojin.xyz/post/2020/04/18/theme-sharing-4.html</link>
+            <guid>http://shangxiaojin.xyz/post/2020/04/18/theme-sharing-4.html</guid>
+            <pubDate>Sat, 18 Apr 2020 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
