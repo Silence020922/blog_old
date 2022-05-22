@@ -1,6 +1,6 @@
 ---
 date: 2022-05-22
-title:杂笔 
+title: 杂笔 
 cover: https://surplus-1311636487.cos.ap-beijing.myqcloud.com/theme-sharing-5.jpg
 category: 一夜无眠写下的胡话
 ---
