@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://shangxiaojin.xyz</id>
     <title>殇晓瑾、</title>
-    <updated>2022-06-02T01:20:08.483Z</updated>
+    <updated>2022-06-05T13:03:13.462Z</updated>
     <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
     <link rel="alternate" href="http://shangxiaojin.xyz"/>
     <link rel="self" href="http://shangxiaojin.xyz/feed.atom"/>
@@ -28,12 +28,19 @@
 也怕醒时滋味]]></summary>
     </entry>
     <entry>
+        <title type="html"><![CDATA[收藏类扑克]]></title>
+        <id>http://shangxiaojin.xyz/post/2022/06/05/theme-poke.html</id>
+        <link href="http://shangxiaojin.xyz/post/2022/06/05/theme-poke.html">
+        </link>
+        <updated>2022-06-05T00:00:00.000Z</updated>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[正能量分享——咸鱼翻身?双面焦罢了]]></title>
         <id>http://shangxiaojin.xyz/post/2022/05/06/theme-sharing-0.html</id>
         <link href="http://shangxiaojin.xyz/post/2022/05/06/theme-sharing-0.html">
         </link>
         <updated>2022-05-06T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[我身边有很多人，都觉得自己的人生值得扼腕叹息。有人喜欢文科，却因为社会上重理轻文的偏见，被家长强迫要求选择了学理。最后学不进去，只考了二流大学， 混着日子。他们总爱幻想要是当初选了文科会怎样，好像只要读文科就一定能考上重本。]]></summary>
+        <summary type="html"><![CDATA[人如果没有梦想，和咸鱼有什么区别?这句打鸡血的话，激励了多少青年在追逐梦想的路上一条道走到黑。]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[正能量分享——努力拼搏才算成功？]]></title>
@@ -41,7 +48,7 @@
         <link href="http://shangxiaojin.xyz/post/2022/05/05/theme-sharing-1.html">
         </link>
         <updated>2022-05-05T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[为什么不追求一下性价比?]]></summary>
+        <summary type="html"><![CDATA[一份工作， 每天工作八小时能收获八十分的业绩，每天工作十二小时大概也只能把业绩提升到九十分。]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[歌单分享]]></title>
@@ -49,7 +56,7 @@
         <link href="http://shangxiaojin.xyz/post/2022/05/06/theme-sharing-2.html">
         </link>
         <updated>2022-05-06T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[- 夏天 -- 李玖哲]]></summary>
+        <summary type="html"><![CDATA[- 放飞 -- 许嵩]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[正能量分享——最好的都是想象，得到的不过如此。]]></title>
