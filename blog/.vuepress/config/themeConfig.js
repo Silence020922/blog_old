@@ -17,7 +17,7 @@ module.exports = {
   social: [
     {
       type: 'email',
-      link: '201917090004@mail.sdu.edu.cn'
+      link: '1367896482@qq.com'
     },
     {
       type: 'github',
