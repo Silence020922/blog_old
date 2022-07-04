@@ -25,7 +25,7 @@ reward: false
     <img src="https://surplus-1311636487.cos.ap-beijing.myqcloud.com/dog2.jpg" width = "200">
 </figure>
 
-* 小杯子--全新未使用--鲜血得--2r
+* 小杯子--全新未使用--献血得--2r
 <figure class="twice">
     <img src="https://surplus-1311636487.cos.ap-beijing.myqcloud.com/杯子.jpg" width = "160">
 </figure>
