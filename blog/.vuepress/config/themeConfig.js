@@ -9,7 +9,7 @@ module.exports = {
     { text: '📖 Poem', link: '/categories/poem/' },
     { text: '🤝 Share', link: '/categories/share/' },
     { text: '🔥 About me', link: '/about-me/' },
-    { text: '📽 Old Time', link: '/categories/oldtime/' },
+    { text: '📽 sold second-hand', link: '/sold second-hand/' },
     { text: '🔗 friend-links', link: '/friend-links/' },
   ],
   searchPlaceholder: 'Search',
