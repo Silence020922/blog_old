@@ -1,7 +1,7 @@
 module.exports = {
   hostname: 'http://shangxiaojin.xyz',
   siteName: '殇晓瑾、',
-  logo: 'https://surplus-1311636487.cos.ap-beijing.myqcloud.com/logo1.jpg',
+  logo: 'https://surplus-1311636487.cos.ap-beijing.myqcloud.com/1654157381461.jpg',
   siteDesc: '一个00后的在校大学生 -- 喜爱魔[术]、数[学]、运[动]、游[戏]的新人。（拥有一个喜欢在[斗地主]里破产的女朋友）',
   lastUpdated: 'Last Updated',
   nav: [
