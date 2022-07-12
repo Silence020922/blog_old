@@ -4,7 +4,7 @@
         <title>殇晓瑾、</title>
         <link>http://shangxiaojin.xyz</link>
         <description>一个00后的在校大学生 -- 喜爱魔[术]、数[学]、运[动]、游[戏]的新人（拥有一个喜欢在[斗地主]里破产的女朋友）</description>
-        <lastBuildDate>Tue, 05 Jul 2022 08:56:16 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 12 Jul 2022 14:09:26 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
         <atom:link href="http://shangxiaojin.xyz/feed.atom" rel="self" type="application/rss+xml"/>
@@ -66,6 +66,12 @@
             <guid>http://shangxiaojin.xyz/post/2022/05/22/theme-sharing-5.html</guid>
             <pubDate>Sun, 22 May 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[很想去线下看看我所支教的那一群小孩、触碰一下他们的生活。]]></description>
+        </item>
+        <item>
+            <title><![CDATA[烟台游参考]]></title>
+            <link>http://shangxiaojin.xyz/post/2022/07/12/theme-travel-yantai.html</link>
+            <guid>http://shangxiaojin.xyz/post/2022/07/12/theme-travel-yantai.html</guid>
+            <pubDate>Tue, 12 Jul 2022 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
