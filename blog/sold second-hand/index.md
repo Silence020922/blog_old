@@ -20,6 +20,8 @@ reward: false
 * [吾皇巴扎嘿3](https://surplus-1311636487.cos.ap-beijing.myqcloud.com/巴扎嘿.jpg)--绝对正版--10r
 * ~~让我留在你身边--*张嘉佳*--5r~~
 * [人间词话](https://surplus-1311636487.cos.ap-beijing.myqcloud.com/人间词话.jpg)--*王国维*--5r
+* ~~[啊2.0]--*大冰*--3r~~    
+* [人间处方](https://surplus-1311636487.cos.ap-beijing.myqcloud.com/人间处方.jpg)--*夏目漱石*--3r
 ## 闲置物品、
 * 玩偶--全新未拆--献血得--10r
 <figure class="twice">
