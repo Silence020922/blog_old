@@ -15,7 +15,7 @@ function foo () {
       }
     },
     head: [
-      ['link', { rel: 'icon', href: `https://surplus-1311636487.cos.ap-beijing.myqcloud.com/logo1.jpg` }],
+      ['link', { rel: 'icon', href: `https://surplus-1311636487.cos.ap-beijing.myqcloud.com/1654157381461.jpg` }],
       ['link', { rel: 'manifest', href: '/manifest.json' }],
       ['meta', { name: 'theme-color', content: '#3eaf7c' }],
       ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
