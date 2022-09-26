@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://shangxiaojin.xyz</id>
     <title>殇晓瑾</title>
-    <updated>2022-09-09T03:33:53.444Z</updated>
+    <updated>2022-09-26T10:22:13.136Z</updated>
     <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
     <link rel="alternate" href="http://shangxiaojin.xyz"/>
     <link rel="self" href="http://shangxiaojin.xyz/feed.atom"/>
@@ -15,39 +15,13 @@
         <updated>2022-07-20T00:00:00.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[拼多多此刀10单]]></title>
-        <id>http://shangxiaojin.xyz/post/1970/01/01/theme-pdd.html</id>
-        <link href="http://shangxiaojin.xyz/post/1970/01/01/theme-pdd.html">
-        </link>
-        <updated>2022-09-09T03:33:53.438Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[蝶恋花]]></title>
-        <id>http://shangxiaojin.xyz/post/2019/10/19/theme-poem-0.html</id>
-        <link href="http://shangxiaojin.xyz/post/2019/10/19/theme-poem-0.html">
-        </link>
-        <updated>2019-10-19T00:00:00.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[如梦令-归醉]]></title>
-        <id>http://shangxiaojin.xyz/post/2021/03/18/theme-poem-1.html</id>
-        <link href="http://shangxiaojin.xyz/post/2021/03/18/theme-poem-1.html">
-        </link>
-        <updated>2021-03-18T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[几盏清茶又醉
-月半辗转未寐
-才道不关心
-梦里无限拭泪
-还睡、还睡
-也怕醒时滋味]]></summary>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[暑期读物摘录]]></title>
         <id>http://shangxiaojin.xyz/post/2022/07/18/theme-reading.html</id>
         <link href="http://shangxiaojin.xyz/post/2022/07/18/theme-reading.html">
         </link>
         <updated>2022-07-18T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[在悠长的白天里，他感觉通常好受些。可一到晚上，他就开始焦虑起来。他强迫自己每天都要去散步，可即使沐浴在冬日暖阳里，他所看到的一切也都像是黑白照片一般，失去了往日的色彩。
+        <summary type="html"><![CDATA[蛤蟆先生，如果我不相信每个人都有能力变得更好，我就不会做这份工作了。我无法保证事情一定会变好，但我可以承诺的是，我会对你倾注我全身心得关注，我也希望你对咨询是全心投入得。假如我们都能像这样一同努力，就能预见积极的结果。但归根结底，这一切都取决于你。
+在悠长的白天里，他感觉通常好受些。可一到晚上，他就开始焦虑起来。他强迫自己每天都要去散步，可即使沐浴在冬日暖阳里，他所看到的一切也都像是黑白照片一般，失去了往日的色彩。
 快乐喝深情、愤怒、悲伤、恐惧。所有这些情感加在一起，就构成了所谓‘自然型儿童’，而这是整个儿童自我状态的重要组成部分。
 不是发自内心的东西，就不能带来真正的改变。
 童年体验到的最强烈的情绪，不可避免地变成我们成年后常有的感受。
@@ -63,11 +37,26 @@
 当你有恐惧感时，焦虑的念头就会跑到你的意识层面，让你没办法放松。就好像它们在你心里拉响警报，告诉你大事不好了，希望你能做点什么。]]></summary>
     </entry>
     <entry>
+        <title type="html"><![CDATA[如梦令-归醉]]></title>
+        <id>http://shangxiaojin.xyz/post/2021/03/18/theme-poem-1.html</id>
+        <link href="http://shangxiaojin.xyz/post/2021/03/18/theme-poem-1.html">
+        </link>
+        <updated>2021-03-18T00:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[蝶恋花]]></title>
+        <id>http://shangxiaojin.xyz/post/2019/10/19/theme-poem-0.html</id>
+        <link href="http://shangxiaojin.xyz/post/2019/10/19/theme-poem-0.html">
+        </link>
+        <updated>2019-10-19T00:00:00.000Z</updated>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[正能量分享——咸鱼翻身?双面焦罢了]]></title>
         <id>http://shangxiaojin.xyz/post/2022/05/06/theme-sharing-0.html</id>
         <link href="http://shangxiaojin.xyz/post/2022/05/06/theme-sharing-0.html">
         </link>
         <updated>2022-05-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[人如果没有梦想，和咸鱼有什么区别?这句打鸡血的话，激励了多少青年在追逐梦想的路上一条道走到黑。]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[正能量分享——努力拼搏才算成功？]]></title>
@@ -75,7 +64,7 @@
         <link href="http://shangxiaojin.xyz/post/2022/05/05/theme-sharing-1.html">
         </link>
         <updated>2022-05-05T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[我们知道，世间大部分事，付出和回报不成正比。]]></summary>
+        <summary type="html"><![CDATA[一份工作， 每天工作八小时能收获八十分的业绩，每天工作十二小时大概也只能把业绩提升到九十分。]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[歌单分享]]></title>
@@ -83,30 +72,7 @@
         <link href="http://shangxiaojin.xyz/post/2022/05/06/theme-sharing-2.html">
         </link>
         <updated>2022-05-06T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[- Unbelievable -- Owl City/Hanson]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[正能量分享——最好的都是想象，得到的不过如此。]]></title>
-        <id>http://shangxiaojin.xyz/post/2022/05/07/theme-sharing-3.html</id>
-        <link href="http://shangxiaojin.xyz/post/2022/05/07/theme-sharing-3.html">
-        </link>
-        <updated>2022-05-07T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[不是因为我们太不容易满足,而是世界上没有什么事物，能比我们在长久的期待中所勾勒出的那个幻象更美。]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[正能量分享——春日随笔]]></title>
-        <id>http://shangxiaojin.xyz/post/2020/04/18/theme-sharing-4.html</id>
-        <link href="http://shangxiaojin.xyz/post/2020/04/18/theme-sharing-4.html">
-        </link>
-        <updated>2020-04-18T00:00:00.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[杂笔]]></title>
-        <id>http://shangxiaojin.xyz/post/2022/05/22/theme-sharing-5.html</id>
-        <link href="http://shangxiaojin.xyz/post/2022/05/22/theme-sharing-5.html">
-        </link>
-        <updated>2022-05-22T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[很想去线下看看我所支教的那一群小孩、触碰一下他们的生活。]]></summary>
+        <summary type="html"><![CDATA[- 放飞 -- 许嵩]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[正能量分享——我和女朋友三观不合？]]></title>
@@ -114,7 +80,11 @@
         <link href="http://shangxiaojin.xyz/post/2022/07/23/theme-sharing-6.html">
         </link>
         <updated>2022-07-23T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[在如今恋爱自由、婚姻自由的环境下，三观不合的抱怨声也未有停歇。]]></summary>
+        <summary type="html"><![CDATA[一定是我在开始对她了解的太少了吧，不然为什么没有早点发现呢？
+一定是他变心了吧，他刚认识我不是这样的。
+怪我自己看走眼了吧，居然到现在才认清他。
+哎、当初留给我的选择机会太少了，没办法。
+两个观点不合的人步入婚姻殿堂会备受煎熬吧，既然前途黑暗那就不要浪费时间了，当断即断...]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[烟台游参考]]></title>
@@ -122,5 +92,28 @@
         <link href="http://shangxiaojin.xyz/post/2022/07/12/theme-travel-yantai.html">
         </link>
         <updated>2022-07-12T00:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[正能量分享——最好的都是想象，得到的不过如此。]]></title>
+        <id>http://shangxiaojin.xyz/post/2022/05/07/theme-sharing-3.html</id>
+        <link href="http://shangxiaojin.xyz/post/2022/05/07/theme-sharing-3.html">
+        </link>
+        <updated>2022-05-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[我们都有过这样的经历。]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[杂笔]]></title>
+        <id>http://shangxiaojin.xyz/post/2022/05/22/theme-sharing-5.html</id>
+        <link href="http://shangxiaojin.xyz/post/2022/05/22/theme-sharing-5.html">
+        </link>
+        <updated>2022-05-22T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[人总归是有思想的、思多一点总会不差、想多一点就说不准了。不巧、我就是一个爱想的人。大一喜欢乱想、于是干了不少错事、大二喜欢乱想、于是整天不思进取、和女友分崩离析、大三喜欢乱想、于是终日郁郁寡欢、心烦意乱。因为成长、能决定的越来越多、可供选择的方向也越来越多、不幸的是、我想、能后悔的也越来越多。]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[正能量分享——春日随笔]]></title>
+        <id>http://shangxiaojin.xyz/post/2020/04/18/theme-sharing-4.html</id>
+        <link href="http://shangxiaojin.xyz/post/2020/04/18/theme-sharing-4.html">
+        </link>
+        <updated>2020-04-18T00:00:00.000Z</updated>
     </entry>
 </feed>
