@@ -1,5 +1,4 @@
 ---
-cover: https://surplus-1311636487.cos.ap-beijing.myqcloud.com/vocan.jpg
 title: 正能量分享——我和女朋友三观不合？
 category: share
 date: 2022-07-23

@@ -2,7 +2,6 @@
 title: 正能量分享——春日随笔
 date: 2020-04-18
 category: share
-cover: https://s1.328888.xyz/2022/05/19/DjLOA.png
 ---
 ## 4.18随笔
 

@@ -1,7 +1,7 @@
 ---
 title: python 入门
-cover: 
 date: 2022-09-30
+tag: note
 ---
 # 数据科学导论课程
 ## 编译器选用

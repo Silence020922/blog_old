@@ -1,7 +1,6 @@
 ---
 date: 2022-05-06
 title: 歌单分享
-cover: https://surplus-1311636487.cos.ap-beijing.myqcloud.com/share-3.jpg
 category: share
 ---
 # 歌单分享

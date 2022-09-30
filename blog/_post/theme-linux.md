@@ -1,7 +1,7 @@
 ---
 title: linux 入门 
 date: 2022-09-29
-cover:
+tag: note
 ---
 Tips:建议虚拟机,使用版本[manjaro](https://manjaro.org/download/)        
 1.[VMware Workstation Player](https://www.vmware.com/cn/products/workstation-player/workstation-player-evaluation.html)VMware公司为Windows用于非商业用途。

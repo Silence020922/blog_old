@@ -1,7 +1,6 @@
 ---
 date: 2021-03-18
 title: 如梦令-归醉
-cover: https://surplus-1311636487.cos.ap-beijing.myqcloud.com/poem-1.jpg
 category: poem
 ---
 ## 如梦令

@@ -2,7 +2,7 @@
 title: 烟台游参考
 date: 2022-07-12
 cover: https://surplus-1311636487.cos.ap-beijing.myqcloud.com/COVER-yt.jpg
-category: 烟台
+category: travel
 ---
 ## Day0 
 * 准备好换洗衣服、充电宝、拖鞋、水杯、花露水等

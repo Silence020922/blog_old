@@ -1,7 +1,6 @@
 ---
 date: 2019-10-19
 title: 蝶恋花
-cover: https://s1.328888.xyz/2022/05/19/DVPvJ.jpg
 category: poem
 ---
 ## 蝶恋花

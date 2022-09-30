@@ -1,7 +1,6 @@
 ---
 date: 2022-07-18
 title: 暑期读物摘录
-cover: https://surplus-1311636487.cos.ap-beijing.myqcloud.com/夏目100.jpg
 category: share
 ---
 

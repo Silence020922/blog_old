@@ -1,7 +1,6 @@
 ---
 date: 2022-05-05
 category: share
-cover: https://surplus-1311636487.cos.ap-beijing.myqcloud.com/隔离生活.jpg
 title: 正能量分享——努力拼搏才算成功？
 ---
 # 努力拼搏才是成功？

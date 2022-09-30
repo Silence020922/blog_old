@@ -1,7 +1,6 @@
 ---
 date: 2022-05-06
 category: share
-cover: https://surplus-1311636487.cos.ap-beijing.myqcloud.com/JiNanSpring1.jpg
 title: 正能量分享——咸鱼翻身?双面焦罢了
 
 ---

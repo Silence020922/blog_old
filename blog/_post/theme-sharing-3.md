@@ -2,7 +2,6 @@
 date: 2022-05-07
 title: 正能量分享——最好的都是想象，得到的不过如此。
 category: share
-cover: https://surplus-1311636487.cos.ap-beijing.myqcloud.com/theme-sharing-3.jpg
 ---
 # 最好的都是想象，得到的不过如此。
 我们都有过这样的经历。

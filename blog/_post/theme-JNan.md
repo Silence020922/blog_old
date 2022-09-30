@@ -1,8 +1,8 @@
 ---
 title: 济南可玩点介绍
-categroy: 济南
+category: travel
 date: 2022-07-20
-cover: https://pic2.zhimg.com/v2-a816f08c1358bdbe480c04306826d62d_1440w.jpg?source=172ae18b
+cover: https://surplus-1311636487.cos.ap-beijing.myqcloud.com/JiNanSpring1.jpg
 ---
 ## 大明湖
 大明湖确实没得说、四时昼夜不同而景色各异。另外大明湖可体验乘船游览，是一个游玩、锻炼的绝佳之地。可游玩两个小时左右。
