@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://shangxiaojin.xyz</id>
     <title>殇晓瑾</title>
-    <updated>2022-09-30T03:00:24.667Z</updated>
+    <updated>2022-09-30T11:02:30.746Z</updated>
     <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
     <link rel="alternate" href="http://shangxiaojin.xyz"/>
     <link rel="self" href="http://shangxiaojin.xyz/feed.atom"/>
@@ -20,9 +20,10 @@
         <link href="http://shangxiaojin.xyz/post/2022/09/30/theme-python.html">
         </link>
         <updated>2022-09-30T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[顺序结构
-分支结构(if elif else )
-循环结构(for while )]]></summary>
+        <summary type="html"><![CDATA[print s1*2 #将s1打印两次
+列表(list)
+['abcd', 77, 2.23 ]
+命令]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[linux 入门]]></title>

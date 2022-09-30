@@ -15,7 +15,7 @@
             "id": "http://shangxiaojin.xyz/post/2022/09/30/theme-python.html",
             "url": "http://shangxiaojin.xyz/post/2022/09/30/theme-python.html",
             "title": "python 入门",
-            "summary": "顺序结构\n分支结构(if elif else )\n循环结构(for while )",
+            "summary": "print s1*2 #将s1打印两次\n列表(list)\n['abcd', 77, 2.23 ]\n命令",
             "date_modified": "2022-09-30T00:00:00.000Z"
         },
         {
