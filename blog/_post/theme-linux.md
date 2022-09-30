@@ -85,8 +85,8 @@ pacman -U /path/to/package/package_name-version.pkg.tar.zst
 ```
 pacman -U http://www.example.com/repo/example.pkg.tar.zst
 ```
-##(解)压缩命令
-**tar**
+## (解)压缩命令    
+### tar    
 压缩文件file1和目录dir2到test.tar.gz
 ```
 tar -zcvf test.tar.gz file1 dir2
@@ -106,3 +106,26 @@ tar -ztvf test.tar.gz
 > -c : --create 创建一个新的归档（压缩包）    
 > -x : 从压缩包中解出文件    
 
+### rar
+压缩文件
+```
+rar a -r test.rar file 
+```
+解压文件
+```
+unrar x test.rar 
+```
+**解释**
+>a : 添加到压缩文件    
+>-r : 递归处理    
+>x : 以绝对路径解压文件    
+
+### zip
+压缩文件
+```
+zip -r test.zip file #-r意味递归处理
+```
+解压文件
+```
+unzip test.zip
+```

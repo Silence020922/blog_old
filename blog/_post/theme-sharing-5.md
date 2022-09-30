@@ -2,7 +2,7 @@
 date: 2022-05-22
 title: 杂笔 
 cover: https://surplus-1311636487.cos.ap-beijing.myqcloud.com/theme-sharing-5.jpg
-category: 一夜无眠写下的胡话
+category: share
 ---
 很想去线下看看我所支教的那一群小孩、触碰一下他们的生活。  
 

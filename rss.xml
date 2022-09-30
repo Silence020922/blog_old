@@ -4,7 +4,7 @@
         <title>殇晓瑾</title>
         <link>http://shangxiaojin.xyz</link>
         <description>一个00后的在校大学生 -- 喜爱魔[术]、数[学]、运[动]、游[戏]的新人（拥有一个喜欢在[斗地主]里破产的女朋友）</description>
-        <lastBuildDate>Thu, 29 Sep 2022 12:32:27 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 30 Sep 2022 02:43:56 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
         <atom:link href="http://shangxiaojin.xyz/feed.atom" rel="self" type="application/rss+xml"/>
@@ -15,11 +15,20 @@
             <pubDate>Wed, 20 Jul 2022 00:00:00 GMT</pubDate>
         </item>
         <item>
+            <title><![CDATA[python 入门]]></title>
+            <link>http://shangxiaojin.xyz/post/2022/09/30/theme-python.html</link>
+            <guid>http://shangxiaojin.xyz/post/2022/09/30/theme-python.html</guid>
+            <pubDate>Fri, 30 Sep 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[顺序结构
+分支结构(if elif else )
+循环结构(for while )]]></description>
+        </item>
+        <item>
             <title><![CDATA[linux 入门]]></title>
             <link>http://shangxiaojin.xyz/post/2022/09/29/theme-linux.html</link>
             <guid>http://shangxiaojin.xyz/post/2022/09/29/theme-linux.html</guid>
             <pubDate>Thu, 29 Sep 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[VMware公司为macO平台推出非商用软件。]]></description>
+            <description><![CDATA[操作命令]]></description>
         </item>
         <item>
             <title><![CDATA[蝶恋花]]></title>

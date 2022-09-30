@@ -12,10 +12,17 @@
             "date_modified": "2022-07-20T00:00:00.000Z"
         },
         {
+            "id": "http://shangxiaojin.xyz/post/2022/09/30/theme-python.html",
+            "url": "http://shangxiaojin.xyz/post/2022/09/30/theme-python.html",
+            "title": "python 入门",
+            "summary": "顺序结构\n分支结构(if elif else )\n循环结构(for while )",
+            "date_modified": "2022-09-30T00:00:00.000Z"
+        },
+        {
             "id": "http://shangxiaojin.xyz/post/2022/09/29/theme-linux.html",
             "url": "http://shangxiaojin.xyz/post/2022/09/29/theme-linux.html",
             "title": "linux 入门",
-            "summary": "VMware公司为macO平台推出非商用软件。",
+            "summary": "操作命令",
             "date_modified": "2022-09-29T00:00:00.000Z"
         },
         {
