@@ -22,7 +22,7 @@
             "id": "http://shangxiaojin.xyz/post/2022/09/29/theme-linux.html",
             "url": "http://shangxiaojin.xyz/post/2022/09/29/theme-linux.html",
             "title": "linux 入门",
-            "summary": "操作命令",
+            "summary": "在 Red Hat Linux 在停止官方更新后，由社群启动的 Fedora 项目接管了其源代码并构筑了自己的更新，演变成了如今的 Fedora 发行版。Fedora 是一套功能完备且更新迅速的系统，且本身计划也受到了 Red Hat 公司的赞助，成为了公司测试新技术的平台。\n虽然 RHEL 是一个收费的、商业化的系统，但是其遵循 GNU 通用公共许可证，因此会开放源代码。编译这些源代码可以重新得到一个可以使用的操作系统，即一个新的发行版：CentOS（Community Enterprise Operating System，社区版企业操作系统）。因为 CentOS 几乎完全编译自 RHEL 的代码，所以其也像 RHEL 一样具有企业级别的稳定性，适合在要求高度稳定的服务器上运行。",
             "date_modified": "2022-09-29T00:00:00.000Z"
         },
         {
