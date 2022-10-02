@@ -29,7 +29,7 @@ Arch Linux 拥有强大的功能，但因其特殊的理念使得用户不易使
 VMware公司为macO平台推出非商用软件。
 
 3.[VirtualBox](https://www.virtualbox.org/wiki/Downloads)甲骨文公司发行的通用虚拟机管理系统，支持 Windows 和 macOS,且遵循GPLv2开源。    
-# 命令(基于pacman)
+# 装机命令(基于pacman)
 ## 利用neofetch查看本机信息
 ## 安装具体的软件包(Insalling package)
 ```
@@ -141,8 +141,7 @@ pacman -Qo fail_path
 ```
 pacman -Qdt
 ```
-## 其他指令(additional commands)
-**命令**    
+## 其他(additional commands)    
 仅下载但不进行安装
 ```
 pacman -Sw package_name
@@ -154,50 +153,6 @@ pacman -U /path/to/package/package_name-version.pkg.tar.zst
 远程安装(调用网络文件)
 ```
 pacman -U http://www.example.com/repo/example.pkg.tar.zst
-```
-## (解)压缩命令    
-### tar    
-压缩文件file1和目录dir2到test.tar.gz
-```
-tar -zcvf test.tar.gz file1 dir2
-```
-解压文件
-```
-tar -zxvf test.tar.gz
-```
-列出压缩文件的内容 
-```
-tar -ztvf test.tar.gz
-```
-**解释**    
-> -z : 使用 gzip 来压缩和解压文件    
-> -v : --verbose 详细的列出处理的文件    
-> -f : --file=ARCHIVE 使用档案文件或设备，这个选项通常是必选的    
-> -c : --create 创建一个新的归档（压缩包）    
-> -x : 从压缩包中解出文件    
-
-### rar
-压缩文件
-```
-rar a -r test.rar file 
-```
-解压文件
-```
-unrar x test.rar 
-```
-**解释**
->a : 添加到压缩文件    
->-r : 递归处理    
->x : 以绝对路径解压文件    
-
-### zip
-压缩文件
-```
-zip -r test.zip file #-r意味递归处理
-```
-解压文件
-```
-unzip test.zip
 ```
 # 配置(Configuration)
 pacman具体配置文件应存在于/etc/pacman.conf,对起进行相应的配置可实现并行下载、显示新旧版本、跳过升级指定包组文件等功能,but在我的Manjaro上没有找到对应的配置文件,只看到了pacman-mirror.conf以及pacman.d,paman,conf等,有待学习。
@@ -259,4 +214,90 @@ sudo ntpd -qg
 sudo hwclock -w
 ```
 矫正系统时间后重试
+
+# 日用命令
+## 文档与文件管理
+###简介
+>pwd 显示当前工作目录    
+>ls 显示工作目录中的文件信息    
+>cd file_name 切换工作目录        
+>mkdir string 创建空白目录        
+>cp 用于复制文件或目录    
+>mv 剪切文件或者重命名    
+>rm 删除文件或目录    
+>rmdir 删除空的文件或目录    
+>shred 粉碎文件    
+>find 查找文件
+### ls
+```
+ls -a #显示所有文件
+ls -l #将文件名、权限、文件型态、拥有者、文件大小等列出
+ls -lh #同时显示文件大小    
+ls -t #按照更新顺序近到远    
+```
+### cp
+```
+cp /* /*
+-v #详细显示命令操作过程
+-i #若目标文件存在则询问是否覆盖
+-f #直接覆盖
+-r #递归复制目录和文件
+```
+### mv
+```
+mv file_name1 as file_name2 #将文件重命名为name2
+mv dir1 dir2 #移动文件
+```
+### rm
+```
+rm -rf #递归删除且忽略不存在文件
+rm -v #显示详细信息
+```
+### find
+```
+find -name‘’ -delete  #按照名称查找并删除
+```
+
+
+## (解)压缩命令    
+### tar    
+压缩文件file1和目录dir2到test.tar.gz
+```
+tar -zcvf test.tar.gz file1 dir2
+```
+解压文件
+```
+tar -zxvf test.tar.gz
+```
+列出压缩文件的内容 
+```
+tar -ztvf test.tar.gz
+```
+**解释**    
+> -z : 使用 gzip 来压缩和解压文件    
+> -v : --verbose 详细的列出处理的文件    
+> -f : --file=ARCHIVE 使用档案文件或设备，这个选项通常是必选的    
+> -c : --create 创建一个新的归档（压缩包）    
+> -x : 从压缩包中解出文件    
+
+### rar
+压缩文件
+```
+rar a -r test.rar file 
+```
+解压文件
+```
+unrar x test.rar
+```
+**解释**
+>a : 添加到压缩文件>-r : 递归处理>x : 以绝对路径解压文件
+### zip
+压缩文件
+```
+zip -r test.zip file #-r意味递归处理
+```
+解压文件
+```
+unzip test.zip
+```
 
