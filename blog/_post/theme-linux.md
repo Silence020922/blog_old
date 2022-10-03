@@ -29,6 +29,8 @@ Arch Linux 拥有强大的功能，但因其特殊的理念使得用户不易使
 VMware公司为macO平台推出非商用软件。
 
 3.[VirtualBox](https://www.virtualbox.org/wiki/Downloads)甲骨文公司发行的通用虚拟机管理系统，支持 Windows 和 macOS,且遵循GPLv2开源。    
+## 文件存储结构
+![概况](https://surplus-1311636487.cos.ap-beijing.myqcloud.com/file-name.png)
 # 装机命令(基于pacman)
 ## 利用neofetch查看本机信息
 ## 安装具体的软件包(Insalling package)
@@ -419,6 +421,7 @@ unzip test.zip
 ```
 shutdown -r #关机后重新启动
 shutdown -h now #立刻关机亦可指定其他时间
+shutdown -h #默认一分钟后关机若想取消可以用 shutdown -c 进行取消
 ```
 ### poweroff
 ```
@@ -428,4 +431,17 @@ poweroff -i #关闭操作系统前关闭所有网络接口
 ```
 ### reboot 
 重启计算机
+
+## 查找搜索
+### which
+用于查找某个系统命令是否存在，或者找出执行命令所对应的具体位置。    
+基本语法
+```
+which 参数 文件
+```
+
+### whereis
+查找命令所在根文件夹方便进行更改，感觉上和where没什么区别
+
+
 
