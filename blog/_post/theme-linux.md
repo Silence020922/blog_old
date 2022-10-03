@@ -67,6 +67,12 @@ sudo pacman -S firefox
 ```
 yay -S baidunetdisk-bin
 ```
+7.安装截图工具    
+这里用到的是flameshot,是一款编辑能力较强的自由截图工具。
+```
+sudo pacman -S flameshot 
+```
+
 ## 移除安装包(Removing packages)
 **操作命令**    
 删除一个包，保留其全部已经安装的依赖项
@@ -217,7 +223,7 @@ sudo hwclock -w
 
 # 日用命令
 ## 文档与文件管理
-###简介
+### 简介
 >pwd 显示当前工作目录    
 >ls 显示工作目录中的文件信息    
 >cd file_name 切换工作目录        
@@ -255,10 +261,117 @@ rm -v #显示详细信息
 ```
 ### find
 ```
-find -name‘’ -delete  #按照名称查找并删除
+find -name ‘’ -delete  #按照名称查找并删除
+sudo find .  -ctime -1 #找到一天内，内容变化的文件
+sudo find . -atime -1 #找到一天内被访问access过的文件
+sudo find . -atime 2 #找到恰为两天
+sudo find , -atime +2 #超过两天
+-maxdepth -mindepth #设置最大最小目录层级
+-size +10 #寻找大于10M大小的文件
+！ #取反 
+```
+## 文档编辑命令
+### 摘要
+>cat 用于查看纯文本文件，用于其他类型文件查看将会出现乱码    
+>tac 如cat,但反向读取文件    
+>more 纯文本且内容较多    
+>less 纯文本文件可向后翻页    
+>head 用于查看纯文本文件前N行    
+>tail 检测新内容或查看后N行        
+>tr 替换文本文件中字符    
+>wc 统计文本行数、字数、字节数    
+>stat 查看文件存储、时间信息    
+>cut 按列提取文本字符    
+>touch 创建文件或设置文件时间    
+>sort 排序文件并输出    
+>find 查找文件    
+>uniq 去除文件中重复行    
+
+### cat
+基本语法
+```
+cat -参数 file_name
+cat --help 显示帮助信息
+cat --version 显示版本信息
+```
+参数
+```
+-n #显示编号
+-s #显示编号且多个空行一个编号
+-b #显示行数空行无编号
+```
+### more
+在使用more时，如判断非text文件将不执行命令，返回提示，这点与cat不同。同时，more可以执行分屏显示，命令内用space进行翻页操作，具体参数如下
+```
+-num #指定每行显示的行数
+-s #多个空行压缩成一个空行展示
+-f #计算实际行数而非自动换行的行数
+-p #先清屏再显示文本文件剩余内容
+```
+当位于命令内部，可执行如下操作
+```
+space: 显示下一屏的内容
+enter: 下辖n行，默认为1
+= : 输出当前的行号
+ctrl B: 返回上一屏
+V: 调用Vi编译器
+B: 显示上一屏内容 
+```
+### less
+less可使用pageup与pagedown实现翻页功能。推出此程序按Q键。
+```
+less -s #显示连续空行为一行
+less -S #在单行显示较长内容，而不换行显示
+```
+命令内部操作
+```
+b:向后翻一页
+d:向后半页
+Q:推出less
+u:向前滚动半页
+y:向前滚动一行
+space:滚动一页
+enter:滚动一行
+```
+### head
+head -x file-name 仅查看前x行
+### tail
+tail -x file-name 查看后x行    
+对于tail，有多数命令并没有完全搞懂，暂时无用，用得到再查吧。当然， --help仍然可以查官方文档。
+### tr
+```
+tr string1 string2
+tr -s #删除所有重复出现的字符序列，保留一个
 ```
 
+### wc
+基本命令
+```
+wc 参数 文件
+```
+参数
+```
+-w:统计字数
+-word:只显示字数
+-c:统计字节数
+-l:统计行数
+-lines:只显示列数
+-m:统计字符数
+-L:打印最长行长度
 
+```
+### stat
+```
+stat -t file-name #以简介方式输出
+stat -f file-name #显示文件系统的信息
+```
+### uniq
+注意这里是检查每行的唯一性。
+```
+uniq -c file-name  #打印每行在文本中出现的次数，并放在每行开头位置
+uniq -d file-name #只显示有重复的记录，且出现一次
+-u #只显示没有重复的记录
+```
 ## (解)压缩命令    
 ### tar    
 压缩文件file1和目录dir2到test.tar.gz
@@ -290,7 +403,8 @@ rar a -r test.rar file
 unrar x test.rar
 ```
 **解释**
->a : 添加到压缩文件>-r : 递归处理>x : 以绝对路径解压文件
+>a : 添加到压缩文件>-r : 递归处理    
+>x : 以绝对路径解压文件
 ### zip
 压缩文件
 ```
@@ -300,4 +414,18 @@ zip -r test.zip file #-r意味递归处理
 ```
 unzip test.zip
 ```
+## 开关机命令
+### shutdown
+```
+shutdown -r #关机后重新启动
+shutdown -h now #立刻关机亦可指定其他时间
+```
+### poweroff
+```
+poweroff -n #关闭操作系统时不执行sync
+poweroff -f #强制关闭
+poweroff -i #关闭操作系统前关闭所有网络接口
+```
+### reboot 
+重启计算机
 
