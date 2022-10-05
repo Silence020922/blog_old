@@ -374,6 +374,75 @@ uniq -c file-name  #打印每行在文本中出现的次数，并放在每行开
 uniq -d file-name #只显示有重复的记录，且出现一次
 -u #只显示没有重复的记录
 ```
+## 磁盘管理(不常用)
+### fdisk
+磁盘分区工具
+```
+fdisk [参数]
+```
+>-l 列出指定外围设备分区表状况    
+>-b 指定每个分区大小    
+>-s 将指定的分区大小输出到标准输出上，单位为区块     
+当输入
+```
+sudo fdisk /dev/sda #进入A盘对A进行分区
+```
+终端内容显示
+
+>Welcome to fdisk (util-linux 2.38.1).    
+>Changes will remain in memory only, until you decide to write them.    
+>Be careful before using the write command.
+
+>This disk is currently in use - repartitioning is probably a bad idea.    
+>It's recommended to umount all file systems, and swapoff all swap    
+>partitions on this disk.
+
+```
+Command (m for help): m
+```
+Help:
+
+  DOS (MBR)
+```
+   a   toggle a bootable flag
+   b   edit nested BSD disklabel
+   c   toggle the dos compatibility flag
+```
+  Generic
+```
+   d   delete a partition #删除已有分区
+   F   list free unpartitioned space
+   l   list known partition types
+   n   add a new partition #创建新分区
+   p   print the partition table #打印现有分区信息
+   t   change a partition type
+   v   verify the partition table
+   i   print information about a partition
+```
+  Misc
+```
+   m   print this menu
+   u   change display/entry units
+   x   extra functionality (experts only)
+```
+  Script
+```
+   I   load disk layout from sfdisk script file
+   O   dump disk layout to sfdisk script file
+```
+  Save & Exit
+```
+   w   write table to disk and exit #保存并退出
+   q   quit without saving changes #不保存退出
+```  
+Create a new label
+```
+   g   create a new empty GPT partition table #创建GPT分区
+   G   create a new empty SGI (IRIX) partition table
+   o   create a new empty DOS partition table
+   s   create a new empty Sun partition table
+```
+
 ## (解)压缩命令    
 ### tar    
 压缩文件file1和目录dir2到test.tar.gz
@@ -443,5 +512,29 @@ which 参数 文件
 ### whereis
 查找命令所在根文件夹方便进行更改，感觉上和where没什么区别
 
+### df 
+查看磁盘使用情况
+```
+df -k #以KiB为单位，且只显示数字
+df -m #以MiB为单位，且只显示数字
+df -h #显示单位，且为1024
+df -H #显示单位，且为1000
+df --hlep #查看帮助文档
+```
+
+### top
+查看内存使用情况，窗口内信息如下
+>PID:当前运行进程的ID
+>USER:进程用户
+>PR:优先级
+>NInice:静态优先级，取值越小
+>VIRT:进程占用的虚拟内存
+>RES:进程占用的物理内存
+>SHR:进程占用的共享内存
+>S:进程状态，S-休眠 R-正在运行 Z-僵死 N优先级为负数
+>%CPU:占用CPU使用率
+>%MEM:使用的物理内存与总内存百分比
+>TIME+:该进程累积CPU使用时间
+>COMMAND:进程名称
 
 
