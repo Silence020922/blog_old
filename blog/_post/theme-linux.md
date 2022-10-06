@@ -243,6 +243,12 @@ ls -l #将文件名、权限、文件型态、拥有者、文件大小等列出
 ls -lh #同时显示文件大小    
 ls -t #按照更新顺序近到远    
 ```
+### [lsd](https://github.com/Peltoche/lsd)(替代ls)
+Arch Linux 系统
+```
+sudo pacman -S lsd #下载lsd
+``
+`
 ### cp
 ```
 cp /* /*
@@ -302,6 +308,21 @@ cat --version 显示版本信息
 -s #显示编号且多个空行一个编号
 -b #显示行数空行无编号
 ```
+### [bat](https://github.com/sharkdp/bat)
+```
+pacman -S bat #Arch Linux 安装
+sudo apt install bat #Ubuntu 安装 注意更新apt-install
+```
+基本命令
+```
+bat file-name #在终端上打开文件夹
+bat src/*.rs #一次显示多个文件
+bat -A /etc/hosts #显示和突出显示不可打印字符
+bat > file-name #快速创建文件
+bat -n file-name #仅显示行数
+```
+
+
 ### more
 在使用more时，如判断非text文件将不执行命令，返回提示，这点与cat不同。同时，more可以执行分屏显示，命令内用space进行翻页操作，具体参数如下
 ```
@@ -521,12 +542,6 @@ df -k #以KiB为单位，且只显示数字
 df -m #以MiB为单位，且只显示数字
 df -h #显示单位，且为1024
 df -H #显示单位，且为1000
-df --hlep #查看帮助文档
-```
-
-### top
-查看内存使用情况，窗口内信息如下
->PID:当前运行进程的ID
 >USER:进程用户
 >PR:优先级
 >NInice:静态优先级，取值越小
