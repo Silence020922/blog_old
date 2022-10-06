@@ -247,8 +247,20 @@ ls -t #按照更新顺序近到远
 Arch Linux 系统
 ```
 sudo pacman -S lsd #下载lsd
-``
-`
+```
+### zoxide
+代替cd，本人是zoxide搭配fish一同使用，具体下载命令如下
+```
+pacman -S zoxide #Arch Linux 安装
+apt install zoxide #Ubuntu21.04+ 版本可用该命令安装
+```
+安装结束后需要将其添加到shell的配置文件中,在neofetch指令中可查看系统shell,进行配置。
+```
+zoxide init fish | source #fish
+eval "$(zoxide init zsh)" #在.zshrc中添加该命令
+```
+zoxide相比于cd更加方便，在配置成功后只需要z+地址便可前往。且z具有记忆功能，对已查看过的内容可跳转多层目录查看。
+
 ### cp
 ```
 cp /* /*
@@ -277,6 +289,53 @@ sudo find , -atime +2 #超过两天
 -maxdepth -mindepth #设置最大最小目录层级
 -size +10 #寻找大于10M大小的文件
 ！ #取反 
+```
+### fd
+安装命令
+```
+pacman -S fd #Arch Linux
+sudo dpkg -i fd_7.0.0_amd64.deb #Ubuntu
+brew install fd #macOS
+```
+```
+USAGE:
+    fd [FLAGS/OPTIONS] [<pattern>] [<path>...]
+
+FLAGS:
+    -H, --hidden            搜索隐藏的文件和目录
+    -I, --no-ignore         不要忽略 .(git | fd)ignore 文件匹配
+        --no-ignore-vcs     不要忽略.gitignore文件的匹配
+    -s, --case-sensitive    区分大小写的搜索（默认值：智能案例）
+    -i, --ignore-case       不区分大小写的搜索（默认值：智能案例）
+    -F, --fixed-strings     将模式视为文字字符串
+    -a, --absolute-path     显示绝对路径而不是相对路径
+    -L, --follow            遵循符号链接
+    -p, --full-path         搜索完整路径（默认值：仅限 file-/dirname）
+    -0, --print0            用null字符分隔结果
+    -h, --help              打印帮助信息
+    -V, --version           打印版本信息
+
+OPTIONS:
+    -d, --max-depth <depth>        设置最大搜索深度（默认值：无）
+    -t, --type <filetype>...       按类型过滤：文件（f），目录（d），符号链接（l），
+                                   可执行（x），空（e）
+    -e, --extension <ext>...       按文件扩展名过滤
+    -x, --exec <cmd>               为每个搜索结果执行命令
+    -E, --exclude <pattern>...     排除与给定glob模式匹配的条目
+        --ignore-file <path>...    以.gitignore格式添加自定义忽略文件
+    -c, --color <when>             何时使用颜色：never，*auto*, always
+    -j, --threads <num>            设置用于搜索和执行的线程数
+    -S, --size <size>...           根据文件大小限制结果。
+
+ARGS:
+    <pattern>    the search pattern, a regular expression (optional)
+    <path>...    the root directory for the filesystem search (optional)
+```
+具体使用
+```
+fd '^x.*rc$' #搜索x开头并以rc结束的条目
+fd -e md #搜索markdown文件，指定拓展名
+fd -H #搜索范围包括隐藏文件
 ```
 ## 文档编辑命令
 ### 摘要
@@ -511,21 +570,6 @@ unzip test.zip
 ## 开关机命令
 ### shutdown
 ```
-shutdown -r #关机后重新启动
-shutdown -h now #立刻关机亦可指定其他时间
-shutdown -h #默认一分钟后关机若想取消可以用 shutdown -c 进行取消
-```
-### poweroff
-```
-poweroff -n #关闭操作系统时不执行sync
-poweroff -f #强制关闭
-poweroff -i #关闭操作系统前关闭所有网络接口
-```
-### reboot 
-重启计算机
-
-## 查找搜索
-### which
 用于查找某个系统命令是否存在，或者找出执行命令所对应的具体位置。    
 基本语法
 ```
@@ -575,6 +619,16 @@ htop + 参数
 -u #指定用户
 -C #指定单色配色方案
 -d #设置更新延迟
+### bottom
+作为系统监控器，灵感来自top和htop等，其安装命令
+```
+sudo pacman -Syu bottom #Arch Linux 
+```
+安装完毕后利用**btm**启动
+```
+btm -h #获得帮助概略
+btm --hlep #获得详细帮助
+```
 ### ps
 用于显示进程状态，查看部分信息等
 
