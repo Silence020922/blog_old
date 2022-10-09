@@ -4,7 +4,7 @@
         <title>殇晓瑾</title>
         <link>http://shangxiaojin.xyz</link>
         <description>一个00后的在校大学生 -- 喜爱魔[术]、数[学]、运[动]、游[戏]的新人（拥有一个喜欢在[斗地主]里破产的女朋友）</description>
-        <lastBuildDate>Fri, 07 Oct 2022 12:36:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 09 Oct 2022 10:01:26 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
         <atom:link href="http://shangxiaojin.xyz/feed.atom" rel="self" type="application/rss+xml"/>
@@ -30,6 +30,8 @@
             <guid>http://shangxiaojin.xyz/post/2022/10/07/theme-differential-privacy.html</guid>
             <pubDate>Fri, 07 Oct 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[一种原理是淡化个体标志化信息，也就是常说的匿名化处理。基本思路如将身份证、姓名等信息直接删除；通过扰动和泛化的方式使得一个身份证号对应多个样本；将数据集纵向分割后按需公布等。此类操作隐私保护程度低，且在部分问题会遇到N-P hard问题。]]></description>
+            <enclosure url="https://ask.qcloudimg.com/http-save/yehe-1268449/iiahnqe1z8.jpeg?imageView2/2/w/1620">
+            </enclosure>
         </item>
         <item>
             <title><![CDATA[linux 入门]]></title>

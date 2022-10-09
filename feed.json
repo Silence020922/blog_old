@@ -23,6 +23,7 @@
             "url": "http://shangxiaojin.xyz/post/2022/10/07/theme-differential-privacy.html",
             "title": "differential privacy",
             "summary": "一种原理是淡化个体标志化信息，也就是常说的匿名化处理。基本思路如将身份证、姓名等信息直接删除；通过扰动和泛化的方式使得一个身份证号对应多个样本；将数据集纵向分割后按需公布等。此类操作隐私保护程度低，且在部分问题会遇到N-P hard问题。",
+            "image": "https://ask.qcloudimg.com/http-save/yehe-1268449/iiahnqe1z8.jpeg?imageView2/2/w/1620",
             "date_modified": "2022-10-07T00:00:00.000Z"
         },
         {
