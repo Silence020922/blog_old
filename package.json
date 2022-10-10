@@ -38,6 +38,7 @@
     "valine": "^1.4.14",
     "vuepress": "^1.7.1",
     "vuepress-plugin-flowchart": "^1.4.3",
+    "vuepress-plugin-mathjax": "^1.2.8",
     "vuepress-plugin-one-click-copy": "^1.0.2",
     "vuepress-plugin-seo": "^0.1.4"
   },
@@ -45,6 +46,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
+    "vuepress-plugin-katex": "^0.3.0",
     "vuepress-theme-maker": "^1.2.1"
   }
 }

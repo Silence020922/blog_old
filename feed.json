@@ -114,6 +114,13 @@
             "url": "http://shangxiaojin.xyz/post/2022/07/12/theme-travel-yantai.html",
             "title": "烟台游参考",
             "date_modified": "2022-07-12T00:00:00.000Z"
+        },
+        {
+            "id": "http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html",
+            "url": "http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html",
+            "title": "VIM入门",
+            "summary": "`",
+            "date_modified": "2022-10-10T00:00:00.000Z"
         }
     ]
 }

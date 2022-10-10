@@ -2,6 +2,9 @@
 title: differential privacy
 date: 2022-10-07
 tag: note
+sidebarDepth: 3
+mathjax:
+  presets: '\def\lr#1#2#3{\left#1#2\right#3}'
 ---
 ## 隐私？
 什么是隐私这件事一直没有一个很好的定义。在我个人的理解里，需要针对个体的信息或者是某种属性。也就是说，一个群体所具备的某些属性并不能称之为隐私。     
@@ -15,6 +18,7 @@ tag: note
 >另一种思路是利用密码学手段加密解密，保护隐私。显然这类方法计算复杂度太高。同样面临的问题是为了便于分析加密机制的复杂程度，加密机制我们假定公开，很多情况下，adversary甚至能够了解到加密细节。
 
 现将就这两种思路分别举例进行简单介绍……
+
 # A
 ## 让数据学会说谎？    
 举个二值问题的例子，吃香菜vs不吃香菜。若做以下规定，在做统计时抛一枚硬币，若正面向上，则如实记录，否则，再抛一枚硬币，若正面向上，记吃香菜，反之，记不吃香菜。    
@@ -29,27 +33,57 @@ tag: note
  如果两个数据集只相差一条记录，那么这两个数据集是“相邻数据集”。在这基础上，如果对于相邻数据集的查询结果相近，那么那相差的一条记录的隐私就得到了保护。显然，如果对相邻数据集的查询结果越像，那么隐私保护力度越大。
  ### 数学描述
  设有两个数据集分别为D和D'，将D和D'中共有的记录从D和D'中删除，然后将D和D'合并所形成的新的数据集成为D和D'的对称差，记做D△D'。|D△D'|表示D△D'中记录的数量。
-现有两个数据集D和D'，它们满足|D△D'|=1，M为一随机化算法，rang(M)表示算法M的所有可能的输出构成的集合，S是rang(M)的任一子集。如果算法M满足，**$ \frac{P[S\in D]}{P[S\in D']} \leq e^{\epsilon}$**,那么我们则该算法满足ε-差分隐私，其中P为概率。
+现有两个数据集D和D'，它们满足|D△D'|=1，M为一随机化算法，rang(M)表示算法M的所有可能的输出构成的集合，S是rang(M)的任一子集。如果算法M满足 
+$\frac{P[S \in D]}{P[S \in D']} \leq e^{\epsilon}$
+ ,那么我们则该算法满足ε-差分隐私，其中P为概率。
 ![](https://ask.qcloudimg.com/http-save/yehe-1268449/iiahnqe1z8.jpeg?imageView2/2/w/1620)
 ### 主要原理
 如果对一些基础理论不太了解的话，可以看一下[这篇帖子](https://zhuanlan.zhihu.com/p/95687720)    
 首先我们得目的是使得两种状态足够接近，自然利用KL-Divergence：    
-**$ D(Y||Z) = E_{y~Y}[ln(\frac{Pr[Y=y]}{Pr[Z = y]})]$**    
+$D(Y||Z) = E_{y~Y}[ln(\frac{Pr[Y=y]}{Pr[Z = y]})]$    
 但我们不关系平均走势，我们只要在最大值点能有一个界进行限制，于是    
-<img src = "https://pic4.zhimg.com/80/v2-68cc85e20633eebd85e45b7903152fa3_720w.webp" height = "35">    
+$D_{∞}(Y||Z) = \underset{S \subset Supp(Y)}{\max}[ln \frac{Pr[Y \in S]}{Pr[Z \in S ]}] = \underset{y \in Y}{\max}[ln \frac{Pr[Y = y]}{Pr[Z = y]}] \leq \epsilon$
 化简过后，即可得到    
-<img src="https://pic2.zhimg.com/80/v2-df71f363007b1d302d464d8d56852bd1_720w.webp" width = "" height = "20" />    
+$Pr[M(x) \in S] \leq e^{\epsilon}Pr[M(x') \in S]$    
  当然，在实际得应用中为了增加算法得实用性，需要对差分隐私降低一些要求。    
-<img src="https://pic1.zhimg.com/80/v2-54d707ee5f7eb6e1b4dc64f20853fe6c_720w.webp" width = "" height = "20" />    
+$Pr[M(x)\in S]\leq e^{\epsilon}Pr[M(x')\in S] + \delta$     
 从KL-Divergence角度来看，依然是    
-<img src ="https://pic3.zhimg.com/80/v2-8232f370700aaa3e20ea09b1ea65c2ba_720w.webp" height = "35">    
-相较于前者，在分母上添加了一个较小得差距δ。
+$D^{\delta}_{∞}(Y||Z)=\underset {S \subset Supp(Y);Pr[Y \in S] \geq \delta}{\max}[ln \frac{Pr[Y \in S] - \delta}{Pr[Z \in S]}] \leq \epsilon$    
+相较于前者，在分母上添加了一个较小得差距δ。    
 ### 实例演练
 例如在一些领域得机器学习中，防止机器学习算法记忆个体的敏感信息，具体实例参考[这里](https://github.com/tensorflow/privacy)    
 如果想在这方面有更多的了解，放一个过时[网页](http://www.cleverhans.io/privacy/2019/03/26/machine-learning-with-differential-privacy-in-tensorflow.html)供参考
 # B
 ## 基于图边缘着色理论的隐私保护
-待续……
+待续...    
+这方面的内容在此主题下并非重要，且本人对此并无什么了，随便一写图一乐    
+当然，前提假定用户所面向的多个服务器未合谋，否则在合谋的前提下将更改加密模式    
+### 举例
+用户A希望从服务器上下载某文件，同时不希望某服务器对其行为有所记录，则可以采取以下操作    
+>1. 在服务器上选取包含该文件在内的n个文件，并随机生成一个n维向量v，其每一分量唯一对应一个文件    
+>2. 所需文件对应分量+1,生成向量v'    
+>3. 将v发送至服务器A,同时将v'发送至服务器B    
+如此，满足，单个服务器无法窃取我们的具体命令，且v'-v可发出明确信号。
 ## 小注
-本文用VScode书写的markdown文件，Markdown Math + Markdown Preview Enhance可实现本地预览完美显示数学公式，但对于如何上传到网页尚不明确。
+在写这篇博客时遇到了一个问题，，Markdown Math + Markdown Preview Enhance可实现本地预览完美显示数学公式，但对于如何上传到网页尚不明确。    
+而解决的方案是在服务器上下载一个小插件[vuepress-plugin-mathjax](https://vuepress-community.netlify.app/zh/plugins/mathjax/)
+
+>安装
+>>npm i vuepress-plugin-mathjax OR yarn add vuepress-plugin-mathjax 
+>
+>再对*.vuepress/config.js添加相应命令。    
+>
+>>module.exports = {    
+>>  plugins: [    
+>>    [    
+>>      'vuepress-plugin-mathjax',    
+>>      {    
+>>        target: 'svg',     
+>>        macros: {    
+>>          '*': '\\times',    
+>>        },    
+>>      },    
+>>    ],    
+>>  ],    
+>>}    
 
