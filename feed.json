@@ -119,7 +119,7 @@
             "id": "http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html",
             "url": "http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html",
             "title": "VIM入门",
-            "summary": "`",
+            "summary": "vim具有四个基本模式，分别为\n>1. 正常模式(normal mode)\n>2. 可视模式(Visual mode)\n>3. 插入模式(insert mode)\n>4. 命令模式（command mode)",
             "date_modified": "2022-10-10T00:00:00.000Z"
         }
     ]
