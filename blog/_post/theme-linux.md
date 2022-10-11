@@ -57,7 +57,7 @@ pacman -Syuu
 ```
 sudo pacman -S vim
 ```
-具体如何使用可以参考[这里](https://shangxiaojin.xyz/post/2022/10/10/theme-vim.html )
+具体如何使用可以参考[这里](https://shangxiaojin.xyz/post/2022/10/10/theme-vim.html)
 
 4.安装PDF阅读器
 ```

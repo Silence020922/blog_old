@@ -10,7 +10,7 @@ module.exports = {
     { text: '🤝 Share', link: '/categories/share/' },
     { text: '🔥 About me', link: '/about-me/' },
     { text: '📽 sold second-hand', link: '/sold second-hand/' },
-    { text: '🔗 friend-links', link: '/friend-links/' },
+    { text: '🔗 learning-note', link: '/tags/note/' },
   ],
   searchPlaceholder: 'Search',
   searchMaxSuggestions: 10,
