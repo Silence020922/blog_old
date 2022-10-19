@@ -272,3 +272,39 @@ df.drop_duplicates() #删除重复行，返回新数组
 df.drop_duplicates(['k1'])#删除k1列的重复数据
 df.drop_duplicates(['k1'],keep='last') #对于重复数据，只保留最后一个
 ```
+### [turtle](https://docs.python.org/zh-cn/3/library/turtle.html)
+**介绍**    
+turtle又叫海龟画图，作为入门级的图形绘制函数库，诞生于1969年。一个小海龟在画布上爬行，便生成了图案。在这里，你可以改变画笔颜色，大小，速度，轨迹等等。    
+**主要函数**    
+```
+import turtle #引入turtle库
+turtle.setup(300 , 300) #设置画布大小300*300像素 turtle.setup(width, height[, startx, starty])
+turtle.shape(name='turtle') #设置画笔的形状为“海龟”
+turtle.color('red', 'red') #设置背景及前景颜色为红色
+turtle.penup() #抬笔
+turtle.goto(-100 , 0) #移动画笔至（-100，0）位置
+turtle.pendown() #落笔
+turtle.begin_fill() #开始填充颜色
+for i in range(5): #循环，i分别取0、1、2、3、4，控制循环执行5次
+turtle.fd(200) #向前移动（爬行）200
+turtle.rt(144) #右旋144度
+turtle.end_fill() #结束填充颜色
+turtle.done() #结束绘图
+```
+### [random](https://docs.python.org/3/library/random.html)
+**介绍**    
+random库在生成随机数方面具有广泛应用    
+**主要函数**    
+```
+seed(a=None) #初始化随机数种子，默认值为当前系统时间    
+random() #生成一个[0.0, 1.0)之间的随机小数        
+randint(a, b) #生成一个[a,b]之间的整数        
+getrandbits(k) #生成一个k比特长度的随机整数    
+randrange(start, stop[, step]) #生成一个[start, stop)之间以step为步数的随机整数    
+uniform(a, b) #生成一个[a, b]之间的随机小数    
+choice(seq) #从序列类型(例如：列表)中随机返回一个元素    
+shuffle(seq) #将序列类型中元素随机排列，返回打乱后的序列    
+sample(pop, k) #从pop类型中随机选取k个元素，以列表类型返回    
+```
+
+

@@ -76,7 +76,18 @@ yay -S baidunetdisk-bin
 ```
 sudo pacman -S flameshot 
 ```
+8.安装QQ    
+在这里一开始使用的是deepin-wine-qq
+```
+yay -S deepin-wine-qq
+```
+其界面与常见QQ相似，同样具有QQ所具有的功能    
 
+使用一段时间后感觉界面与linux简约主题不太搭，另外占内存也比较大，最后换成Icalingua++
+```
+yay -S icalingua++
+```
+作为一个第三方QQ,界面简约，可操纵性较高，比较稳定，平时用于传文件足够。
 ## 移除安装包(Removing packages)
 **操作命令**    
 删除一个包，保留其全部已经安装的依赖项

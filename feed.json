@@ -19,17 +19,23 @@
             "date_modified": "2022-09-30T00:00:00.000Z"
         },
         {
+            "id": "http://shangxiaojin.xyz/post/2022/10/17/theme-r.html",
+            "url": "http://shangxiaojin.xyz/post/2022/10/17/theme-r.html",
+            "title": "R实战入门",
+            "date_modified": "2022-10-17T00:00:00.000Z"
+        },
+        {
             "id": "http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html",
             "url": "http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html",
             "title": "vim入门",
-            "summary": "nG 光标定位到第 n 行的行首\n> gg 光标定位到第一行的行首\n> G 光标定位到最后一行的行首\n> H 光标定位到当前屏幕的第一行行首\n> L 光标移动到当前屏幕的尾部",
+            "summary": "vim具有四个基本模式，分别为\n>1. 正常模式(normal mode)\n>2. 可视模式(Visual mode)\n>3. 插入模式(insert mode)\n>4. 命令模式（command mode)",
             "date_modified": "2022-10-10T00:00:00.000Z"
         },
         {
             "id": "http://shangxiaojin.xyz/post/2022/10/07/theme-differential-privacy.html",
             "url": "http://shangxiaojin.xyz/post/2022/10/07/theme-differential-privacy.html",
             "title": "differential privacy",
-            "summary": "而解决的方案是在服务器上下载一个小插件vuepress-plugin-mathjax",
+            "summary": "一种原理是淡化个体标志化信息，也就是常说的匿名化处理。基本思路如将身份证、姓名等信息直接删除；通过扰动和泛化的方式使得一个身份证号对应多个样本；将数据集纵向分割后按需公布等。此类操作隐私保护程度低，且在部分问题会遇到N-P hard问题。",
             "image": "https://ask.qcloudimg.com/http-save/yehe-1268449/iiahnqe1z8.jpeg?imageView2/2/w/1620",
             "date_modified": "2022-10-07T00:00:00.000Z"
         },
@@ -37,7 +43,7 @@
             "id": "http://shangxiaojin.xyz/post/2022/09/29/theme-linux.html",
             "url": "http://shangxiaojin.xyz/post/2022/09/29/theme-linux.html",
             "title": "linux 入门",
-            "summary": "操作命令",
+            "summary": "2020 年 12 月，CentOS 社区在其博客中宣布未来的重点转向 CentOS Stream，这是一个全新的滚动发行版。在此之前，RHEL 的上游为 Fedora，而 CentOS 的上游为 RHEL；在推出 CentOS Stream 之后，它就成为了 RHEL 的上游发行版。与此同时，CentOS 8 的支持期限被缩短至 2021 年底，且不再推出新的非 Stream 的 CentOS 版本。不满于该决定的人们也组织了新的社区，推出了诸如 AlmaLinux、Rocky Linux 等发行版。",
             "image": "https://surplus-1311636487.cos.ap-beijing.myqcloud.com/file-name.png",
             "date_modified": "2022-09-29T00:00:00.000Z"
         },
@@ -63,51 +69,17 @@
             "date_modified": "2022-07-18T00:00:00.000Z"
         },
         {
-            "id": "http://shangxiaojin.xyz/post/2022/05/06/theme-sharing-0.html",
-            "url": "http://shangxiaojin.xyz/post/2022/05/06/theme-sharing-0.html",
-            "title": "正能量分享——咸鱼翻身?双面焦罢了",
-            "date_modified": "2022-05-06T00:00:00.000Z"
-        },
-        {
-            "id": "http://shangxiaojin.xyz/post/2022/05/05/theme-sharing-1.html",
-            "url": "http://shangxiaojin.xyz/post/2022/05/05/theme-sharing-1.html",
-            "title": "正能量分享——努力拼搏才算成功？",
-            "summary": "我们知道，世间大部分事，付出和回报不成正比。",
-            "date_modified": "2022-05-05T00:00:00.000Z"
+            "id": "http://shangxiaojin.xyz/post/2019/09/01/theme-share.html",
+            "url": "http://shangxiaojin.xyz/post/2019/09/01/theme-share.html",
+            "title": "碎碎念",
+            "summary": "到大学后她突然开窍了，课本一扔，注重起穿着打扮来。无精打采束在脑后的低马尾换成了爽利活泼的短\n    发，金属细框眼镜另有一番风味，专柜的护肤品，商场里买的连衣裙。",
+            "date_modified": "2019-09-01T00:00:00.000Z"
         },
         {
             "id": "http://shangxiaojin.xyz/post/2022/05/06/theme-sharing-2.html",
             "url": "http://shangxiaojin.xyz/post/2022/05/06/theme-sharing-2.html",
             "title": "歌单分享",
-            "summary": "- Unbelievable -- Owl City/Hanson",
             "date_modified": "2022-05-06T00:00:00.000Z"
-        },
-        {
-            "id": "http://shangxiaojin.xyz/post/2022/05/07/theme-sharing-3.html",
-            "url": "http://shangxiaojin.xyz/post/2022/05/07/theme-sharing-3.html",
-            "title": "正能量分享——最好的都是想象，得到的不过如此。",
-            "summary": "不是因为我们太不容易满足,而是世界上没有什么事物，能比我们在长久的期待中所勾勒出的那个幻象更美。",
-            "date_modified": "2022-05-07T00:00:00.000Z"
-        },
-        {
-            "id": "http://shangxiaojin.xyz/post/2020/04/18/theme-sharing-4.html",
-            "url": "http://shangxiaojin.xyz/post/2020/04/18/theme-sharing-4.html",
-            "title": "正能量分享——春日随笔",
-            "date_modified": "2020-04-18T00:00:00.000Z"
-        },
-        {
-            "id": "http://shangxiaojin.xyz/post/2022/05/22/theme-sharing-5.html",
-            "url": "http://shangxiaojin.xyz/post/2022/05/22/theme-sharing-5.html",
-            "title": "杂笔",
-            "summary": "很想去线下看看我所支教的那一群小孩、触碰一下他们的生活。",
-            "date_modified": "2022-05-22T00:00:00.000Z"
-        },
-        {
-            "id": "http://shangxiaojin.xyz/post/2022/07/23/theme-sharing-6.html",
-            "url": "http://shangxiaojin.xyz/post/2022/07/23/theme-sharing-6.html",
-            "title": "正能量分享——我和女朋友三观不合？",
-            "summary": "在如今恋爱自由、婚姻自由的环境下，三观不合的抱怨声也未有停歇。",
-            "date_modified": "2022-07-23T00:00:00.000Z"
         },
         {
             "id": "http://shangxiaojin.xyz/post/2022/09/10/theme-sharing-life-3.html",
@@ -115,6 +87,14 @@
             "title": "双节+恋爱300days",
             "image": "https://surplus-1311636487.cos.ap-beijing.myqcloud.com/retouch_2022071201075019.jpg",
             "date_modified": "2022-09-10T00:00:00.000Z"
+        },
+        {
+            "id": "http://shangxiaojin.xyz/post/2022/10/12/theme-submodular.html",
+            "url": "http://shangxiaojin.xyz/post/2022/10/12/theme-submodular.html",
+            "title": "submodular function 初步",
+            "summary": "万物存在于均衡之间",
+            "image": "https://surplus-1311636487.cos.ap-beijing.myqcloud.com/10086-3.png",
+            "date_modified": "2022-10-12T00:00:00.000Z"
         },
         {
             "id": "http://shangxiaojin.xyz/post/2022/07/12/theme-travel-yantai.html",

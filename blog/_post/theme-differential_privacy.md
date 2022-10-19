@@ -59,11 +59,22 @@ $D^{\delta}_{∞}(Y||Z)=\underset {S \subset Supp(Y);Pr[Y \in S] \geq \delta}{\m
 这方面的内容在此主题下并非重要，且本人对此并无什么了，随便一写图一乐    
 当然，前提假定用户所面向的多个服务器未合谋，否则在合谋的前提下将更改加密模式    
 ### 举例
+A    
 用户A希望从服务器上下载某文件，同时不希望某服务器对其行为有所记录，则可以采取以下操作    
 >1. 在服务器上选取包含该文件在内的n个文件，并随机生成一个n维向量v，其每一分量唯一对应一个文件    
 >2. 所需文件对应分量+1,生成向量v'    
->3. 将v发送至服务器A,同时将v'发送至服务器B    
-如此，满足，单个服务器无法窃取我们的具体命令，且v'-v可发出明确信号。
+>3. 发起查询,将v发送至服务器A,同时将v'发送至服务器B    
+>4. 返回结果,v'-v可发出明确信号。
+
+B    
+在$S_4$ based PIR模型中，用户需要下载某个文件，此时根据边染色原理
+<div align=center><img src="https://surplus-1311636487.cos.ap-beijing.myqcloud.com/10086-1.png" height = "200" weight = "" ></div>
+现随机生成一个$\sigma$为{1,2,3}映到{1,2,3},如图发出查询
+
+<img  src = "https://surplus-1311636487.cos.ap-beijing.myqcloud.com/10086-2.png" height = ""  weight = "" >
+
+### 相关理论
+边染色理论| 超图| baranyai theorem 等 
 ## 小注
 在写这篇博客时遇到了一个问题，，Markdown Math + Markdown Preview Enhance可实现本地预览完美显示数学公式，但对于如何上传到网页尚不明确。    
 而解决的方案是在服务器上下载一个小插件[vuepress-plugin-mathjax](https://vuepress-community.netlify.app/zh/plugins/mathjax/)
@@ -80,7 +91,7 @@ $D^{\delta}_{∞}(Y||Z)=\underset {S \subset Supp(Y);Pr[Y \in S] \geq \delta}{\m
 >>      {    
 >>        target: 'svg',     
 >>        macros: {    
->>          '*': '\\times',    
+>>          '*': '\\times',        
 >>        },    
 >>      },    
 >>    ],    
