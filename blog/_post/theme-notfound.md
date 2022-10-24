@@ -154,4 +154,7 @@ def getAllExternalLinks(siteUrl):
 ```
 ## 利用RSS
 很不幸的是很多大型网站的反爬系统比较完备，对于入门级小白无法获取到自己想要追溯的信息。对于该类网站，RSS订阅能够有效实现信息搜集功能。    
-目前利用RSShub+feeder实现检测功能。
+目前利用RSShub/feed43+feeder实现订阅功能。    
+* feeder作为常规订阅器，可在firefox上下载feeder插件完成电脑端使用，或下载feeder移动端完成移动端上的订阅。    
+* 大多数网站可以通过交互式命令进行RSS订阅，但不排除有些网站不具备该功能键，此时考虑RSS hub利用配置好的文件直接进行订阅。    
+* 某些小站可能不会被RSShub收录，可使用feed43生成feed后自行订阅。具体可参考[这里](https://feed43.com/faq.html)
