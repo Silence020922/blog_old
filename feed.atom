@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://shangxiaojin.xyz</id>
     <title>殇晓瑾</title>
-    <updated>2022-10-24T02:29:52.930Z</updated>
+    <updated>2022-10-25T10:48:36.416Z</updated>
     <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
     <link rel="alternate" href="http://shangxiaojin.xyz"/>
     <link rel="self" href="http://shangxiaojin.xyz/feed.atom"/>
@@ -33,7 +33,7 @@
         <updated>2022-10-17T00:00:00.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[添翼工程]]></title>
+        <title type="html"><![CDATA[计算机入门——添翼课程]]></title>
         <id>http://shangxiaojin.xyz/post/2022/10/23/theme-ty.html</id>
         <link href="http://shangxiaojin.xyz/post/2022/10/23/theme-ty.html">
         </link>

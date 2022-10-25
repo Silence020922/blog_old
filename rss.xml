@@ -4,7 +4,7 @@
         <title>殇晓瑾</title>
         <link>http://shangxiaojin.xyz</link>
         <description>一个00后的在校大学生 -- 喜爱魔[术]、数[学]、运[动]、游[戏]的新人（拥有一个喜欢在[斗地主]里破产的女朋友）</description>
-        <lastBuildDate>Mon, 24 Oct 2022 02:29:52 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 25 Oct 2022 10:48:36 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
         <atom:link href="http://shangxiaojin.xyz/feed.atom" rel="self" type="application/rss+xml"/>
@@ -31,7 +31,7 @@
             <pubDate>Mon, 17 Oct 2022 00:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[添翼工程]]></title>
+            <title><![CDATA[计算机入门——添翼课程]]></title>
             <link>http://shangxiaojin.xyz/post/2022/10/23/theme-ty.html</link>
             <guid>http://shangxiaojin.xyz/post/2022/10/23/theme-ty.html</guid>
             <pubDate>Sun, 23 Oct 2022 00:00:00 GMT</pubDate>
