@@ -28,21 +28,22 @@
             "id": "http://shangxiaojin.xyz/post/2022/10/23/theme-ty.html",
             "url": "http://shangxiaojin.xyz/post/2022/10/23/theme-ty.html",
             "title": "计算机入门——添翼课程",
-            "summary": "\"D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include\",\n                    \"D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed\"\n                ]\n            }\n        }\n    ],\n    \"version\": 4\n}\n文件2：launch.json\n{\n    \"version\": \"0.2.0\",\n    \"configurations\": [\n        {\n            \"name\": \"(gdb) Launch\", // 配置名称，将会在启动配置的下拉菜单中显示\n            \"type\": \"cppdbg\",       // 配置类型，这里只能为cppdbg\n            \"request\": \"launch\",    // 请求配置类型，可以为launch（启动）或attach（附加）\n            \"program\": \"${workspaceFolder}/${fileBasenameNoExtension}.exe\",// 这里配合tasks文件生成的路经进行使用\n            \"args\": [],             // 程序调试时传递给程序的命令行参数，一般设为空即可\n            \"stopAtEntry\": false,   // 设为true时程序将暂停在程序入口处，一般设置为false\n            \"cwd\": \"${workspaceFolder}\", // 调试程序时的工作目录，一般为${workspaceFolder}即代码所在目录\n            \"environment\": [],\n            \"externalConsole\": true, // 调试时是否显示控制台窗口，一般设置为true显示控制台\n            \"MIMode\": \"gdb\",",
-            "image": "https://img2018.cnblogs.com/i-beta/1479352/201911/1479352-20191104170445328-1887164546.png",
+            "summary": "由于添翼工程需要提交作业，故将学习过程记录于此。",
+            "image": "https://pic1.zhimg.com/80/v2-b040dc2bb679cea471ce66282e92c808_720w.webp",
             "date_modified": "2022-10-23T00:00:00.000Z"
         },
         {
             "id": "http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html",
             "url": "http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html",
             "title": "vim入门",
+            "summary": "nG 光标定位到第 n 行的行首\n> gg 光标定位到第一行的行首\n> G 光标定位到最后一行的行首\n> H 光标定位到当前屏幕的第一行行首\n> L 光标移动到当前屏幕的尾部",
             "date_modified": "2022-10-10T00:00:00.000Z"
         },
         {
             "id": "http://shangxiaojin.xyz/post/2022/10/07/theme-differential-privacy.html",
             "url": "http://shangxiaojin.xyz/post/2022/10/07/theme-differential-privacy.html",
             "title": "differential privacy",
-            "summary": "一种原理是淡化个体标志化信息，也就是常说的匿名化处理。基本思路如将身份证、姓名等信息直接删除；通过扰动和泛化的方式使得一个身份证号对应多个样本；将数据集纵向分割后按需公布等。此类操作隐私保护程度低，且在部分问题会遇到N-P hard问题。",
+            "summary": "3. 发起查询,将v发送至服务器A,同时将v'发送至服务器B\n>4. 返回结果,v'-v可发出明确信号。",
             "image": "https://ask.qcloudimg.com/http-save/yehe-1268449/iiahnqe1z8.jpeg?imageView2/2/w/1620",
             "date_modified": "2022-10-07T00:00:00.000Z"
         },
@@ -50,7 +51,7 @@
             "id": "http://shangxiaojin.xyz/post/2022/09/29/theme-linux.html",
             "url": "http://shangxiaojin.xyz/post/2022/09/29/theme-linux.html",
             "title": "linux 入门",
-            "summary": "2020 年 12 月，CentOS 社区在其博客中宣布未来的重点转向 CentOS Stream，这是一个全新的滚动发行版。在此之前，RHEL 的上游为 Fedora，而 CentOS 的上游为 RHEL；在推出 CentOS Stream 之后，它就成为了 RHEL 的上游发行版。与此同时，CentOS 8 的支持期限被缩短至 2021 年底，且不再推出新的非 Stream 的 CentOS 版本。不满于该决定的人们也组织了新的社区，推出了诸如 AlmaLinux、Rocky Linux 等发行版。",
+            "summary": "操作命令\n删除一个包，保留其全部已经安装的依赖项\npacman -R package_name\n删除包及现存包所不需要的依赖项\npacman -Rs package_name\n如遭遇阻止尝试\npacman -Rsu package_name\npacman在删除时会备份重要配置文件，在其后加上*.pacsave扩展名。-n可以避免备份\npacman -Rn package-name\n`",
             "image": "https://surplus-1311636487.cos.ap-beijing.myqcloud.com/file-name.png",
             "date_modified": "2022-09-29T00:00:00.000Z"
         },
@@ -58,7 +59,6 @@
             "id": "http://shangxiaojin.xyz/post/2022/10/22/theme-notfound.html",
             "url": "http://shangxiaojin.xyz/post/2022/10/22/theme-notfound.html",
             "title": "爬虫初步",
-            "summary": "linklist.append(link)\n    dictionary = dict(zip(thinglist, linklist))\n    for i,j in dictionary.items():\n        print(i,j)",
             "date_modified": "2022-10-22T00:00:00.000Z"
         },
         {

@@ -3,9 +3,16 @@ title: 计算机入门——添翼课程
 date: 2022-10-23
 tag: note
 ---
-# C
-## C 编译器选择
-为了贪图方便，在这里我仍然对VScode进行环境配置，具体的配置流程如下：
+## 关于为什么选择这门课(杂谈)
+    作为一名平日无所事事的数学系学生，总感觉与社会格格不入，仔细一想是揣了算法一大堆却    
+    不知道如何使用，另外半路出家计算机基础也一塌糊涂。于是在开《计算机网络》这本书补基    
+    础的同时想搞门编程语言实战一下。由于目的性并不明确，索性报一门课程探索一下。探索期    
+    间发现学C还是有一定的收益，后来学了一点C后想既然C++兼容C，干脆学Cpp吧，目前正在开    
+    《C++语言程序设计》若以后有时间可以翻一下 C++ primer。      
+    由于添翼工程需要提交作业，故将学习过程记录于此。     
+
+## C/CPP 编译器选择
+贪图方便，直接利用电脑现存的VScode进行环境配置后充当编译器使用，在此采用gcc/g++编译c/c++，VScode相关配置如下：
 ### MinGW
 前往MinGW官网下载对应系统的安装包进行安装。这里要注意的是如果是win系统，下载压缩文件后直接解压缩是不会自动试别系统路径的。在这时我们需要下载完成后首先定位下载位置x:/xx/xx。前往此电脑--属性--高级设置--环境变量--path进行路径添加。    
 在上述操作就绪后，以win系统为例。打开电脑cmd窗口输入：
@@ -209,7 +216,7 @@ scanf("%d %c",&c,&d) #将正确接收12A、12 A、12  A...
 scanf("%d%c",&c,&d) #仅接受12A，对于12 A将会将空格作为字符传入d
 ```
 * 字符的计算    
-![ASCII对照表](https://img2018.cnblogs.com/i-beta/1479352/201911/1479352-20191104170445328-1887164546.png)
+![](https://pic1.zhimg.com/80/v2-b040dc2bb679cea471ce66282e92c808_720w.webp)
 
 ```
 char c;
@@ -278,8 +285,9 @@ scanf("i = %lf\n",&i)
 print("&.xf\n",i) #.xf为设置输出格式为小数点后x位
 ```
 
-## C艹 
+## C艹的学习
 ### 绪论
+参考资料 [网站1](https://en.cppreference.com/)    
 #### 二进制的编码表示
 * 原码    
 概略：符号-绝对值
@@ -403,7 +411,7 @@ int main() {
 }
 ```
 * 多重分支    
-    嵌套if语句
+    *嵌套if语句*
 ```
 # include <iostream>
 using namespace std;
@@ -423,8 +431,11 @@ int main() {
     return 0;
 }
 ```
-    if...else if语句    
-    switch    
+
+*if...else if语句*    
+    
+*switch*    
+
 ```
 switch (表达式)
     {   case 常量表达式1:语句1
@@ -560,4 +571,160 @@ enum 枚举类型名 {变量值列表};
 enum WeekDay{Sun,Mon,Tue,Wed,Thu,Fri,Sat}; //枚举视为常量，创建后无法再次赋值
 ```
 ### 函数
+#### 函数的定义与使用
+**函数的定义**
+```
+类型说明符 函数名{含类型说明的形式参数表}
+[
+    语句序列
+]
+```
+**函数的返回值**    
+return 表达式    
+一方面return将main函数的返回值返回到系统，另一方面return可结束当前函数的调用    
+**函数的调用**    
+将8位的二进制数转化为十进制数并进行输出    
+```
+# include <iostream>
+using namespace std;
+
+double power(double x,int n){
+    double val = 1.0;
+    while (n--) {  //实际上是等价于while(n>=0) n--
+        val *= x;
+    }
+    return val;
+}
+
+int main() {
+    int value =0;
+    cout<<"Please Enter an 8 bit binary number : ";
+    for (int i=7;i>=0;i--){
+        char ch;
+        cin>>ch;
+        if(ch == '1') 
+            value += static_cast<int>(power(2,i)); \\强制数据类型转换
+    }
+    cout<<"Decimal Value is "<<value<<endl;
+    system("pause");
+    return 0;
+}
+```
+掷骰子小游戏
+```
+# include <iostream>
+# include <cstdlib>
+# include <time.h>
+using namespace std;
+/*一个简单的掷骰子游戏，第一轮若得7 11 则胜利，2 12 失败，其他情况进
+行第二轮，第二轮中若得到与第一轮点数和相同则胜利，和为7则失败，重复直
+到结果出现*/
+int roll(){  //建立投骰子函数
+    int num1 = 1 + rand()%6; //取值 1- 6
+    int num2 = 1 + rand()%6;
+    int sum = num1 + num2;
+
+    cout<<"Play rolled "<<num1<<"+"<<num2<<"="<<sum<<endl;
+    return sum;
+}
+
+enum GameStatus {WIN,LOSE,PALY};
+int main(){
+    int sum,myPoint;
+    GameStatus status;
+    srand((unsigned)time(NULL));  //传入随机种子
+    cout<<"game start"<<endl;
+
+    sum = roll();
+    switch (sum)
+    {
+    case 7 /* constant-expression */:
+    case 11:
+        status = WIN;
+        break;
+    case 2:
+    case 12:
+        status = LOSE;
+        break;
+    default: //游戏暂时无果
+        myPoint = sum;
+        cout<<"Now you can't win until you could roll "<<myPoint<<endl;
+        status = PALY;
+        break;
+    }
+
+    while(status == PALY){
+        sum = roll();
+        if(sum == myPoint)
+            status = WIN;
+        else if(sum == 7)
+            status = LOSE;
+    }
+    if(status = WIN){
+        cout<<"Player win"<<endl;
+    }
+    else
+        cout<<"Player lose"<<endl;
+    system("pause");
+    return 0;
+}
+```
+从n个人中选出k个的组合数
+```
+# include <iostream>
+using namespace std;
+int comm(int n,int k){
+    if (k>n)
+        return 0;
+    else if (k==n||k==0)
+        return 1;
+    else 
+        return comm(n-1,k-1) + comm(n-1,k);
+}
+
+int main(){
+    int n,k;
+    cout<<"Please enter two integers n and k: ";
+    cin>>n>>k;
+    cout<<"C(n,k) = "<<comm(n,k)<<endl;
+    system("pause");
+    return 0;
+}
+```
+**函数值得传递**    
+解释:函数具有形参和实参，在函数为被调用时，形参不占有实际内存空间，也没有实际的 值，只有被调用时才为其分配存储单元，并将实参与形参结合。函数参数传递分为值传递和引用传递。    
+* 值传递    
+此时若将t=a，a作为实参值会改变t形参值，但是单项作用，并不会对实参产生影响。在这种情况下，`int a(3),b(5); int t;t=a;a=b;b=t;`将不会更改ab的值。    
+* 引用传递    
+    - 声明引用`int &ri=i` 声明引用ri同时进行初始化指向已存在的变量i    
+    - 而将引用作为形参时，对其任何直接操作也会作用于实参，如：
+```
+# include <iostream>
+using namespace std;
+void  swap(int &a,int &b ){ //利用 & 创建引用变量
+    int t = a;
+    a = b;
+    b = t;
+}
+int main(){
+    int x,y;
+    cout<<"enter two integers x and y: ";
+    cin>>x>>y;
+    swap(x,y);
+    cout<<"now  x = "<<x<<endl<<"now  y = "<<y<<endl;
+    system("pause");
+    return 0;
+
+}
+```
+#### 内联函数
+* 语法：`inline 类型说明符 函数名(){}`    
+* 特点：对于一些功能简单、规模较小又使用频繁的函数可以设定为内联函数。在编译时编译器会直接将函数代码放于调用处，可以减少参数传递所消耗的时间。注意在部分编译器中当定义函数大于一行将自动忽视`inline`命令。    
+#### 带默认形参值的函数
+在定义函数时可以设置默认值，调用时若给出实参则使用实参值，否则自动填充默认值。注意，在定义默认值时需要放于最后，即    
+`int add(int x,int y = 2,int z = 0);` √    
+`int add(int x,int y=2,int z );` ×
+#### 函数重载
+* 理解:在定义函数时有些情况下为方便我们将会定义重名函数，例如对于浮点数加法与整数加法若分开定义则过于繁琐，在调用时，编译器可根据参数自动选取最适合的函数。
+
 
