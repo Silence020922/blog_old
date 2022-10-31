@@ -726,5 +726,148 @@ int main(){
 `int add(int x,int y=2,int z );` ×
 #### 函数重载
 * 理解:在定义函数时有些情况下为方便我们将会定义重名函数，例如对于浮点数加法与整数加法若分开定义则过于繁琐，在调用时，编译器可根据参数自动选取最适合的函数。
+### 类与对象
+    在我们熟悉的现实世界中，一切事物皆为对象
+#### 类和对象
+**类的定义**    
+```
+class 类名称
+{
+    public:
+        外部接口
+    protected:
+        保护型成员
+    private:
+        私有成员
+};
+```
+例如，当我们创建一个时钟类
+```
+#include <iostream>
+using namespace std;
+class clock{
+    public:
+        void setTime(int H,int M,int S);
+        void showTime();
+    private:
+        int hour,minute,second;
+    
+};
+```
+**类成员访问控制**    
+访问权限有以下三种：公有类型(public)、私有类型(private)、保护类型(protected)    
+公有类型是类的外部接口，外部只能通过公有类型来观察了解类，如通过setTime改变事件和showTime显示时间    
+私有类型只能被类中函数访问，保证了数据的安全性。    
+ **对象**    
+ 声明一个对象和变量的方式相同，为`类型名 对象名`    
+ 访问对象成员采用操作符`.`，例如`clock myclock;`,`clock.shouTime()`    
+ **类的成员函数**    
+ 函数的原型声明要写在类体中，但其具体实现写于类体之外，与普通函数不同在于，在实现成员函数要表明类的名称如`void clock::showTime()`    
+ * 同样成员函数有默认值的设定和内联函数    
+ * 内联函数分为隐式声明(直接放于类体内)和显式声明    
+ 
+ **示例**
+```
+#include <iostream>
+using namespace std;
+class clock{
+    public:
+        void setTime(int H= 0,int M = 0,int S = 0); //设置函数初始值
+        void showTime();
+    private:
+        int hour,minute,second;
+    
+};
+void clock::setTime(int H,int M, int S){
+    hour = H;
+    minute = M;
+    second = S;
+}
+inline void clock::showTime(){
+    cout<<hour<<":"<<minute<<":"<<second<<endl;
 
+};
+int main(){
+    clock myclock;
+    int x,y,z;
+    cout<<"the priminal set is "<<endl;
+    myclock.setTime();
+    myclock.showTime();
+    cout<<"you could set time as h/m/s "<<endl;
+    cin>>x>>y>>z;
+    myclock.setTime(x,y,z);
+    cout<<"Now the time is "<<endl;
+    myclock.showTime();
+    system("pause");
+    return 0;
+}
+```
+#### 构造函数
+构造函数存在于类体中，在上例clock定义中未定义构造函数，此时系统会自动生成一个空函数，`clock(){}`，要注意，若在类体定义中给出构造函数和形参需在创建对象时填写对应参数，例如，若给出
+```
+class clock{
+    public:
+        clock(int h,int m ,int s);
+    ......
+}
+```
+则在之后定义类对象时需使用`clock time(x,y,z)`参数则成为了必需品，利用这个特点，可完成重载函数调用， 例如若同时给出`clock(){hour = 0;minute = 0;second=0;}`和`clock(int h,int m,int s)`则在调用`clock a`则会自动选择2
+**~~复制构造函数~~**    
+声明和复制构造函数的一般方法 
+```
+class 类名
+{
+    public:
+        类名(形参表);
+        类名(类名 & 对象名); //复制构造函数
+        ...
+}
+类名::类名(类名 & 对象名); //复制构造函数的实现
+{函数体
+}
+```
+示例
+```
+class point{
+    public:
+        point(int xx=0,int yy=0){
+            x = xx;
+            y = yy;
+        }
+        point(point &p);
+            int getX(){
+                return x;
+            }
+            int getY(){
+                return y;
+            }
+    private:
+        int x,y;
+};
 
+//成员函数的实现
+point::point(point &p){
+    x = p.x;
+    y = p.y;
+    cout<<"Calling the copy constructor"<<endl;
+}
+// 形参为point类的函数
+void f1(point p){
+    cout<<p.getX()<<endl;
+}
+//返回值为point类的函数
+point f2(){
+    point a(1,2);
+    return a ;
+}
+int main(){
+    point a(4,5);
+    point b  = a;//在利用a初始化b调用复制构造函数
+    cout<<b.getX()<<endl;
+    f1(b); //在b作为f1的实参时，调用复制构造函数
+    b = f2();//函数返回值为类的对象，调用复制构造函数
+    cout<<b.getX()<<endl;
+    return 0;
+
+}
+```
