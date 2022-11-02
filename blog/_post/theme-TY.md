@@ -871,3 +871,249 @@ int main(){
 
 }
 ```
+#### 前向引用声明
+在C++中一般我们需要完整的定义一个类之后再去使用它，但不排除有时候我们需要互相引用。如
+```
+class A { 
+    public: 
+        void f(B b);  //尚未定义B 会报错
+};
+class B{
+    public:
+        void g(A a);
+};
+```
+需要在class A 上一行加入 class B，前向引用声明
+#### UML简单标识认识
+* 类由一个矩形表示，分为三部分，最顶上为类名，数据成员于中层，函数成员位于底层    
+* 除了类名部分其他部分可不显示    
+* UML中数据成员语法`[访问控制属性] 名称 [重数] [:类型][=默认值] [{约束特征}]`    
+* [访问控制属性]包括public(+),private(-),protected(#)    
+* 约束特征:例如`{只读}`说明其只有可读属性    
+* 函数成员的语法:`[访问控制属性] 名称[(参数表)][:返回类型][{约束特征}]`    
+* UML中一个矩形代表一个对象，对象名字需加下划线。对象名位于图形上部，格式为`对象名:类名`    
+**几种关系**    
+* 依赖关系:UML图形把依赖关系绘制为一条指向被依赖的事物的虚线    
+* 作用关系——关联：利用实线及重数，重数A代表对方对象B向A中多少对象发生作用     
+* 包含关系——聚集和组合：聚集为空心菱形，组合为实心。    
+* 继承关系——泛化：带三角形的直线，三角的一个尖指向父类，对边上的线指向子类    
+#### 联合体
+联合体可以定义多个变量成员，但同时只能有一个是有意义的，例如，使用联合体保存成绩信息，并输出。
+```
+# include <iostream>
+# include <string>
+using namespace std;
+
+class ExamInfo{
+    public:
+    ExamInfo(string name,char grade):name(name),mode(GRADE),grade(grade){};
+    ExamInfo(string name,bool pass):name(name),mode(PASS),pass(pass){};
+    ExamInfo(string name,int percent):name(name),mode(PERCENTAGE),percent(percent){};
+    void show();
+    private:
+        string name;
+        enum {GRADE,PASS,PERCENTAGE}mode; //定义枚举变量 与定义枚举类型 enum mode {}区别
+        union 
+        {
+            char grade;
+            bool pass;
+            int percent;
+            /* data */
+        };
+};
+    void ExamInfo::show(){
+        cout<<name<<":";
+        switch (mode)
+        {
+        case GRADE/* constant-expression */:
+            cout<<grade<<endl;/* code */
+            break;
+        case PASS:
+            cout<<(pass?"PASS":"FALL")<<endl;
+            break;
+        case PERCENTAGE:
+            cout<<percent<<endl;
+        default:
+            break;
+        }
+    }
+    int main(){
+        ExamInfo course1("English",'A');
+        ExamInfo course2("Chinese",true);
+        ExamInfo course3("Math",100);
+        course1.show();
+        course2.show();
+        course3.show();
+        system("pause");
+        return 0;
+    }
+```
+#### 综合示例
+```
+# include <iostream>
+
+# include <cmath>
+
+// 做一个个人银行账户存储管理系统
+
+using namespace std;
+
+class Savingaccount{
+
+private:
+
+    int id; //账号
+
+    double balance; //余额
+
+    double rate; //利率
+
+    int lastDate;  //上次余额变更日期
+
+    double accumulation;  //余额累加之和
+
+    void record(int date,double amount); //记录一笔账
+
+    double accumulate(int date) const{  //对余额进行日累计，获得指定日期为止的余额累积。利用一年中的日平均求年利息
+
+    return accumulation + balance*(date - lastDate);
+
+    };
+
+public:
+
+    Savingaccount(int date,int id,double rate);  //创建构造函数
+
+    int getID(){return id;}; //返回id
+
+    double getBalance(){return balance;};  //返回当前余额
+
+    double getRate(){return rate;};  //返回年利率
+
+    void show(); 
+
+    void deposite(int date,double amount); //存入
+
+    void withdraw(int date,double amount); //取出
+
+    void settle(int date); //结算利息
+
+};
+
+//Savingaccount类函数的实现
+
+Savingaccount::Savingaccount(int date,int id, double rate)
+
+    :id(id),balance(0),rate(rate),lastDate(date),accumulation(0){
+
+        cout<<date<<"\t"<<id<<"\t"<<"is create"<<endl;
+
+}
+
+void Savingaccount::record(int date,double amount){
+
+    accumulation = accumulate(date);
+
+    lastDate = date;
+
+    amount = floor(100*amount+0.5)/100; //四舍五入的保留两位小数
+
+    balance += amount;
+
+    cout<<id<<"\t"<<date<<"\t"<<amount<<"\t"<<balance<<endl;
+
+}
+
+void Savingaccount::deposite(int date,double amount){
+
+    record(date, amount);
+
+}
+
+void Savingaccount::withdraw(int date ,double amount){
+
+    if (amount > balance){
+
+        cout<<"your account has not enough money";
+
+    }
+
+    else
+
+    {record(date,-amount);}}
+
+void Savingaccount::settle(int date){
+
+    double interest = accumulate(date)*rate/365;
+
+    if(interest != 0)
+
+        record(date,interest);
+
+    accumulation = 0;   
+
+}
+
+void Savingaccount::show(){
+
+    cout<<"#"<<id<<"\tBanlance: "<<balance<<endl;
+
+}
+
+int main(){
+
+    Savingaccount zero(1,5369845,0.015);
+
+    zero.deposite(5,5000);
+
+    zero.deposite(45,5500);
+
+    zero.settle(90);
+
+    zero.show();
+
+    system("pause");
+
+    return 0;
+
+}
+```
+#### other
+* 位域    
+在各种基本数据类型中，长度最小的char和bool在内存中占据一个字节。但对于某些数据几个二进制位就可以解决。例如，对于一个枚举`enum Example{A,B,C,D}; `此时两个二进制位便可以表示。而对Example定义一个类型变量至少需要一个字节(8个二进制位)，为了解决该问题，C++允许在类中声明位域，语法`数据类型说明符 成员名:位数;` 需要注意的是
+> * 只有int、bool、enum、char的成员才能定义位域     
+> * 对于打包方式C++并没有特殊规定，这会导致在不同编译器下执行的操作有所不同    
+> * 定义位域会导致打包和解包等额外操作，可能耗费时间    
+### 数据的共享与保护
+#### 标识符的作用域和可见性
+**作用域**     
+作用域即标识符在程序正文中有效的区域    
+* 函数原型作用域    
+我们在声明函数原型时需要同时规定形参类型，例如`int add(int a,int b);`此时a就仅作用于()之间。    
+*  局部作用域    
+一般来说在函数体形参声明中声明的标识符作用到函数体结束。且在一些块中，如if，函数体中声明的形参都会作用到块结束。    
+* 类作用域(先鸽了)    
+* 命名空间作用域    
+命名空间顾名思义就是该名称只此空间范围内有意义。在开发过程很多模块可能分专人负责，这就导致不可避免地命名重复。    
+命名空间的语法
+```
+namespace 命名空间名{
+    命名空间内的各种声明{函数声明、类声明...}
+}
+```
+命名空间决定了作用域，在该空间内如需要调用其他空间的标识符，需要 `其他空间名::标识符名` 总这样使用会使得限定冗长，可使用 `using`语句
+```
+using 命名空间名::标识符名; //将该标识符暴露于当前空间可直接调用
+using namespace 命名空间名;  //将空间内所有标识符都暴露于当前空间
+```
+命名空间允许嵌套`namespace A{namespace B{class C{...};}}`此时调用C需要`A::B::C`    
+**可见性**    
+规则一般如下    
+- 标识符声明在前 调用在后    
+- 同一作用域不能有同名标识符    
+- 无互相包含关系的不同作用域中声明互不干涉    
+- 包含关系若具有同名则外层不可见    
+#### 对象的生存期
+* 静态生存期(若对象的生存期与程序运行期相同)    
+命名空间作用域中定义的对象都具有静态生存期，函数体中可利用关键字`static`    
+* 动态生存期(除了上述两种情况外)    
