@@ -10,7 +10,8 @@ tag: note
     间发现学C还是有一定的收益，后来学了一点C后想既然C++兼容C，干脆学Cpp吧，目前正在开    
     《C++语言程序设计》若以后有时间可以翻一下 C++ primer。      
     由于添翼工程需要提交作业，故将学习过程记录于此。     
-
+## 作业要求之学习截图
+![](https://surplus-1311636487.cos.ap-beijing.myqcloud.com/添翼工程-1.jpg)
 ## C/CPP 编译器选择
 贪图方便，直接利用电脑现存的VScode进行环境配置后充当编译器使用，在此采用gcc/g++编译c/c++，VScode相关配置如下：
 ### MinGW
@@ -886,6 +887,7 @@ class B{
 需要在class A 上一行加入 class B，前向引用声明
 #### UML简单标识认识
 * 类由一个矩形表示，分为三部分，最顶上为类名，数据成员于中层，函数成员位于底层    
+* 静态数据成员往往在数据成员下加下划线表示    
 * 除了类名部分其他部分可不显示    
 * UML中数据成员语法`[访问控制属性] 名称 [重数] [:类型][=默认值] [{约束特征}]`    
 * [访问控制属性]包括public(+),private(-),protected(#)    
@@ -1117,3 +1119,94 @@ using namespace 命名空间名;  //将空间内所有标识符都暴露于当�
 * 静态生存期(若对象的生存期与程序运行期相同)    
 命名空间作用域中定义的对象都具有静态生存期，函数体中可利用关键字`static`    
 * 动态生存期(除了上述两种情况外)    
+#### 类的静态成员
+    先插入一段杂谈，近期赶各种DDL赶到不行，一方面是专业课的作业，一方面是入党
+    材料提交，再加上最近转了半天转回了最熟悉的python搞了点东西，学习进度极慢。
+
+**需求点**    
+静态成员主要面向同一类不同对象的数据和函数共享问题。举个例子，例如我们定义了一个员工类`class Employee`，想要统计员工数量，若我们采用类定义之外的函数进行统计，则无法实现数据的隐藏，而若定义类体之内，则面临各个对象都将存有该数据导致冗余且易出现更新不同步的现象。    
+**静态数据成员**    
+如果某个属性为整个类所共有而不为任何具体对象所有，则采用static关键字声明为静态成员。    
+静态成员在每个类中仅有一个副本，如此该类的所有对象将共同维护和使用，并实现不同对象的数据共享。    
+由于并不属于某个具体对象，故通过`类名::标识符`进行访问。
+```
+# include <iostream>
+using namespace std;
+
+class point{
+    public:
+    point(int x=0,int y=0):x(x),y(y){
+        count++;
+    }
+    point(point &p){ //复制构造函数 
+        x = p.x;
+        y = p.y;
+        count ++;
+    }
+    ~point(){count--;} //用于减少一个计数
+    int getX(){return x;}
+    int getY(){return y;}
+    void showCount(){
+        cout<<"Object count = "<<count<<endl;
+    }
+    private:
+        int x,y;
+        static int count; //设置静态变量
+
+};
+int point::count = 0; //利用类名限制进行初始化     
+
+int main(){
+    point a(4,5);
+    a.showCount();
+    point b(a);
+    b.showCount();
+    system("pause");
+    return 0;
+}
+```
+**静态函数成员**    
+静态函数成员同样利用关键字static，但作为静态函数，访问非静态数据只能通过对象来访问，故其作用一般用于访问同一个类的静态数据成员。    
+#### 类的友元
+**需求点**    
+一方面，在程序调用上其他类无法直接访问该类私有成员将产生不便，另一方面有时一个函数不属于两对象或该类，无法简单存放于某类之中。    
+**友元函数**    
+利用friend关键词修饰非成员函数，使其具有访问类中私有数据。例如，计算两点间的距离
+```
+# include <iostream>
+# include <cmath>
+using namespace std;
+
+class point{
+private:
+    int x,y;
+public:
+    point(int x=0,int y=9):x(x),y(y){};
+    int getX(){return x;}
+    int getY(){return y;}
+    friend float dist(point &a,point &b);
+};
+float dist(point &p1,point &p2){
+float x = p1.x - p2.x;
+float y = p1.y - p2.y;
+return static_cast<float>(sqrt(x*x+y*y)); //
+};
+int main(){
+    point a(1,2);
+    point b(4,3);
+    cout<<dist(a,b)<<endl;
+    system("pause");
+    return 0;
+}
+```
+**友元类**    
+若A为B友元类，则A类所有成员函数都是B的友元函数。
+#### 共享数据的保护
+我们一般将既需要共享又不可改变的数据声明为常量，利用const关键字修饰。    
+**常成员函数**    
+`类型说明符 函数名(参数)const` 常对象只能调用他的常成员函数，而无论是否通过常对象调用常成员函数，在函数调用期间该对象视为常对象。const也可用于重载函数的区分，对于无需改变对象状态的函数都应使用const。    
+**常数据成员**    
+类成员中的静态变量和常量都应在类外进行定义。    
+**常引用**    
+const 类型说明符 &引用名; 在不需改变其值的参数，传递常引用为宜。
+

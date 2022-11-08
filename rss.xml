@@ -4,7 +4,7 @@
         <title>殇晓瑾</title>
         <link>http://shangxiaojin.xyz</link>
         <description>一个00后的在校大学生 -- 喜爱魔[术]、数[学]、运[动]、游[戏]的新人（拥有一个喜欢在[斗地主]里破产的女朋友）</description>
-        <lastBuildDate>Wed, 02 Nov 2022 13:08:53 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 08 Nov 2022 11:42:52 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
         <atom:link href="http://shangxiaojin.xyz/feed.atom" rel="self" type="application/rss+xml"/>
@@ -35,8 +35,30 @@
             <link>http://shangxiaojin.xyz/post/2022/10/23/theme-ty.html</link>
             <guid>http://shangxiaojin.xyz/post/2022/10/23/theme-ty.html</guid>
             <pubDate>Sun, 23 Oct 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[由于添翼工程需要提交作业，故将学习过程记录于此。]]></description>
-            <enclosure url="https://pic1.zhimg.com/80/v2-b040dc2bb679cea471ce66282e92c808_720w.webp">
+            <description><![CDATA["D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include",
+                    "D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"
+                ]
+            }
+        }
+    ],
+    "version": 4
+}
+文件2：launch.json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) Launch", // 配置名称，将会在启动配置的下拉菜单中显示
+            "type": "cppdbg",       // 配置类型，这里只能为cppdbg
+            "request": "launch",    // 请求配置类型，可以为launch（启动）或attach（附加）
+            "program": "${workspaceFolder}/${fileBasenameNoExtension}.exe",// 这里配合tasks文件生成的路经进行使用
+            "args": [],             // 程序调试时传递给程序的命令行参数，一般设为空即可
+            "stopAtEntry": false,   // 设为true时程序将暂停在程序入口处，一般设置为false
+            "cwd": "${workspaceFolder}", // 调试程序时的工作目录，一般为${workspaceFolder}即代码所在目录
+            "environment": [],
+            "externalConsole": true, // 调试时是否显示控制台窗口，一般设置为true显示控制台
+            "MIMode": "gdb",]]></description>
+            <enclosure url="https://surplus-1311636487.cos.ap-beijing.myqcloud.com/添翼工程-1.jpg">
             </enclosure>
         </item>
         <item>
@@ -44,37 +66,30 @@
             <link>http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html</link>
             <guid>http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html</guid>
             <pubDate>Mon, 10 Oct 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[nG 光标定位到第 n 行的行首
-> gg 光标定位到第一行的行首
-> G 光标定位到最后一行的行首
-> H 光标定位到当前屏幕的第一行行首
-> L 光标移动到当前屏幕的尾部]]></description>
         </item>
         <item>
             <title><![CDATA[differential privacy]]></title>
             <link>http://shangxiaojin.xyz/post/2022/10/07/theme-differential-privacy.html</link>
             <guid>http://shangxiaojin.xyz/post/2022/10/07/theme-differential-privacy.html</guid>
             <pubDate>Fri, 07 Oct 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[3. 发起查询,将v发送至服务器A,同时将v'发送至服务器B
->4. 返回结果,v'-v可发出明确信号。]]></description>
+            <description><![CDATA[一种原理是淡化个体标志化信息，也就是常说的匿名化处理。基本思路如将身份证、姓名等信息直接删除；通过扰动和泛化的方式使得一个身份证号对应多个样本；将数据集纵向分割后按需公布等。此类操作隐私保护程度低，且在部分问题会遇到N-P hard问题。]]></description>
             <enclosure url="https://ask.qcloudimg.com/http-save/yehe-1268449/iiahnqe1z8.jpeg?imageView2/2/w/1620">
             </enclosure>
+        </item>
+        <item>
+            <title><![CDATA[html入门]]></title>
+            <link>http://shangxiaojin.xyz/post/2022/11/07/theme-html.html</link>
+            <guid>http://shangxiaojin.xyz/post/2022/11/07/theme-html.html</guid>
+            <pubDate>Mon, 07 Nov 2022 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[linux 入门]]></title>
             <link>http://shangxiaojin.xyz/post/2022/09/29/theme-linux.html</link>
             <guid>http://shangxiaojin.xyz/post/2022/09/29/theme-linux.html</guid>
             <pubDate>Thu, 29 Sep 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[操作命令
-删除一个包，保留其全部已经安装的依赖项
-pacman -R package_name
-删除包及现存包所不需要的依赖项
-pacman -Rs package_name
-如遭遇阻止尝试
-pacman -Rsu package_name
-pacman在删除时会备份重要配置文件，在其后加上*.pacsave扩展名。-n可以避免备份
-pacman -Rn package-name
-`]]></description>
+            <description><![CDATA[Red Hat Linux 是美国的 Red Hat 公司发行的一个发行版，第一个版本发布于 1994 年 11 月 3 日，也是一个历史悠久的发行版。它曾经也广为使用，但在 2003 年 Red Hat 公司停止了对它的维护，转而将精力都投身于其企业版 Red Hat Enterprise Linux（简称 RHEL）上，Red Hat Linux 自此完结，而商业市场导向的 RHEL 维护至今。
+在 Red Hat Linux 在停止官方更新后，由社群启动的 Fedora 项目接管了其源代码并构筑了自己的更新，演变成了如今的 Fedora 发行版。Fedora 是一套功能完备且更新迅速的系统，且本身计划也受到了 Red Hat 公司的赞助，成为了公司测试新技术的平台。
+虽然 RHEL 是一个收费的、商业化的系统，但是其遵循 GNU 通用公共许可证，因此会开放源代码。编译这些源代码可以重新得到一个可以使用的操作系统，即一个新的发行版：CentOS（Community Enterprise Operating System，社区版企业操作系统）。因为 CentOS 几乎完全编译自 RHEL 的代码，所以其也像 RHEL 一样具有企业级别的稳定性，适合在要求高度稳定的服务器上运行。]]></description>
             <enclosure url="https://surplus-1311636487.cos.ap-beijing.myqcloud.com/file-name.png">
             </enclosure>
         </item>
@@ -83,6 +98,10 @@ pacman -Rn package-name
             <link>http://shangxiaojin.xyz/post/2022/10/22/theme-notfound.html</link>
             <guid>http://shangxiaojin.xyz/post/2022/10/22/theme-notfound.html</guid>
             <pubDate>Sat, 22 Oct 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[linklist.append(link)
+    dictionary = dict(zip(thinglist, linklist))
+    for i,j in dictionary.items():
+        print(i,j)]]></description>
         </item>
         <item>
             <title><![CDATA[蝶恋花]]></title>

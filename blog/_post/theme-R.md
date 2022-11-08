@@ -21,7 +21,7 @@ library() #导入R命令窗口进行使用
 ```
 ### RStudio
 这是在windows上图方便用的    
-直接前往[官方](https://www.rstudio.com/)下载，下载免费版即可。当然需先安装R
+直接前往[官方](https://www.rstudio.com/)下载，下载免费版即可。当然需先安装[R](https://www.r-project.org/)
 ## 作业1
 ```
 Q1:    
@@ -33,17 +33,19 @@ I <- matrix(rep(1:100,times =100),nrow = 100,byrow = F)
 J <- matrix(rep(1:100,times=100),nrow = 100,byrow = T)
 A <- 0.5^(abs(I-J))
 Q3:    
-function.Q3 <- function(n){    
+function.Q3 <- function(n){     #不会声明未知变量选择使用函数形参代替
 I <- matrix(rep(1:n,times =n),nrow = n,byrow = F)            
 J <- matrix(rep(1:n,times=n),nrow = n,byrow = T)    
-A <- 0.5^(abs(I-J))    
+A <- 0.5^(abs(I-J))     
+}    
 ```
 ## 作业2
 ```
 rm(list = ls())
 getwd() #获取当前工作目录
-setwd("C:/Users/ASUS/Desktop/R")  #调整工作目录到我的文件所在地址
+setwd("C:/Users/ASUS/Desktop/R")  #调整工作目录到我的文件所在地址，按照题目要求应为"D:/"
 getwd()
+list_new <- list()   
 file_name <- list.files("zuoye2")
 dir <- paste("./zuoye2/",file_name,sep="") #通过粘结将文件名配置为当前目录下可直接调用
 n <- length(dir)
@@ -62,8 +64,10 @@ for (i in 1:n){
     A<-A[-1,] # 接下来三行是针对该数据特征将标题等文本信息去除
     A<-A[,-1]
     A<-A[,-1]
-    B <- apply(A,2,as.numeric)
-    ans = mean(B)
-    print(paste("The average of the data ",file," is ",ans))}
+    B <- apply(A,2,as.numeric)   #之后对题目要求理解出现问题，再三考虑后决定采用下两行而将首次代码注释掉。
+     list_new[[(length(list_new))+ 1]]<- B}
+     ans <- Reduce("+",list_new)/length(list_new) #Reduce代替apply可实现保留结果连续求值
+    # ans = mean(B)
+    # print(paste("The average of the data ",file," is ",ans))}
 }
 ```
