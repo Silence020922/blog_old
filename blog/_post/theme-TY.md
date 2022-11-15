@@ -12,7 +12,10 @@ tag: note
     由于添翼工程需要提交作业，故将学习过程记录于此。     
 ## 作业要求之学习截图
 ![](https://surplus-1311636487.cos.ap-beijing.myqcloud.com/添翼工程-1.jpg)
-## C/CPP 编译器选择
+## C/Cpp 编译器选择-Arch linux
+同样利用g++搭配VScode实现对cpp文件的编译。    
+VScode下载看[这里](https://aur.archlinux.org/packages/visual-studio-code-bin)，安装完成后在VScode中下载C++插件，写一个cpp文件F5调试即可。
+## C/CPP 编译器选择-Win11
 贪图方便，直接利用电脑现存的VScode进行环境配置后充当编译器使用，在此采用gcc/g++编译c/c++，VScode相关配置如下：
 ### MinGW
 前往MinGW官网下载对应系统的安装包进行安装。这里要注意的是如果是win系统，下载压缩文件后直接解压缩是不会自动试别系统路径的。在这时我们需要下载完成后首先定位下载位置x:/xx/xx。前往此电脑--属性--高级设置--环境变量--path进行路径添加。    
@@ -1226,7 +1229,7 @@ const 类型说明符 &引用名; 在不需改变其值的参数，传递常引�
 # define str1 3
 # endif
 ```
-### 综合实战演练
+#### 综合实战演练
 ```
 // account.h
 #ifndef _ACCOUNT_H_  //避免重复引用文件导致类名冲突
@@ -1349,3 +1352,26 @@ int main() {
     "version": "2.0.0"
 }
 ```
+#### other
+在本章提到的常函数成员，旨在不改变对象状态时进行声明以确保数据安全性。在有些情况下，常函数会对对象属性的值发生变化但却并不改变对象的状态。例如，在line类中，
+```
+class line{
+    public:
+    double getLen();
+    line(const Point &p1,const Point &p2):p1(p1),p2(p2),len(-1){};
+    private:
+    Point p1,p2;
+    double len;
+}
+double line::getLen(){
+    if (len<0){
+        double x=p1.getX() - p2.getX();
+        double y=p1.getY() - p2.getY();
+        len = sqrt(x*x + y*y);}
+    return len;
+
+}
+```
+我们将len属性放在getLen中进行求解，这样如果len不被需要我们可以省去计算距离的时间。为避免重复计算,getLIne将计算值储存到len中。    
+此时getLine()并不会改变对象的状态(由于两点便会确定直线，而getLine并没有使对象直线本身发生变化)，但此时定义`getLine() const`则会报错，原因是将对象的值len发生了改变。针对这种情况可使用mutable关键字，`mutable len`就可以将getLine()声明为常成员函数了。
+### 数组、指针、字符串

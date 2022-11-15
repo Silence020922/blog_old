@@ -32,7 +32,9 @@ VMware公司为macO平台推出非商用软件。
 ## 文件存储结构
 ![概况](https://surplus-1311636487.cos.ap-beijing.myqcloud.com/file-name.png)
 # 装机命令(基于pacman)
+**本文待更新，最近由于一些原因将manjaro替换为Arch linux，具体装机可参考[这篇文章](https://arch.icekylin.online/)。**
 ## 利用neofetch查看本机信息
+	贪图方便可将其设置为终端自行启动，例如本人使用zsh，可自行书写配置文件neofetch于~/.Myconfig中后于.zshrc添加相关路径。
 ## 安装具体的软件包(Insalling package)
 ```
 # pacman -S package_name1 package_name2 ...
@@ -63,13 +65,15 @@ sudo pacman -S vim
 ```
 sudo pacman -S okular
 ```
-5.安装firefox chromium
+5.安装firefox (chromium)
 ```
 sudo pacman -S firefox
 ```
-6.安装百度网盘
+6.安装[wudao-dict](https://github.com/ChestnutHeng/Wudao-dict)
 ```
-yay -S baidunetdisk-bin
+git clone https://github.com/chestnutheng/wudao-dict
+cd ./wudao-dict/wudao-dict
+sudo bash setup.sh #或者sudo ./setup.sh
 ```
 7.安装截图工具    
 这里用到的是flameshot,是一款编辑能力较强的自由截图工具。

@@ -9,16 +9,11 @@ tag: note
 这是我在linux系统上使用的编译器    
 ```
 sudo pacman -S r #用于安装R
+sudo pacman -S pythohn-pip #安装pip
 pip install -U radian #在此使用radian 作为R的编译器
 ```
-具体配置文档参考[这里](https://github.com/randy3k/radian)
-```
-search() #查看可用包
-install.packages("") #执行包下载命令
-library() #导入R命令窗口进行使用
-<- #数据存储命令 新版本可用=
-
-```
+具体配置文档参考[这里](https://github.com/randy3k/radian)     
+*注意*：与其他编译器不同的是,radian不再使用.Rhistory存储，反而自动存储于.radian_histor中供全局或者本地使用。    
 ### RStudio
 这是在windows上图方便用的    
 直接前往[官方](https://www.rstudio.com/)下载，下载免费版即可。当然需先安装[R](https://www.r-project.org/)
