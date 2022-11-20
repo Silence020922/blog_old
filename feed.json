@@ -6,6 +6,12 @@
     "description": "一个00后的在校大学生 -- 喜爱魔[术]、数[学]、运[动]、游[戏]的新人（拥有一个喜欢在[斗地主]里破产的女朋友）",
     "items": [
         {
+            "id": "http://shangxiaojin.xyz/post/2022/11/19/scrath.html",
+            "url": "http://shangxiaojin.xyz/post/2022/11/19/scrath.html",
+            "title": "scratch",
+            "date_modified": "2022-11-19T00:00:00.000Z"
+        },
+        {
             "id": "http://shangxiaojin.xyz/post/2022/07/20/theme-jnan.html",
             "url": "http://shangxiaojin.xyz/post/2022/07/20/theme-jnan.html",
             "title": "济南可玩点介绍",
@@ -23,20 +29,6 @@
             "url": "http://shangxiaojin.xyz/post/2022/10/17/theme-r.html",
             "title": "R实战入门",
             "date_modified": "2022-10-17T00:00:00.000Z"
-        },
-        {
-            "id": "http://shangxiaojin.xyz/post/2022/10/23/theme-ty.html",
-            "url": "http://shangxiaojin.xyz/post/2022/10/23/theme-ty.html",
-            "title": "C/Cpp",
-            "summary": "\"D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include\",\n                    \"D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed\"\n                ]\n            }\n        }\n    ],\n    \"version\": 4\n}\n文件2：launch.json\n{\n    \"version\": \"0.2.0\",\n    \"configurations\": [\n        {\n            \"name\": \"(gdb) Launch\", // 配置名称，将会在启动配置的下拉菜单中显示\n            \"type\": \"cppdbg\",       // 配置类型，这里只能为cppdbg\n            \"request\": \"launch\",    // 请求配置类型，可以为launch（启动）或attach（附加）\n            \"program\": \"${workspaceFolder}/${fileBasenameNoExtension}.exe\",// 这里配合tasks文件生成的路经进行使用\n            \"args\": [],             // 程序调试时传递给程序的命令行参数，一般设为空即可\n            \"stopAtEntry\": false,   // 设为true时程序将暂停在程序入口处，一般设置为false\n            \"cwd\": \"${workspaceFolder}\", // 调试程序时的工作目录，一般为${workspaceFolder}即代码所在目录\n            \"environment\": [],\n            \"externalConsole\": true, // 调试时是否显示控制台窗口，一般设置为true显示控制台\n            \"MIMode\": \"gdb\",",
-            "image": "https://surplus-1311636487.cos.ap-beijing.myqcloud.com/添翼工程-1.jpg",
-            "date_modified": "2022-10-23T00:00:00.000Z"
-        },
-        {
-            "id": "http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html",
-            "url": "http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html",
-            "title": "vim入门",
-            "date_modified": "2022-10-10T00:00:00.000Z"
         },
         {
             "id": "http://shangxiaojin.xyz/post/2022/10/07/theme-differential-privacy.html",
@@ -64,6 +56,7 @@
             "id": "http://shangxiaojin.xyz/post/2022/11/17/theme-networkx.html",
             "url": "http://shangxiaojin.xyz/post/2022/11/17/theme-networkx.html",
             "title": "A project",
+            "image": "https://surplus-1311636487.cos.ap-beijing.myqcloud.com/recommend.jpg",
             "date_modified": "2022-11-17T00:00:00.000Z"
         },
         {
@@ -127,6 +120,21 @@
             "url": "http://shangxiaojin.xyz/post/2022/07/12/theme-travel-yantai.html",
             "title": "烟台游参考",
             "date_modified": "2022-07-12T00:00:00.000Z"
+        },
+        {
+            "id": "http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html",
+            "url": "http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html",
+            "title": "vim入门",
+            "summary": "vim具有四个基本模式，分别为\n>1. 正常模式(normal mode)\n>2. 可视模式(Visual mode)\n>3. 插入模式(insert mode)\n>4. 命令模式（command mode)",
+            "date_modified": "2022-10-10T00:00:00.000Z"
+        },
+        {
+            "id": "http://shangxiaojin.xyz/post/2022/10/23/theme-ty.html",
+            "url": "http://shangxiaojin.xyz/post/2022/10/23/theme-ty.html",
+            "title": "C/Cpp",
+            "summary": "\"D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include\",\n                    \"D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed\"\n                ]\n            }\n        }\n    ],\n    \"version\": 4\n}\n文件2：launch.json\n{\n    \"version\": \"0.2.0\",\n    \"configurations\": [\n        {\n            \"name\": \"(gdb) Launch\", // 配置名称，将会在启动配置的下拉菜单中显示\n            \"type\": \"cppdbg\",       // 配置类型，这里只能为cppdbg\n            \"request\": \"launch\",    // 请求配置类型，可以为launch（启动）或attach（附加）\n            \"program\": \"${workspaceFolder}/${fileBasenameNoExtension}.exe\",// 这里配合tasks文件生成的路经进行使用\n            \"args\": [],             // 程序调试时传递给程序的命令行参数，一般设为空即可\n            \"stopAtEntry\": false,   // 设为true时程序将暂停在程序入口处，一般设置为false\n            \"cwd\": \"${workspaceFolder}\", // 调试程序时的工作目录，一般为${workspaceFolder}即代码所在目录\n            \"environment\": [],\n            \"externalConsole\": true, // 调试时是否显示控制台窗口，一般设置为true显示控制台\n            \"MIMode\": \"gdb\",",
+            "image": "https://surplus-1311636487.cos.ap-beijing.myqcloud.com/添翼工程-1.jpg",
+            "date_modified": "2022-10-23T00:00:00.000Z"
         }
     ]
 }

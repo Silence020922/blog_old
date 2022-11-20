@@ -2,11 +2,18 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://shangxiaojin.xyz</id>
     <title>殇晓瑾</title>
-    <updated>2022-11-17T14:24:30.189Z</updated>
+    <updated>2022-11-20T14:16:36.118Z</updated>
     <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
     <link rel="alternate" href="http://shangxiaojin.xyz"/>
     <link rel="self" href="http://shangxiaojin.xyz/feed.atom"/>
     <subtitle>一个00后的在校大学生 -- 喜爱魔[术]、数[学]、运[动]、游[戏]的新人（拥有一个喜欢在[斗地主]里破产的女朋友）</subtitle>
+    <entry>
+        <title type="html"><![CDATA[scratch]]></title>
+        <id>http://shangxiaojin.xyz/post/2022/11/19/scrath.html</id>
+        <link href="http://shangxiaojin.xyz/post/2022/11/19/scrath.html">
+        </link>
+        <updated>2022-11-19T00:00:00.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[济南可玩点介绍]]></title>
         <id>http://shangxiaojin.xyz/post/2022/07/20/theme-jnan.html</id>
@@ -31,43 +38,6 @@
         <link href="http://shangxiaojin.xyz/post/2022/10/17/theme-r.html">
         </link>
         <updated>2022-10-17T00:00:00.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[C/Cpp]]></title>
-        <id>http://shangxiaojin.xyz/post/2022/10/23/theme-ty.html</id>
-        <link href="http://shangxiaojin.xyz/post/2022/10/23/theme-ty.html">
-        </link>
-        <updated>2022-10-23T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA["D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include",
-                    "D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"
-                ]
-            }
-        }
-    ],
-    "version": 4
-}
-文件2：launch.json
-{
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "(gdb) Launch", // 配置名称，将会在启动配置的下拉菜单中显示
-            "type": "cppdbg",       // 配置类型，这里只能为cppdbg
-            "request": "launch",    // 请求配置类型，可以为launch（启动）或attach（附加）
-            "program": "${workspaceFolder}/${fileBasenameNoExtension}.exe",// 这里配合tasks文件生成的路经进行使用
-            "args": [],             // 程序调试时传递给程序的命令行参数，一般设为空即可
-            "stopAtEntry": false,   // 设为true时程序将暂停在程序入口处，一般设置为false
-            "cwd": "${workspaceFolder}", // 调试程序时的工作目录，一般为${workspaceFolder}即代码所在目录
-            "environment": [],
-            "externalConsole": true, // 调试时是否显示控制台窗口，一般设置为true显示控制台
-            "MIMode": "gdb",]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[vim入门]]></title>
-        <id>http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html</id>
-        <link href="http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html">
-        </link>
-        <updated>2022-10-10T00:00:00.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[differential privacy]]></title>
@@ -190,5 +160,47 @@
         <link href="http://shangxiaojin.xyz/post/2022/07/12/theme-travel-yantai.html">
         </link>
         <updated>2022-07-12T00:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[vim入门]]></title>
+        <id>http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html</id>
+        <link href="http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html">
+        </link>
+        <updated>2022-10-10T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[vim具有四个基本模式，分别为
+>1. 正常模式(normal mode)
+>2. 可视模式(Visual mode)
+>3. 插入模式(insert mode)
+>4. 命令模式（command mode)]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[C/Cpp]]></title>
+        <id>http://shangxiaojin.xyz/post/2022/10/23/theme-ty.html</id>
+        <link href="http://shangxiaojin.xyz/post/2022/10/23/theme-ty.html">
+        </link>
+        <updated>2022-10-23T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA["D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include",
+                    "D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"
+                ]
+            }
+        }
+    ],
+    "version": 4
+}
+文件2：launch.json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) Launch", // 配置名称，将会在启动配置的下拉菜单中显示
+            "type": "cppdbg",       // 配置类型，这里只能为cppdbg
+            "request": "launch",    // 请求配置类型，可以为launch（启动）或attach（附加）
+            "program": "${workspaceFolder}/${fileBasenameNoExtension}.exe",// 这里配合tasks文件生成的路经进行使用
+            "args": [],             // 程序调试时传递给程序的命令行参数，一般设为空即可
+            "stopAtEntry": false,   // 设为true时程序将暂停在程序入口处，一般设置为false
+            "cwd": "${workspaceFolder}", // 调试程序时的工作目录，一般为${workspaceFolder}即代码所在目录
+            "environment": [],
+            "externalConsole": true, // 调试时是否显示控制台窗口，一般设置为true显示控制台
+            "MIMode": "gdb",]]></summary>
     </entry>
 </feed>
