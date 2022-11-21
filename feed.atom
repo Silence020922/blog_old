@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://shangxiaojin.xyz</id>
     <title>殇晓瑾</title>
-    <updated>2022-11-20T14:16:36.118Z</updated>
+    <updated>2022-11-21T14:28:04.648Z</updated>
     <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
     <link rel="alternate" href="http://shangxiaojin.xyz"/>
     <link rel="self" href="http://shangxiaojin.xyz/feed.atom"/>
@@ -38,6 +38,43 @@
         <link href="http://shangxiaojin.xyz/post/2022/10/17/theme-r.html">
         </link>
         <updated>2022-10-17T00:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[C/Cpp]]></title>
+        <id>http://shangxiaojin.xyz/post/2022/10/23/theme-ty.html</id>
+        <link href="http://shangxiaojin.xyz/post/2022/10/23/theme-ty.html">
+        </link>
+        <updated>2022-10-23T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA["D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include",
+                    "D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"
+                ]
+            }
+        }
+    ],
+    "version": 4
+}
+文件2：launch.json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) Launch", // 配置名称，将会在启动配置的下拉菜单中显示
+            "type": "cppdbg",       // 配置类型，这里只能为cppdbg
+            "request": "launch",    // 请求配置类型，可以为launch（启动）或attach（附加）
+            "program": "${workspaceFolder}/${fileBasenameNoExtension}.exe",// 这里配合tasks文件生成的路经进行使用
+            "args": [],             // 程序调试时传递给程序的命令行参数，一般设为空即可
+            "stopAtEntry": false,   // 设为true时程序将暂停在程序入口处，一般设置为false
+            "cwd": "${workspaceFolder}", // 调试程序时的工作目录，一般为${workspaceFolder}即代码所在目录
+            "environment": [],
+            "externalConsole": true, // 调试时是否显示控制台窗口，一般设置为true显示控制台
+            "MIMode": "gdb",]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[vim入门]]></title>
+        <id>http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html</id>
+        <link href="http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html">
+        </link>
+        <updated>2022-10-10T00:00:00.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[differential privacy]]></title>
@@ -103,18 +140,19 @@
 也怕醒时滋味]]></summary>
     </entry>
     <entry>
+        <title type="html"><![CDATA[the evolution  of social relation]]></title>
+        <id>http://shangxiaojin.xyz/post/2022/11/21/theme-psychology.html</id>
+        <link href="http://shangxiaojin.xyz/post/2022/11/21/theme-psychology.html">
+        </link>
+        <updated>2022-11-21T00:00:00.000Z</updated>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[暑期读物摘录]]></title>
         <id>http://shangxiaojin.xyz/post/2022/07/18/theme-reading.html</id>
         <link href="http://shangxiaojin.xyz/post/2022/07/18/theme-reading.html">
         </link>
         <updated>2022-07-18T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[在悠长的白天里，他感觉通常好受些。可一到晚上，他就开始焦虑起来。他强迫自己每天都要去散步，可即使沐浴在冬日暖阳里，他所看到的一切也都像是黑白照片一般，失去了往日的色彩。
-快乐喝深情、愤怒、悲伤、恐惧。所有这些情感加在一起，就构成了所谓‘自然型儿童’，而这是整个儿童自我状态的重要组成部分。
-不是发自内心的东西，就不能带来真正的改变。
-童年体验到的最强烈的情绪，不可避免地变成我们成年后常有的感受。
-就像所有好的问题一样，答案会让你产生痛苦的自我觉察。
-蛤蟆，咨询过程中产生的一些概念，乍一听会显得愚蠢，不合逻辑，甚至让人害怕。但是越是能帮助你深入自我的概念，也越容易引发强烈的阻抗。因为这些概念最容易打破我们的心理平衡，它们最有可能带你走向深层的蜕变，而这个过程往往是痛苦的，我想你现在也感受到了。我们看到的自己并不一定总是我们喜欢的样子。从当下的你，变成你想成为的自己，必定要经历行为喝态度的转边，需要付出艰辛的努力，需要勇气和决心。
-‘父母状态’更像是一个法官，这个法官一直在控诉别人，给他们定罪，然后顺理成章地惩罚他们。‘父母状态’包含了自出生起，我们从父母那里学到的所有价值观喝道德观，还包含了对生活的评判标准，让我们借此判断是非对错。
+        <summary type="html"><![CDATA[‘父母状态’更像是一个法官，这个法官一直在控诉别人，给他们定罪，然后顺理成章地惩罚他们。‘父母状态’包含了自出生起，我们从父母那里学到的所有价值观喝道德观，还包含了对生活的评判标准，让我们借此判断是非对错。
 没有一种批判比自我批判更强烈，没有一个法官比我们自己更严苛。
 ‘成人自我状态’指我们用理性而不是情绪化的方式来行事。它让我们能应对此时此地正在发生的现实状况。
 我们在另外两种状态时，像父母或儿童一样行事，几乎不需要去思考，因为我们知道要做什么、说什么、就好像在演戏一样。
@@ -160,47 +198,5 @@
         <link href="http://shangxiaojin.xyz/post/2022/07/12/theme-travel-yantai.html">
         </link>
         <updated>2022-07-12T00:00:00.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[vim入门]]></title>
-        <id>http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html</id>
-        <link href="http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html">
-        </link>
-        <updated>2022-10-10T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[vim具有四个基本模式，分别为
->1. 正常模式(normal mode)
->2. 可视模式(Visual mode)
->3. 插入模式(insert mode)
->4. 命令模式（command mode)]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[C/Cpp]]></title>
-        <id>http://shangxiaojin.xyz/post/2022/10/23/theme-ty.html</id>
-        <link href="http://shangxiaojin.xyz/post/2022/10/23/theme-ty.html">
-        </link>
-        <updated>2022-10-23T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA["D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include",
-                    "D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"
-                ]
-            }
-        }
-    ],
-    "version": 4
-}
-文件2：launch.json
-{
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "(gdb) Launch", // 配置名称，将会在启动配置的下拉菜单中显示
-            "type": "cppdbg",       // 配置类型，这里只能为cppdbg
-            "request": "launch",    // 请求配置类型，可以为launch（启动）或attach（附加）
-            "program": "${workspaceFolder}/${fileBasenameNoExtension}.exe",// 这里配合tasks文件生成的路经进行使用
-            "args": [],             // 程序调试时传递给程序的命令行参数，一般设为空即可
-            "stopAtEntry": false,   // 设为true时程序将暂停在程序入口处，一般设置为false
-            "cwd": "${workspaceFolder}", // 调试程序时的工作目录，一般为${workspaceFolder}即代码所在目录
-            "environment": [],
-            "externalConsole": true, // 调试时是否显示控制台窗口，一般设置为true显示控制台
-            "MIMode": "gdb",]]></summary>
     </entry>
 </feed>
