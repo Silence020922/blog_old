@@ -114,6 +114,114 @@ pit.legend(loc='best', shadow=True,ncol=2) #显示图例，显示两个plot的la
 subplot #绘制多子图
 plt.savefig(' .png or pdf') #导出PDF或图像文件
 ```
+#### matplotlib 实战
+输出本机可用语言，解决matplotlib无法显示汉字的问题
+```
+import matplotlib
+print(matplotlib.matplotlib_fname())
+from matplotlib.font_manager import FontManager
+import subprocess
+
+fm = FontManager()
+mat_fonts = set(f.name for f in fm.ttflist)
+print (mat_fonts)
+output = subprocess.check_output('fc-list :lang=zh -f "%{family}\n"', shell=True)
+print ('*' * 10, '系统可用的中文字体', '*' * 10)
+print (output)
+zh_fonts = set(f.split(',', 1)[0] for f in output.decode().split('\n'))
+available = mat_fonts & zh_fonts
+print ('*' * 10, '可用的字体', '*' * 10)
+for f in available:
+    print(f)
+```
+对济南15-22年二手房成交情况文件中提取数据并实现数据可视化
+```
+import csv
+import numpy as np
+import re
+import matplotlib.pyplot as plt
+from matplotlib import font_manager
+pic, axes = plt.subplots(nrows=2, ncols=2)  # 初始化画布
+axes[0, 0].set(title='济南市各区总单数',  ylabel='成交数目')
+axes[0, 1].set(title='济南市二手房成交周期')
+axes[1, 0].set(title='济南市二手房年成交总量',ylabel = '年份')
+axes[1, 1].set(title='济南市二手房年交易均价',ylabel = '年份')
+
+plt.rcParams['font.sans-serif'] = ['WenQuanYi Zen Hei']
+
+
+def readCSV(path):
+    with open(path, "r", encoding='UTF-8') as file:
+        data = csv.reader(file)
+        list = []
+        for row in data:
+            list.append(row)
+    return list
+
+
+data_list = readCSV("/home/surplus/Downloads/secpond_price.csv")
+
+
+# 地区交易总额
+region_list = []  # 录入地区名(无重)
+for i in np.arange(int(len(data_list)/10)):
+    if data_list[i*10 + 1][1] not in region_list:
+        region_list.append(data_list[i*10 + 1][1])
+
+
+region_deal = [i[1] for i in data_list[1:]] # 录入地区名(有重)
+
+total_deal = []# 计算地区交易总量
+for i in region_list:
+    total_deal.append(region_deal.count(i))
+
+for i in range(len(region_list)): #绘图
+    p1 = axes[0, 0].bar(region_list[i], total_deal[i], label='value')
+    axes[0, 0].bar_label(p1, label_type='edge')
+
+# 观察总体成交周期
+deal_cycle_str = [re.sub('[\u4e00-\u9fa5]', '', i[17]) for i in data_list[1:]]
+deal_cycle_int = [int(i) for i in deal_cycle_str] # 转化为整型
+cycle_class = ['一个月以内','一个月至半年','半年以上','一年以上']
+deal_cycle = [len([i for i in deal_cycle_int if i <=30]),
+    len([i for i in deal_cycle_int if i > 30 and i<=180 ]),
+    len([i for i in deal_cycle_int if i >180 and i<= 365]),
+    len([i for i in deal_cycle_int if i >365])]
+axes[0,1].pie(deal_cycle,
+        labels=cycle_class, # 设置饼图标签
+        colors=["#d5695d", "#5d8ca8", "#65a479", "#a564c9"], # 设置饼图颜色
+        autopct='%.2f%%', # 格式化输出百分比,
+        explode=(0, 0, 0, 0.2)
+       )
+
+#年份均价走势图
+money_str = [re.sub('[\u4e00-\u9fa5,/]', '', i[10]) for i in data_list[1:]]
+money_int = [int(i) for i in money_str]
+deal_time_str = [re.sub('[\u4e00-\u9fa5]', '', i[8][0:4]) for i in data_list[1:]]
+deal_time_int = [int(i) for i in deal_time_str]
+
+zipped = zip(deal_time_int,money_int)  # 执行同步排序
+sort_zip = sorted(zipped,key = lambda x:(x[0],x[1]))
+uzip = zip(*sort_zip)
+time_year, money = [list(x) for x in uzip]
+year_total_num = []
+for i in np.arange(time_year[0],time_year[-1] + 1):
+    year_total_num.append(time_year.count(i))
+ 
+axes[1,0].plot(np.arange(time_year[0],time_year[-1] + 1), year_total_num,label = '年成交总量 ',c =  'g') #年成交总量绘图
+axes[1,0].legend()
+year_mean_money = []
+
+temp = 0
+for j in year_total_num:
+    year_mean_money.append(sum(money[temp:temp + j])/j)
+    temp += j
+
+axes[1,1].plot(np.arange(time_year[0],time_year[-1] + 1),year_mean_money,label = '年平均单价 元\平米',c = 'r') #年成交均价绘图
+axes[1,1].legend()
+
+plt.show()
+```
 ### [Numpy](https://docs.scipy.org/doc/numpy/reference/)
 **介绍**    
 安装
@@ -461,5 +569,58 @@ choice(seq) #从序列类型(例如：列表)中随机返回一个元素
 shuffle(seq) #将序列类型中元素随机排列，返回打乱后的序列    
 sample(pop, k) #从pop类型中随机选取k个元素，以列表类型返回    
 ```
+### jieba
+#### jieba实例
+通过调用jieba、wordcloud库对二十大报告全文关键词进行频次统计并绘制词云。
+```
+import jieba
+from matplotlib import pyplot as plt
+from wordcloud import WordCloud
+from PIL import Image
+import numpy as np
 
+def tcg(texts):
+    cut = jieba.cut(texts)  #分词
+    string = ' '.join(cut)
+    return string
+
+jieba.load_userdict(r"C:\python学习\userdict.txt")
+txt = open("C:\python学习\二十大报告全文.txt",'r',encoding='utf-8').read()
+st = open('C:/python学习/stopwords.txt','r',encoding='utf-8')
+string=tcg(txt)
+img = Image.open('C:/Users/carefree/Desktop/project1.png') #打开图片
+img_array = np.array(img) #将图片装换为数组
+stop_words = [line.strip('\n') for line in st.readlines()]
+words = jieba.lcut(txt)
+counts = {}
+for word in words:
+    if len(word) == 1: #排除单个字符（汉字）的分词结果
+        if word not in stop_words:
+            stop_words.append(word)
+        continue
+    else:
+        if word not in stop_words:
+            counts[word] = counts.get(word,0) + 1
+
+#排序
+items = list(counts.items())
+items.sort(key=lambda x:x[1], reverse=True)      #排序
+# 输出前20的高频词
+for i in range(20):                              #输出前20个词
+    word, count = items[i]
+    print ("{0:<10}{1:>5}".format(word, count))
+
+wc = WordCloud(
+    background_color='white',
+    width=800,
+    height=600,
+    mask=img_array, #设置背景图片
+    font_path='C:/Windows/Fonts/simkai.ttf',
+    stopwords=stop_words
+)
+wc.generate_from_text(string)#绘制图片
+plt.imshow(wc)
+plt.axis('off')
+plt.show()  #显示图片
+```
 

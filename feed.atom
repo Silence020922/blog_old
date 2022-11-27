@@ -2,17 +2,20 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://shangxiaojin.xyz</id>
     <title>殇晓瑾</title>
-    <updated>2022-11-23T12:31:48.851Z</updated>
+    <updated>2022-11-27T12:04:08.610Z</updated>
     <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
     <link rel="alternate" href="http://shangxiaojin.xyz"/>
     <link rel="self" href="http://shangxiaojin.xyz/feed.atom"/>
     <subtitle>一个00后的在校大学生 -- 喜爱魔[术]、数[学]、运[动]、游[戏]的新人（拥有一个喜欢在[斗地主]里破产的女朋友）</subtitle>
     <entry>
-        <title type="html"><![CDATA[scratch]]></title>
-        <id>http://shangxiaojin.xyz/post/2022/11/19/scrath.html</id>
-        <link href="http://shangxiaojin.xyz/post/2022/11/19/scrath.html">
+        <title type="html"><![CDATA[Animate 代码实例开发]]></title>
+        <id>http://shangxiaojin.xyz/post/2022/11/27/theme-animate.html</id>
+        <link href="http://shangxiaojin.xyz/post/2022/11/27/theme-animate.html">
         </link>
-        <updated>2022-11-19T00:00:00.000Z</updated>
+        <updated>2022-11-27T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[我们需要新建一个图层用于放置播放和停止的按钮。双击进入对对象的设置，并修改实例对象的名称以用于编程实现。
+代码需单独放在一个新的图层上，参考代码如下
+import flash.events.MouseEvent;]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[济南可玩点介绍]]></title>
@@ -31,13 +34,6 @@
 列表(list)
 ['abcd', 77, 2.23 ]
 命令]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[R实战入门]]></title>
-        <id>http://shangxiaojin.xyz/post/2022/10/17/theme-r.html</id>
-        <link href="http://shangxiaojin.xyz/post/2022/10/17/theme-r.html">
-        </link>
-        <updated>2022-10-17T00:00:00.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[C/Cpp]]></title>
@@ -75,6 +71,13 @@
         <link href="http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html">
         </link>
         <updated>2022-10-10T00:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[R实战入门]]></title>
+        <id>http://shangxiaojin.xyz/post/2022/10/17/theme-r.html</id>
+        <link href="http://shangxiaojin.xyz/post/2022/10/17/theme-r.html">
+        </link>
+        <updated>2022-10-17T00:00:00.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[differential privacy]]></title>
@@ -162,13 +165,27 @@
 当你有恐惧感时，焦虑的念头就会跑到你的意识层面，让你没办法放松。就好像它们在你心里拉响警报，告诉你大事不好了，希望你能做点什么。]]></summary>
     </entry>
     <entry>
+        <title type="html"><![CDATA[scratch]]></title>
+        <id>http://shangxiaojin.xyz/post/2022/11/19/theme-scrath.html</id>
+        <link href="http://shangxiaojin.xyz/post/2022/11/19/theme-scrath.html">
+        </link>
+        <updated>2022-11-19T00:00:00.000Z</updated>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[碎碎念]]></title>
         <id>http://shangxiaojin.xyz/post/2019/09/01/theme-share.html</id>
         <link href="http://shangxiaojin.xyz/post/2019/09/01/theme-share.html">
         </link>
         <updated>2019-09-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[到大学后她突然开窍了，课本一扔，注重起穿着打扮来。无精打采束在脑后的低马尾换成了爽利活泼的短
-    发，金属细框眼镜另有一番风味，专柜的护肤品，商场里买的连衣裙。]]></summary>
+        <summary type="html"><![CDATA[人如果没有梦想，和咸鱼有什么区别?这句打鸡血的话，激励了多少青年在追逐梦想的路上一条道走到黑。]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[歌单分享]]></title>
+        <id>http://shangxiaojin.xyz/post/2022/05/06/theme-sharing-2.html</id>
+        <link href="http://shangxiaojin.xyz/post/2022/05/06/theme-sharing-2.html">
+        </link>
+        <updated>2022-05-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[- Shape of You -- Ed Sheeran]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[双节+恋爱300days]]></title>
@@ -184,20 +201,5 @@
         </link>
         <updated>2022-10-12T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[万物存在于均衡之间]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[烟台游参考]]></title>
-        <id>http://shangxiaojin.xyz/post/2022/07/12/theme-travel-yantai.html</id>
-        <link href="http://shangxiaojin.xyz/post/2022/07/12/theme-travel-yantai.html">
-        </link>
-        <updated>2022-07-12T00:00:00.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[歌单分享]]></title>
-        <id>http://shangxiaojin.xyz/post/2022/05/06/theme-sharing-2.html</id>
-        <link href="http://shangxiaojin.xyz/post/2022/05/06/theme-sharing-2.html">
-        </link>
-        <updated>2022-05-06T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[- 我爱他 -- 王小帅]]></summary>
     </entry>
 </feed>
