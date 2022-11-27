@@ -66,3 +66,60 @@ for (i in 1:n){
     # print(paste("The average of the data ",file," is ",ans))}
 }
 ```
+## 作业3
+>首先需要说明的是，严格来讲并没有完全复刻示例图片，但个人已将认为比较重要的    
+>数据详尽的表示了出来，最终效果图可以查看[这里](https://surplus-1311636487.cos.ap-beijing.myqcloud.com/R-3.jpg)
+
+代码如下
+```
+load("Download/zuoye3.rdata")
+library(ggplot2)
+library(ggpubr)
+function1 <-function(groupV,s){ 
+         for (i in 1:7){
+             if (groupV[i,1] <0.01){
+                     s[i] = '**'
+                 }else if(groupV[i,1]<0.05){
+                         s[i] = '*'
+                     }else {s[i] = ' '}}
+         for (j in 1:7){
+                 if (groupV[j,2]<0.01){
+                         s[j+7] = '**'
+                     }else if (groupV[j,2]<0.05){
+                             s[j+7] = '*'
+                         }else {s[j+7] = ' '}}
+         return(s)
+    }
+function2 <-function(groupV,s){ 
+         for (i in 1:14){
+             if (groupV[i,4] <0.01){
+                     s[i] = '**'
+                 }else if(groupV[i,4]<0.05){
+                         s[i] = '*'
+                     }else {s[i] = ' '}}
+         return(s)
+    }
+labelA <- c();labelB <- c();labelA_B <- c()
+pd <- position_dodge(0.1)
+labelA <- function2(dataA,labelA);labelB <- function2(dataB,labelB);labelA_B <- function1(groupPvlue,labelA_B)
+pic1 <- ggplot(dataA, aes(XX, y, colour=group, group = group),angle = 45) + 
+    geom_errorbar(aes(ymin=low, ymax=up), width=.2, position=pd) +
+    geom_point(aes(colour = group, shape = factor(group)),position=pd, size = 3) +
+    xlab("XX") + 
+    ylab("y-value") + 
+    ggtitle("(A)") + 
+    scale_colour_gradient(low = 'red',high = 'blue') + 
+    geom_text(aes(XX+.2,y,label = labelA)) + 
+    geom_label(aes(XX + .02,y + 1,label = labelA_B[1:7]),data = dataA[1:7,1:6])
+pic2 <- ggplot(dataB, aes(XX, y, colour=group, group = group),angle = 45) + 
+    geom_errorbar(aes(ymin=low, ymax=up), width=.2, position=pd) +
+    geom_point(aes(colour = group, shape = factor(group)),position=pd, size = 3) +
+    xlab("XX") + 
+    ylab("y-value") + 
+    ggtitle("(B)") + 
+    theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1)) +
+    scale_colour_gradient(low = 'red',high = 'blue') + 
+    geom_text(aes(XX+.2,y,label = labelB)) + 
+    geom_label(aes(XX + .02,y + 1,label = labelA_B[8:14]),data = dataB[1:7,1:6])
+ggarrange(pic1,pic2)
+```
