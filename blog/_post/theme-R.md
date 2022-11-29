@@ -72,10 +72,10 @@ for (i in 1:n){
 
 代码如下
 ```
-load("Download/zuoye3.rdata")
-library(ggplot2)
-library(ggpubr)
-function1 <-function(groupV,s){ 
+load("Download/zuoye3.rdata") #更改为自己文件所在的地址
+library(ggplot2) #主要库
+library(ggpubr) #基于ggplot2用于组合展示
+function1 <-function(groupV,s){  # 将p差值转化为标签*
          for (i in 1:7){
              if (groupV[i,1] <0.01){
                      s[i] = '**'
@@ -90,7 +90,7 @@ function1 <-function(groupV,s){
                          }else {s[j+7] = ' '}}
          return(s)
     }
-function2 <-function(groupV,s){ 
+function2 <-function(groupV,s){  # 将p值转化为标签*
          for (i in 1:14){
              if (groupV[i,4] <0.01){
                      s[i] = '**'
@@ -99,10 +99,10 @@ function2 <-function(groupV,s){
                      }else {s[i] = ' '}}
          return(s)
     }
-labelA <- c();labelB <- c();labelA_B <- c()
+labelA <- c();labelB <- c();labelA_B <- c() # 用于存储标签属性
 pd <- position_dodge(0.1)
-labelA <- function2(dataA,labelA);labelB <- function2(dataB,labelB);labelA_B <- function1(groupPvlue,labelA_B)
-pic1 <- ggplot(dataA, aes(XX, y, colour=group, group = group),angle = 45) + 
+labelA <- function2(dataA,labelA);labelB <- function2(dataB,labelB);labelA_B <- function1(groupPvlue,labelA_B) # 生成标签
+pic1 <- ggplot(dataA, aes(XX, y, colour=group, group = group),angle = 45) +  # 绘制图(A)
     geom_errorbar(aes(ymin=low, ymax=up), width=.2, position=pd) +
     geom_point(aes(colour = group, shape = factor(group)),position=pd, size = 3) +
     xlab("XX") + 
@@ -111,7 +111,7 @@ pic1 <- ggplot(dataA, aes(XX, y, colour=group, group = group),angle = 45) +
     scale_colour_gradient(low = 'red',high = 'blue') + 
     geom_text(aes(XX+.2,y,label = labelA)) + 
     geom_label(aes(XX + .02,y + 1,label = labelA_B[1:7]),data = dataA[1:7,1:6])
-pic2 <- ggplot(dataB, aes(XX, y, colour=group, group = group),angle = 45) + 
+pic2 <- ggplot(dataB, aes(XX, y, colour=group, group = group),angle = 45) + # 绘制图(B)
     geom_errorbar(aes(ymin=low, ymax=up), width=.2, position=pd) +
     geom_point(aes(colour = group, shape = factor(group)),position=pd, size = 3) +
     xlab("XX") + 
@@ -121,5 +121,6 @@ pic2 <- ggplot(dataB, aes(XX, y, colour=group, group = group),angle = 45) +
     scale_colour_gradient(low = 'red',high = 'blue') + 
     geom_text(aes(XX+.2,y,label = labelB)) + 
     geom_label(aes(XX + .02,y + 1,label = labelA_B[8:14]),data = dataB[1:7,1:6])
-ggarrange(pic1,pic2)
+pic <- ggarrange(pic1,pic2) # 组合展示
+ggsave(pic,file = 'pic_name.pdf',width = 20,height = 10) #保存
 ```

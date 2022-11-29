@@ -1375,3 +1375,88 @@ double line::getLen(){
 我们将len属性放在getLen中进行求解，这样如果len不被需要我们可以省去计算距离的时间。为避免重复计算,getLIne将计算值储存到len中。    
 此时getLine()并不会改变对象的状态(由于两点便会确定直线，而getLine并没有使对象直线本身发生变化)，但此时定义`getLine() const`则会报错，原因是将对象的值len发生了改变。针对这种情况可使用mutable关键字，`mutable len`就可以将getLine()声明为常成员函数了。
 ### 数组、指针、字符串
+* 数组的声明：`数据类型 表示符[常量表达式1][常量表达式2]`注意，下标是从0开始。例如`int a[5][3]`代表a可以储存5*3的整数类型，其坐标由[0][0]开始，[4][2]结束。自然可以声明更高维数组，但一般三维以上不常用。    
+* ` int a[][3] = {0,0,0,1,1,1}; ` 等价`int a[2][3] = {{0,0,0},{1,1,1}};`    
+* 数组的使用：`表示符[下标表达式][下标表达式]`    
+
+**实例**
+```
+# include <iostream>
+using namespace std;
+// 初始化一个矩阵并将每一个元素输出然后调用子函数，分别计算每一行的和存储到每行第一个元素
+void rowSum(int a[][4],int nRow){
+    for(int i=0; i< nRow;i++){
+        for(int j = 1;j <4;j++){
+            a[i][0] += a[i][j];
+        }
+    }
+}
+int main(){
+    int table[3][4] = {{1,2,3,4},{2,3,4,5},{3,4,5,6}};
+    for (int i=0;i<3;i++){
+        for (int j=0;j<4;j++){
+            cout<<table[i][j]<<' ';
+        }
+        cout<<endl;
+    }
+    rowSum(table,3);
+    for (int i=0;i<3;i++){
+        cout<<"sum of row "<<i<<" is "<<table[i][0]<<endl;
+    }
+    return 0;
+}
+// 把数组作为参数一般不指定第一维的大小，事实上，即使指定也会被忽略
+```
+**对象数组**
+实例：基于最小二乘法的直线拟合
+* point.h
+```
+# ifndef _POINT_H
+# define _POINT_H
+
+class Point {
+    public:
+    Point(float x= 0,float y =0):x(x),y(y){};
+    float getX() const {return x;}
+    float getY() const {return y;}
+    private:
+    float x,y;
+};
+
+# endif
+```
+* main.cpp
+```
+# include "Point.h"
+# include <iostream>
+# include <cmath>
+using namespace std;
+
+float linefit(const Point points[], int pointnum){
+    int avgX = 0,avgY =0;
+    float lxx = 0,lyy=0,lxy = 0;
+    for (int i=0;i<pointnum;i++){
+        avgX += points[i].getX()/pointnum;
+        avgY += points[i].getY()/pointnum;
+    }
+    for (int i=0;i<pointnum;i++){
+        lxx += (points[i].getX()-avgX)*(points[i].getX()-avgX);
+        lxy += (points[i].getX()-avgX)*(points[i].getY()-avgY);
+        lyy += (points[i].getY()-avgY)*(points[i].getY()-avgY);
+    }
+    cout<<"the line can be fitted by y=ax+b"<<endl;
+    cout<<"a = "<<lxy/lxx<<" ";
+    cout<<"b = "<<avgY-lxy*avgX/lxx<<endl;
+    return static_cast<float>(lxy/sqrt(lxx*lyy));
+}
+
+int main(){
+    Point p[10] = {Point(6,10),Point(14,20),Point(26,30),Point(33,40),
+    Point(46,50),Point(54,60),Point(67,70),Point(75,80),
+    Point(84,90),Point(100,100)};
+    float r = linefit(p,10);
+    cout<<"r = "<<r<<endl;
+    return 0 ;
+}
+```
+
