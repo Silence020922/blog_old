@@ -18,14 +18,14 @@ reward: false
 
 * 山东大学&emsp;&emsp;&emsp;&emsp;&emsp;2019.8~至今&emsp;&emsp;&emsp;&emsp;&emsp; 数学与应用数学--本科  
 
-## 课表一览
-* 数据科学导论(周一8.00-10.00 周四8.00-10.00）    
-* 统计软件(周一10.00-12.00 周三8.00-10.00)    
-* 组合数学(周二 19.00-22.00)     
-* Dense induced bipartite subgraphs in triangle-free graphs(周一15.00-16.00)    
-* 量子计算(周五14.30-16.30)    
-* 次模分析及在优化和博弈中的应用(周一/三/五 20.00-22.00)    
-
+## 入门
+* Cpp    
+* python    
+* R     
+* Matlab    
+* Lingo    
+* scrath    
+* html
 
 ## 专业技能
 * 具有一定的外语能力（*CET-6* ）
