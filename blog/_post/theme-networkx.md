@@ -1,5 +1,5 @@
 ---
-title: A project
+title: 推荐系统对群体意见演化的影响
 date: 2022-11-17
 tag: note
 ---
