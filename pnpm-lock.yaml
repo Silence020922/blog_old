@@ -1,17 +1,20 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@vuepress/plugin-blog': ^1.9.3
-  '@vuepress/plugin-medium-zoom': ^1.8.0
-  '@vuepress/plugin-pwa': ^1.8.0
+  '@vuepress/plugin-blog': ^1.9.4
+  '@vuepress/plugin-medium-zoom': ^1.9.7
+  '@vuepress/plugin-pwa': ^1.9.7
   markdown-it-abbr: ^1.0.4
-  markdown-it-footnote: ^3.0.2
+  markdown-it-footnote: ^3.0.3
   markdown-it-mark: ^3.0.1
   markdown-it-task-lists: ^2.1.1
-  valine: ^1.4.14
-  vuepress: ^1.7.1
-  vuepress-plugin-flowchart: ^1.4.3
-  vuepress-plugin-one-click-copy: ^1.0.2
+  mathjax: ^3.2.2
+  valine: ^1.4.18
+  vuepress: ^1.9.7
+  vuepress-plugin-flowchart: ^1.5.0
+  vuepress-plugin-katex: ^0.3.0
+  vuepress-plugin-mathjax: ^1.2.8
+  vuepress-plugin-one-click-copy: ^1.0.6
   vuepress-plugin-seo: ^0.1.4
   vuepress-theme-maker: ^1.2.1
 
@@ -23,13 +26,16 @@ dependencies:
   markdown-it-footnote: 3.0.3
   markdown-it-mark: 3.0.1
   markdown-it-task-lists: 2.1.1
+  mathjax: 3.2.2
   valine: 1.4.18
   vuepress: 1.9.7
   vuepress-plugin-flowchart: 1.5.0
+  vuepress-plugin-mathjax: 1.2.8
   vuepress-plugin-one-click-copy: 1.0.6
   vuepress-plugin-seo: 0.1.4
 
 devDependencies:
+  vuepress-plugin-katex: 0.3.0
   vuepress-theme-maker: 1.2.1
 
 packages:
@@ -1231,6 +1237,12 @@ packages:
     dependencies:
       defer-to-connect: 1.1.3
 
+  /@traptitech/markdown-it-katex/3.6.0:
+    resolution: {integrity: sha512-CnJzTWxsgLGXFdSrWRaGz7GZ1kUUi8g3E9HzJmeveX1YwVJavrKYqysktfHZQsujdnRqV5O7g8FPKEA/aeTkOQ==}
+    dependencies:
+      katex: 0.16.3
+    dev: true
+
   /@types/body-parser/1.19.2:
     resolution: {integrity: sha512-ALYone6pm6QmwZoAgeyNksccT9Q4AWZQ6PvfwR37GT6r6FWUPguq6sUmNGSMV2Wr761oQoBxwGGa6DR5o1DC9g==}
     dependencies:
@@ -1550,7 +1562,7 @@ packages:
       source-map: 0.6.1
       vue-template-es2015-compiler: 1.9.1
     optionalDependencies:
-      prettier: 2.6.2
+      prettier: 2.8.0
     transitivePeerDependencies:
       - arc-templates
       - atpl
@@ -2132,7 +2144,7 @@ packages:
     engines: {node: '>=0.10.0'}
 
   /array-flatten/1.1.1:
-    resolution: {integrity: sha1-ml9pkFGx5wczKPKgCJaLZOopVdI=}
+    resolution: {integrity: sha512-PCVAQswWemu6UdxsDFFX/+gVeYqKAod3D3UVm91jHwynguOwAvYPhx8nNlM++NqRcK6CxxpUafjmhIdKiHibqg==}
 
   /array-flatten/2.1.2:
     resolution: {integrity: sha512-hNfzcOV8W4NdualtqBFPyVO+54DSJuZGY9qT4pRroB6S9e3iiido2ISIC5h9R2sPJ8H3FHCIiEnsv1lPXO3KtQ==}
@@ -2216,7 +2228,7 @@ packages:
     hasBin: true
     dependencies:
       browserslist: 4.20.3
-      caniuse-lite: 1.0.30001339
+      caniuse-lite: 1.0.30001435
       normalize-range: 0.1.2
       num2fraction: 1.2.2
       picocolors: 0.2.1
@@ -2534,7 +2546,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001339
+      caniuse-lite: 1.0.30001435
       electron-to-chromium: 1.4.137
       escalade: 3.1.1
       node-releases: 2.0.4
@@ -2693,12 +2705,12 @@ packages:
     resolution: {integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==}
     dependencies:
       browserslist: 4.20.3
-      caniuse-lite: 1.0.30001339
+      caniuse-lite: 1.0.30001435
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
 
-  /caniuse-lite/1.0.30001339:
-    resolution: {integrity: sha512-Es8PiVqCe+uXdms0Gu5xP5PF2bxLR7OBp3wUzUnuO7OHzhOfCyg3hdiGWVPVxhiuniOzng+hTc1u3fEQ0TlkSQ==}
+  /caniuse-lite/1.0.30001435:
+    resolution: {integrity: sha512-kdCkUTjR+v4YAJelyiDTqiu82BDr4W4CP5sgTA0ZBmqn30XfS2ZghPLMowik9TPhS+psWJiUNxsqLyurDbmutA==}
 
   /caseless/0.12.0:
     resolution: {integrity: sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw=}
@@ -2914,6 +2926,11 @@ packages:
 
   /commander/2.20.3:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
+
+  /commander/8.3.0:
+    resolution: {integrity: sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==}
+    engines: {node: '>= 12'}
+    dev: true
 
   /comment-regex/1.0.1:
     resolution: {integrity: sha512-IWlN//Yfby92tOIje7J18HkNmWRR7JESA/BK8W7wqY/akITpU5B0JQWnbTjCfdChSrDNb0DrdA9jfAxiiBXyiQ==}
@@ -3565,6 +3582,12 @@ packages:
     dependencies:
       mimic-response: 1.0.1
 
+  /deconstruct-merge/1.1.0:
+    resolution: {integrity: sha512-o0RFi4YhLf+FJKQ2ly7iDePl9WtdY+RJIPd0wEDlMlK0wTxfywS9DxYQeei8N4qqHKoy8Idp4UXPtXFIVn0PrA==}
+    dependencies:
+      array-flatten: 2.1.2
+    dev: false
+
   /deep-equal/1.1.1:
     resolution: {integrity: sha512-yd9c5AdiqVcR+JjcwUQb9DkhJc8ngNr0MahEBGvDiJw8puWab2yZlh+nkasOnZP+EGTAP6rRp2JzJhJZzvNF8g==}
     dependencies:
@@ -4061,6 +4084,11 @@ packages:
       esrecurse: 4.3.0
       estraverse: 4.3.0
 
+  /esm/3.2.25:
+    resolution: {integrity: sha512-U1suiZ2oDVWv4zPO56S0NcR5QriEahGtdN2OR6FiOG4WJvcjBVFB0qI4+eKoWFH483PKGuLuu6V8Z4T5g63UVA==}
+    engines: {node: '>=6'}
+    dev: false
+
   /esprima/4.0.1:
     resolution: {integrity: sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==}
     engines: {node: '>=4'}
@@ -4497,7 +4525,7 @@ packages:
     requiresBuild: true
     dependencies:
       bindings: 1.5.0
-      nan: 2.15.0
+      nan: 2.17.0
     optional: true
 
   /fsevents/2.3.2:
@@ -5469,6 +5497,13 @@ packages:
       json-schema: 0.4.0
       verror: 1.10.0
 
+  /katex/0.16.3:
+    resolution: {integrity: sha512-3EykQddareoRmbtNiNEDgl3IGjryyrp2eg/25fHDEnlHymIDi33bptkMv6K4EOC2LZCybLW/ZkEo6Le+EM9pmA==}
+    hasBin: true
+    dependencies:
+      commander: 8.3.0
+    dev: true
+
   /keyv/3.1.0:
     resolution: {integrity: sha512-9ykJ/46SN/9KPM/sichzQ7OvXyGDYKGTaDlKMGCAlg2UK8KRy4jb0d8sFc+0Tt0YYnThq8X2RZgCg74RPxgcVA==}
     dependencies:
@@ -5781,6 +5816,17 @@ packages:
     engines: {node: '>= 12'}
     hasBin: true
 
+  /mathjax/3.2.2:
+    resolution: {integrity: sha512-Bt+SSVU8eBG27zChVewOicYs7Xsdt40qm4+UpHyX7k0/O9NliPc+x77k1/FEsPsjKPZGJvtRZM1vO+geW0OhGw==}
+    dev: false
+
+  /mathjax3/3.0.0-beta.3:
+    resolution: {integrity: sha512-MgXK56KOLk5b8/Y01RXB/C0+QgC2Kc+SJmKBilP+Jwxout/4SdV8AjsPp+WMzlotnAacQWFpn24CPdLkdej9AA==}
+    deprecated: The mathjax3 package is deprecated.  Use mathjax or marjax-full instead
+    dependencies:
+      esm: 3.2.25
+    dev: false
+
   /md5.js/1.3.5:
     resolution: {integrity: sha512-xitP+WxNPcTTOgnTJcrhM0xvdPepipPSf3I8EIpGKeFLjt3PlJLIDG3u8EX53ZIubkb+5U2+3rELYpEhHhzdkg==}
     dependencies:
@@ -6018,8 +6064,8 @@ packages:
       dns-packet: 1.3.4
       thunky: 1.1.0
 
-  /nan/2.15.0:
-    resolution: {integrity: sha512-8ZtvEnA2c5aYCZYd1cvgdnU6cqwixRoYg70xPLWUws5ORTa/lnw+u4amixRS/Ac5U5mQVgp9pnlSUnbNWFaWZQ==}
+  /nan/2.17.0:
+    resolution: {integrity: sha512-2ZTgtl0nJsO0KQCjEpxcIr5D+Yv90plTitZt9JBfQvVJDS5seMl3FOvsh3+9CoYWXf/1l5OaZzzF6nDm4cagaQ==}
     requiresBuild: true
     optional: true
 
@@ -6795,8 +6841,8 @@ packages:
     resolution: {integrity: sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=}
     engines: {node: '>=4'}
 
-  /prettier/2.6.2:
-    resolution: {integrity: sha512-PkUpF+qoXTqhOeWL9fu7As8LXsIUZ1WYaJiY/a7McAQzxjk82OF0tibkFXVCDImZtWxbvojFjerkiLb0/q8mew==}
+  /prettier/2.8.0:
+    resolution: {integrity: sha512-9Lmg8hTFZKG0Asr/kW9Bp8tJjRVluO8EJQVfY2T7FMw9T5jy4I/Uvx0Rca/XWf50QQ1/SS48+6IJWnrb+2yemA==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     requiresBuild: true
@@ -8437,6 +8483,12 @@ packages:
       util.promisify: 1.0.0
       webpack: 4.46.0
 
+  /vuepress-mergeable/1.1.4:
+    resolution: {integrity: sha512-AG1RqLJdHrFzv1sq2/KT/V2u7FCMYc+SfzcVIZubx/IEUefGaqu+7KujL16zQn0Y08hTohs8vEnXieNmti13Kg==}
+    dependencies:
+      deconstruct-merge: 1.1.0
+    dev: false
+
   /vuepress-plugin-container/2.1.5:
     resolution: {integrity: sha512-TQrDX/v+WHOihj3jpilVnjXu9RcTm6m8tzljNJwYhxnJUW0WWQ0hFLcDTqTBwgKIFdEiSxVOmYE+bJX/sq46MA==}
     dependencies:
@@ -8470,6 +8522,12 @@ packages:
     dependencies:
       flowchart.js: 1.17.1
 
+  /vuepress-plugin-katex/0.3.0:
+    resolution: {integrity: sha512-qRmNAAJmfi8CFs73dhcLelnTkAe+Zx61pCXABX9MtWxnwPdfdewvd67MAwSzGZi3EtXCKEh+nRvG4LVF6zOjgw==}
+    dependencies:
+      '@traptitech/markdown-it-katex': 3.6.0
+    dev: true
+
   /vuepress-plugin-mailchimp/1.4.2:
     resolution: {integrity: sha512-4t5ZaKZXu5ZkwgE+WW//7CgXgz6DEhRefGrO5aql4PwapauNXlHKgQ2JMf9FRe5y5WHjNpDHYveEDNzISZmxJw==}
     dependencies:
@@ -8477,6 +8535,14 @@ packages:
       query-string: 6.14.1
     transitivePeerDependencies:
       - supports-color
+
+  /vuepress-plugin-mathjax/1.2.8:
+    resolution: {integrity: sha512-vtRyDsBviQJfMgHhjzsVY+Rnr4HyEnUCgCKof5FV2ZG+mVe+YECfhVAe1Zo24XkkYjS/FBMFLn/sz4s0p5iuuQ==}
+    dependencies:
+      lru-cache: 5.1.1
+      mathjax3: 3.0.0-beta.3
+      vuepress-mergeable: 1.1.4
+    dev: false
 
   /vuepress-plugin-one-click-copy/1.0.6:
     resolution: {integrity: sha512-apFCcsBwk9IEDm5HwD6dwor30rl8gr0VjPkmrQlFSR2KD7OjK3ZUwioeEvbrcAiZBi35V6YgndLAHksJXRfpnQ==}
@@ -9066,7 +9132,7 @@ packages:
     resolution: {integrity: sha512-JKhqTOwSrqNA1NY5lSztJ1GrBiUodLMmIZuLiDaMRJ+itFd+ABVE8XBjOvIWL+rSqNDC74LCSFmlb/U4UZ4hJQ==}
 
   /yallist/2.1.2:
-    resolution: {integrity: sha1-HBH5IY8HYImkfdUS+TxmmaaoHVI=}
+    resolution: {integrity: sha512-ncTzHV7NvsQZkYe1DW7cbDLm0YpzHmZF5r/iyP3ZnQtMiJ+pjzisCiMNI+Sj+xQF5pXhSHxSB3uDbsBTzY/c2A==}
 
   /yallist/3.1.1:
     resolution: {integrity: sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==}
