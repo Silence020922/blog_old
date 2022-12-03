@@ -1,5 +1,5 @@
 ---
-title: C/Cpp
+title: C&Cpp
 date: 2022-10-23
 tag: note
 ---
@@ -8,15 +8,14 @@ tag: note
 最近接触了一下scratch和Animate，简单谈谈我的想法。    
 scratch是一门有趣且上手简单的编程语言。其界面包括积木区、编码区、舞台。积木区包括各种模块。我觉得小孩子自己学会使用这个软件是有困难的，尤其是对每个指令的理解还需要老师的指导。当然，在有人指导的情况下，6岁左右的孩子可以照着例子完整地还原一个能运行的程序。这个过程并不需要孩子认识英文或汉字，是培养孩子数学思维、创意表达和兴趣激发很好的方式。而对于二到三年级的孩子就可以学着灵活运用指令，自己设计编程作品了。通过scratch主要培养孩子的编程逻辑，且无需代码基础。当然，在这里也有一些实例。
 
-- [小板击球——板的相关设定]( https://surplus-1311636487.cos.ap-beijing.myqcloud.com/TY-1.png )     
-- [小板击球——球的相关设定]( https://surplus-1311636487.cos.ap-beijing.myqcloud.com/TY-2.png )     
-- [小虫画图]( https://surplus-1311636487.cos.ap-beijing.myqcloud.com/TY-3.png )      
-- [风车旋转参考 ]( https://surplus-1311636487.cos.ap-beijing.myqcloud.com/TY-4.png )     
-- [小熊吃蜜1]( https://surplus-1311636487.cos.ap-beijing.myqcloud.com/TY-5.png )     
-- [小熊吃蜜2]( https://surplus-1311636487.cos.ap-beijing.myqcloud.com/TY-6.png )     
+* [小板击球——板的相关设定]( https://surplus-1311636487.cos.ap-beijing.myqcloud.com/TY-1.png )     
+* [小板击球——球的相关设定]( https://surplus-1311636487.cos.ap-beijing.myqcloud.com/TY-2.png )     
+* [小虫画图]( https://surplus-1311636487.cos.ap-beijing.myqcloud.com/TY-3.png )      
+* [风车旋转参考]( https://surplus-1311636487.cos.ap-beijing.myqcloud.com/TY-4.png )     
+* [小熊吃蜜1]( https://surplus-1311636487.cos.ap-beijing.myqcloud.com/TY-5.png )     
+* [小熊吃蜜2]( https://surplus-1311636487.cos.ap-beijing.myqcloud.com/TY-6.png )     
 
 而 Animate 是一个动画软件，可以通过创建关键帧，补全中间动画的方式来制作简单动画，同时能够实现创建按钮控制影片的播放和停止、播放速度等功能。
-
 ## C/Cpp 编译器选择-Arch linux
 同样利用g++搭配VScode实现对cpp文件的编译。    
 VScode下载看[这里](https://aur.archlinux.org/packages/visual-studio-code-bin)，安装完成后在VScode中下载C++插件，写一个cpp文件F5调试即可。
@@ -293,7 +292,6 @@ double i
 scanf("i = %lf\n",&i)
 print("&.xf\n",i) #.xf为设置输出格式为小数点后x位
 ```
-
 ## C艹的学习
 ### 绪论
 参考资料 [网站1](https://en.cppreference.com/)    
@@ -1380,9 +1378,14 @@ double line::getLen(){
 我们将len属性放在getLen中进行求解，这样如果len不被需要我们可以省去计算距离的时间。为避免重复计算,getLIne将计算值储存到len中。    
 此时getLine()并不会改变对象的状态(由于两点便会确定直线，而getLine并没有使对象直线本身发生变化)，但此时定义`getLine() const`则会报错，原因是将对象的值len发生了改变。针对这种情况可使用mutable关键字，`mutable len`就可以将getLine()声明为常成员函数了。
 ### 数组、指针、字符串
-* 数组的声明：`数据类型 表示符[常量表达式1][常量表达式2]`注意，下标是从0开始。例如`int a[5][3]`代表a可以储存5*3的整数类型，其坐标由[0][0]开始，[4][2]结束。自然可以声明更高维数组，但一般三维以上不常用。    
-* ` int a[][3] = {0,0,0,1,1,1}; ` 等价`int a[2][3] = {{0,0,0},{1,1,1}};`    
-* 数组的使用：`表示符[下标表达式][下标表达式]`    
+* 数组的声明：`数据类型 表示符[常量表达式1][常量表达式2]`注意，下标是从0开始。例如`int a[5][3]`代表a可以储存5*3的整数类型，其坐标由`[0][0]`开始，`[4][2]`结束。自然可以声明更高维数组，但一般三维以上不常用。
+
+* 数组的使用：表示符[下标表达式][下标表达式]
+
+
+```    
+int a[][3] = {0,0,0,1,1,1}等价int a[2][3] = {{0,0,0},{1,1,1}}
+```    
 
 **实例**
 ```
@@ -1415,6 +1418,7 @@ int main(){
 
 **对象数组**
 实例：基于最小二乘法的直线拟合
+
 * point.h
 ```
 # ifndef _POINT_H
@@ -1465,4 +1469,3 @@ int main(){
     return 0 ;
 }
 ```
-
