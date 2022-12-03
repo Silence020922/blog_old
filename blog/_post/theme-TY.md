@@ -3,15 +3,18 @@ title: C/Cpp
 date: 2022-10-23
 tag: note
 ---
-## 关于为什么选择这门课(杂谈)
-    作为一名平日无所事事的数学系学生，总感觉与社会格格不入，仔细一想是揣了算法一大堆却    
-    不知道如何使用，另外半路出家计算机基础也一塌糊涂。于是在开《计算机网络》这本书补基    
-    础的同时想搞门编程语言实战一下。由于目的性并不明确，索性报一门课程探索一下。探索期    
-    间发现学C还是有一定的收益，后来学了一点C后想既然C++兼容C，干脆学Cpp吧，目前正在开    
-    《C++语言程序设计》若以后有时间可以翻一下 C++ primer。      
-    由于添翼工程需要提交作业，故将学习过程记录于此。     
-## 作业要求之学习截图
-![](https://surplus-1311636487.cos.ap-beijing.myqcloud.com/添翼工程-1.jpg)
+## 杂谈
+最近接触了一下scratch和Animate，简单谈谈我的想法。    
+scratch是一门有趣且上手简单的编程语言。其界面包括积木区、编码区、舞台。积木区包括各种模块。我觉得小孩子自己学会使用这个软件是有困难的，尤其是对每个指令的理解还需要老师的指导。当然，在有人指导的情况下，6岁左右的孩子可以照着例子完整地还原一个能运行的程序。这个过程并不需要孩子认识英文或汉字，是培养孩子数学思维、创意表达和兴趣激发很好的方式。而对于二到三年级的孩子就可以学着灵活运用指令，自己设计编程作品了。通过scratch主要培养孩子的编程逻辑，且无需代码基础。当然，我这里也有一些实例。
+- [小板击球——板的相关设定]( https://surplus-1311636487.cos.ap-beijing.myqcloud.com/TY-1.png )     
+- [小板击球——球的相关设定]( https://surplus-1311636487.cos.ap-beijing.myqcloud.com/TY-2.png )     
+- [小虫画图]( https://surplus-1311636487.cos.ap-beijing.myqcloud.com/TY-3.png )      
+- [风车旋转参考 ]( https://surplus-1311636487.cos.ap-beijing.myqcloud.com/TY-4.png )     
+- [小熊吃蜜1]( https://surplus-1311636487.cos.ap-beijing.myqcloud.com/TY-5.png )     
+- [小熊吃蜜2]( https://surplus-1311636487.cos.ap-beijing.myqcloud.com/TY-6.png )     
+
+而 Animate 是一个动画软件，可以通过创建关键帧，补全中间动画的方式来制作简单动画，同时能够实现创建按钮控制影片的播放和停止、播放速度等功能。
+
 ## C/Cpp 编译器选择-Arch linux
 同样利用g++搭配VScode实现对cpp文件的编译。    
 VScode下载看[这里](https://aur.archlinux.org/packages/visual-studio-code-bin)，安装完成后在VScode中下载C++插件，写一个cpp文件F5调试即可。

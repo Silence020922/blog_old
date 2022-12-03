@@ -404,5 +404,186 @@ newdata <- subset(leadership, gender=="M" & age > 25,
 **随机采样**    
 `mysample <- frame_name[sample(1:nrow(leadership), 3, replace=FALSE),]` 样本数据3的无放回抽样
 
+## 高级数据管理
+### 数值和字符处理函数
+数学函数|描述
+----|-----
+abs(x)| 绝对值
+sqrt(x)| 平方根
+ceiling(x)|  不小于 x 的最小整数
+floor(x)|  不大于 x 的最大整数
+trunc(x)|向 0 的方向截取的 x 中的整数部分,trunc(5.99)返回值为 5
+round(x, digits=n)|将 x 舍入为指定位的小数
+signif(x, digits=n)|将 x 舍入为指定的有效数字位数
+cos(x)、 sin(x)、tan(x)、acos(x)、asin(x)、atan(x)、cosh(x)、sinh(x)、tanh(x)、acosh(x)、asinh(x)、atanh(x)|余弦、反余弦，双曲余弦、反双曲余弦
+exp(x)|指数函数
+log(x,base=n)|对 x 取以 n 为底的对数
 
+统计函数|描述
+---|-----------------
+mean(x)| 平均数
+median(x)|中位数
+sd(x)| 标准差
+var(x)|方差
+mad(x)|绝对中位差(数据到中位数的偏差的绝对值的中位数)
+quantile(x,probs)|求分位数。其中 x 为待求分位数的数值型向量,probs 为一个由[0,1]之间的概率值组成的数值向量
+range(x)|求值域
+sum(x)|求和
+diff(x, lag=n)|滞后差分,lag 用以指定滞后几项。默认的 lag 值为 1,x<- c(1, 5, 23, 29),diff(x)返回值为 c(4, 18, 6)
+min(x)|求最小值
+max(x)| 求最大值
+scale(x,center=TRUE,scale=TRUE)|为数据对象 x 按列进行中心化(center=TRUE)或标准化(center=TRUE,scale=TRUE),默认情况将数据标准化为均值0方差1;
+
+**概率函数**    
+在R中,概率函数形如 :`[dpqr] + 分布缩写()`
+>其中第一个字母表示其所指分布的某一方面:    
+>d = 密度函数(density)，p = 分布函数(distribution function)，q = 分位数函数(quantile function)，r = 生成随机数(随机偏差)
+
+例如`qnorm(.9, mean=500, sd=100) #均值为 500,标准差为 100 的正态分布的 0.9 分位点值`,`pnorm(1.96) #位于 z=1.96 左侧的标准正态曲线下方面积`。
+
+在R中生成伪随机数时，函数会每次调用不同种子，通过set.seed()可以指定这个种子，可使结果重现。
+
+字符处理函数|描述
+-----|--------
+toupper(x)|大写转换
+tolower(x)|小写转换
+paste(..., sep="")|连接字符串,分隔符为 sep,例如，paste('today is ',date(),sep = ' ')
+strsplit(x, split,fixed=FALSE)|在 split 处分割字符向量 x 中的元素。若 fixed=FALSE,则 pattern 为一个正则表达式。若 fixed=TRUE,则 pattern 为一个文本字符串
+nchar(x)|计算 x 中的字符数量,  x <- 'good',length(x) = 1,nchat(x) = 4
+substr(x, start, stop)|提取或替换一个字符向量中的子串,substr(x, 2, 4) <- "22222"(x 将变成"a222ef")
+grep(pattern, x, ignore.case=FALSE, fixed=FALSE)|在 x 中搜索某种模式。若 fixed=FALSE,则 pattern 为一个正则表达式。若fixed=TRUE,则 pattern 为一个文本字符串。返回值为匹配的下标
+sub(pattern, replacement,x, ignore.case=FALSE,fixed=FALSE)|在 x 中搜索 pattern,并以文本 replacement 将其替换。若 fixed=FALSE,则pattern 为一个正则表达式。若 fixed=TRUE,则 pattern 为一个文本字符串。
+
+其他使用函数|描述
+--------|--------
+seq(from, to, by)|生成一个序列
+rep(x, n)|将 x 重复 n 次,y <- rep(1:3, 2),y 的值为 c(1, 2, 3, 1, 2, 3)
+pretty(x, n)|创建美观的分割点。通过选取 n+1 个等间距的取整值,将一个连续型变量x分割为n个区间。绘图中常用
+
+### apply()
+R中提供了一个 apply()函数,可将一个任意函数“应用”到矩阵、数组、数据框的任何维度上。apply()函数的使用格式为:`apply(x, MARGIN, FUN, ...)`。MARGIN=1表示行，2表示列，...部分表示传递给FUN的参数。
+
+### 综合示例
+将学生的各科考试成绩组合为单一的成绩衡量指标,基于相对名次
+(前20%、下20%、等等)给出从A到F的评分,根据学生姓氏和名字的首字母对花名册进行排序。
+```
+Student <- c("John Davis", "Angela Williams", "Bullwinkle Moose",
+    "David Jones", "Janice Markhammer", "Cheryl Cushing",
+    "Reuven Ytzrhak", "Greg Knox", "Joel England",
+    "Mary Rayburn")
+    Math <- c(502, 600, 412, 358, 495, 512, 410, 625, 573, 522)
+    Science <- c(95, 99, 80, 82, 75, 85, 80, 95, 89, 86)
+    English <- c(25, 22, 18, 15, 20, 28, 15, 30, 27, 18)
+    roster <- data.frame(Student, Math, Science, English,
+    stringsAsFactors=FALSE) #录入数据
+\\ 数据显示如下
+             Student Math Science English
+1         John Davis  502      95      25
+2    Angela Williams  600      99      22
+3   Bullwinkle Moose  412      80      18
+4        David Jones  358      82      15
+5  Janice Markhammer  495      75      20
+6     Cheryl Cushing  512      85      28
+7     Reuven Ytzrhak  410      80      15
+8          Greg Knox  625      95      30
+9       Joel England  573      89      27
+10      Mary Rayburn  522      86      18 \\
+
+z <- scale(roster[,2:4]) 分数进行标准化
+score <- apply(z,MARGIN = 1,mean) # 求标准化成绩后的成绩均值
+roster <- cbind(roster,score) #合并
+y <- quantile(score, c(.8,.6,.4,.2)) #求.8,-.2的分位数
+roster$grade[score >= y[1]] <- "A"
+roster$grade[score < y[1] & score >= y[2]] <- "B"
+roster$grade[score < y[2] & score >= y[3]] <- "C"
+roster$grade[score < y[3] & score >= y[4]] <- "D"
+roster$grade[score < y[4]] <- "F" # 按照.2间隔给予评分
+Firstname <- sapply(name, "[", 1) #sapply()在这提取列表中第一个元素
+Lastname <- sapply(name, "[", 2)
+roster <- cbind(Firstname, Lastname, roster[,-1]) #-1意为除掉第一个列
+roster[order(Lastname,Firstname),] # 根据姓名排序
+```
+
+### 控制流
+if,while,for 略
+```
+# 关于switch
+> feelings <- c("sad", "afraid")
+> for (i in feelings)
+print(
+switch(i,
+happy = "I am glad you are happy",
+afraid = "There is nothing to fear",
+sad
+ = "Cheer up",
+angry = "Calm down now"
+)
+)
+[1] "Cheer up"
+[1] "There is nothing to fear"
+```
+```
+关于ifelse()
+ifelse(score > 0.5, print("Passed"), print("Failed"))
+```
+
+### 整合与重构数据
+t()对数据框进行转置
+
+**数据整合**    
+```
+对于如下数据
+mtcars
+                     mpg cyl  disp  hp drat   wt qsec vs am gear carb
+Mazda RX4           21.0   6 160.0 110 3.90 2.62 16.5  0  1    4    4
+Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.88 17.0  0  1    4    4
+Datsun 710          22.8   4 108.0  93 3.85 2.32 18.6  1  1    4    1
+Hornet 4 Drive      21.4   6 258.0 110 3.08 3.21 19.4  1  0    3    1
+Hornet Sportabout   18.7   8 360.0 175 3.15 3.44 17.0  0  0    3    2
+Valiant             18.1   6 225.0 105 2.76 3.46 20.2  1  0    3    1
+Duster 360          14.3   8 360.0 245 3.21 3.57 15.8  0  0    3    4
+Merc 240D           24.4   4 146.7  62 3.69 3.19 20.0  1  0    4    2
+Merc 230            22.8   4 140.8  95 3.92 3.15 22.9  1  0    4    2
+Merc 280            19.2   6 167.6 123 3.92 3.44 18.3  1  0    4    4
+Merc 280C           17.8   6 167.6 123 3.92 3.44 18.9  1  0    4    4
+Merc 450SE          16.4   8 275.8 180 3.07 4.07 17.4  0  0    3    3
+Merc 450SL          17.3   8 275.8 180 3.07 3.73 17.6  0  0    3    3
+Merc 450SLC         15.2   8 275.8 180 3.07 3.78 18.0  0  0    3    3
+Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.25 18.0  0  0    3    4
+Lincoln Continental 10.4   8 460.0 215 3.00 5.42 17.8  0  0    3    4
+Chrysler Imperial   14.7   8 440.0 230 3.23 5.34 17.4  0  0    3    4
+Fiat 128            32.4   4  78.7  66 4.08 2.20 19.5  1  1    4    1
+Honda Civic         30.4   4  75.7  52 4.93 1.61 18.5  1  1    4    2
+Toyota Corolla      33.9   4  71.1  65 4.22 1.83 19.9  1  1    4    1
+Toyota Corona       21.5   4 120.1  97 3.70 2.46 20.0  1  0    3    1
+Dodge Challenger    15.5   8 318.0 150 2.76 3.52 16.9  0  0    3    2
+AMC Javelin         15.2   8 304.0 150 3.15 3.44 17.3  0  0    3    2
+Camaro Z28          13.3   8 350.0 245 3.73 3.84 15.4  0  0    3    4
+Pontiac Firebird    19.2   8 400.0 175 3.08 3.85 17.1  0  0    3    2
+Fiat X1-9           27.3   4  79.0  66 4.08 1.94 18.9  1  1    4    1
+Porsche 914-2       26.0   4 120.3  91 4.43 2.14 16.7  0  1    5    2
+Lotus Europa        30.4   4  95.1 113 3.77 1.51 16.9  1  1    5    2
+Ford Pantera L      15.8   8 351.0 264 4.22 3.17 14.5  0  1    5    4
+Ferrari Dino        19.7   6 145.0 175 3.62 2.77 15.5  0  1    5    6
+Maserati Bora       15.0   8 301.0 335 3.54 3.57 14.6  0  1    5    8
+Volvo 142E          21.4   4 121.0 109 4.11 2.78 18.6  1  1    4    2
+
+```
+通过`aggdata <-aggregate(mtcars, by=list(cyl,gear), FUN=mean, na.rm=TRUE)
+`,实现对mtcars数据按照cyl,gear进行分类并返回各个数值类型的均值。返回结果如下
+```
+aggdata
+  Group.1 Group.2  mpg cyl disp  hp drat   wt qsec  vs   am gear carb
+1       4       3 21.5   4  120  97 3.70 2.46 20.0 1.0 0.00    3 1.00
+2       6       3 19.8   6  242 108 2.92 3.34 19.8 1.0 0.00    3 1.00
+3       8       3 15.1   8  358 194 3.12 4.10 17.1 0.0 0.00    3 3.08
+4       4       4 26.9   4  103  76 4.11 2.38 19.6 1.0 0.75    4 1.50
+5       6       4 19.8   6  164 116 3.91 3.09 17.7 0.5 0.50    4 4.00
+6       4       5 28.2   4  108 102 4.10 1.83 16.8 0.5 1.00    5 2.00
+7       6       5 19.7   6  145 175 3.62 2.77 15.5 0.0 1.00    5 6.00
+8       8       5 15.4   8  326 300 3.88 3.37 14.6 0.0 1.00    5 6.00
+```
+在结果中, Group.1表示汽缸数量(4、6或8), Group.2代表挡位数(3、4或5)。举例第一行数据,拥有4个汽缸和3个挡位车型的每加仑汽油行驶英里数(mpg)均值为21.5。    
+
+对于更加高级的数据整合方法，可利用reshape2包实现。
 
