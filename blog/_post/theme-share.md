@@ -1,7 +1,7 @@
 ---
 title: 碎碎念
 date: 2019-09-01
-category: shaore
+category: share
 ---
 # 正能量分享
 ## 咸鱼翻身？双面焦罢了
