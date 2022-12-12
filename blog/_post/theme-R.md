@@ -586,4 +586,483 @@ aggdata
 在结果中, Group.1表示汽缸数量(4、6或8), Group.2代表挡位数(3、4或5)。举例第一行数据,拥有4个汽缸和3个挡位车型的每加仑汽油行驶英里数(mpg)均值为21.5。    
 
 对于更加高级的数据整合方法，可利用reshape2包实现。
+## 基本图形
+### 条形图
+`barplot()`可生成条形图。`?barolit`查看帮助文档。当height接受参数为向量时绘制一般条形图，但当其接受矩阵时，将绘制堆砌条形图或分组条形图(取决于参数beside = FALSE/TURE)。    
+棘状图对堆砌条形图进行了重缩放,这样每个条形的高度均为1,每一段的高度即表示比例。由vcd包中的函数spine()绘制。
+### 饼图
+饼图可由以下函数创建:`pie(x, labels, main, col)`,col处可利用`rainbow(n)`快速导入n种颜色。在plotrix包pie3D可绘制三维饼图。    
+饼图存在的问题是如果不将其占比录入标签，仅凭肉眼有时无法分辨占比大小。扇形图提供了一种同时展示相对数量和相互差异的方法。扇形图通过plotrix包`fan.plot()`实现。    
+### 直方图
+直方图通过在x轴上将值域分割为一定数量的组,在y轴上显示相应值的频数,展示了连续型变量的分布。可以使用如下函数创建直方图:`hist(x, breaks(分割组数),freq)`freq=FALSE表示根据概率密度而不是频数绘制图形
+### 核密度图
+利用density(x)其中的x是一个数值型向量。使用line(density(x))可将核密度图叠加到某图上方。    
+使用sm包中的sm.density.compare()函数可向图形叠加两组或更多的核密度图。使用格式为:`sm.density.compare(x, factor)`其中的x 是一个数值型向量, factor是一个分组变量。将自动按照分组及对应数值进行绘制。
+### 箱线图
+箱线图(又称盒须图)通过绘制连续型变量的五数总括,即最小值、下四分位数(第25百分位数)、中位数(第50百分位数)、上四分位数(第75百分位数)以及最大值,描述了连续型变量的分布。箱线图能够显示出可能为离群点(范围±1.5*IQR以外的值,IQR表示四分位距,即上四分位数与下四分位数的差值)的观测。例如:`boxplot(mtcars$mpg, main="Box plot", ylab="Miles per Gallon")`    
+箱线图可以展示单个变量或分组变量。使用格式为:`boxplot(formula, data=dataframe)`其中的formula是一个公式, dataframe代表提供数据的数据框(或列表)。一个示例公式为y~A,这将为类别型变量A的每个值并列地生成数值型变量y的箱线图。公式y~A*B则将为类别型变量A和B所有水平的两两组合生成数值型变量y的箱线图。    
+添加参数varwidth=TRUE将使箱线图的宽度与其样本大小的平方根成正比.参数horizontal=TRUE 可以反转坐标轴的方向。,而varwidth=TRUE则使箱线图的宽度与它们各自的样本大小成正比。添加notch=TRUE,可以得到含凹槽的箱线图。
+### 点图
+点图提供了一种在简单水平刻度上绘制大量有标签值的方法。你可以使用dotchart()函数创建点图,格式为:`dotchart(x, labels=)`。通常来说,点图在经过排序并且分组变量被不同的符号和颜色区分开的时候最有用。
+```
+x <- mtcars[order(mtcars$mpg),]
+x$cyl <- factor(x$cyl)
+x$color[x$cyl==4] <- "red"
+x$color[x$cyl==6] <- "blue"
+x$color[x$cyl==8] <- "darkgreen"
+dotchart(x$mpg,
+    labels = row.names(x),
+     cex=.7,
+    groups = x$cyl, # 有用
+    gcolor = "black",
+    color = x$color,
+    pch=19,
+    main = "Gas Mileage for Car Models\ngrouped by cylinder",
+    xlab = "Miles Per Gallon"）
+```
+## 基本统计分析
+### 描述性统计量
+求最小值、均值、最大值、四分位数`summary()`    
+求最小值、中位数、最大值、四分位数`fivenum()`    
+通过sapply()计算描述性统计量
+```
+> mystats <- function(x, na.omit=FALSE){
+    if (na.omit)
+    x <- x[!is.na(x)]
+    m <- mean(x) # 均值
+    n <- length(x) # 样本数
+    s <- sd(x) # 标准差
+    skew <- sum((x-m)^3/s^3)/n # 偏度
+    kurt <- sum((x-m)^4/s^4)/n - 3 # 峰度
+    return(c(n=n, mean=m, stdev=s, skew=skew, kurtosis=kurt))
+}
+
+```
+其他可通过安装Hmisc,pastecs,psych等包实现。    
+
+有时我们需要分组计算描述性统计量，先前学习的`aggregate()`可实现对数据分组但仅能返回均值、方差统计信息。在此使用`by()`
+```
+> mystats <- function(x, na.omit=FALSE){
+    if (na.omit)
+    x <- x[!is.na(x)]
+    m <- mean(x) # 均值
+    n <- length(x) # 样本数
+    s <- sd(x) # 标准差
+    skew <- sum((x-m)^3/s^3)/n # 偏度
+    kurt <- sum((x-m)^4/s^4)/n - 3 # 峰度
+    return(c(n=n, mean=m, stdev=s, skew=skew, kurtosis=kurt))
+}
+> dstats <- function(x){sapply(x, mystats)}
+> myvars <- c("mpg", "hp", "wt")
+> by(mtcars[myvars], mtcars$am, dstats)
+```
+其他可通过安装doBy,psych实现。
+### 频数表和列联表
+用于创建和处理列联表的函数    
+函数|描述
+-----|-----
+table(var1, var2, ..., varN)| 使用 N 个类别型变量(因子)创建一个 N 维列联表
+xtabs(formula, data)| 根据一个公式和一个矩阵或数据框创建一个 N 维列联表
+prop.table(table, margins(1代表行，2代表列))|依 margins 定义的边际列表将表中条目表示为分数形式
+margin.table(table, margins)|依 margins 定义的边际列表计算表中条目的和
+addmargins(table, margins)|将概述边 margins(默认是求和结果，即边际和)放入表中
+ftable(table)|创建一个紧凑的“平铺”式列联表
+
+**多维列联表**    
+table和xtabs都可以生成多维列联表，形如分类讨论？使用`ftable()`可以使得生成的表更加紧凑。
+
+#### 独立性检验
+```
+chisq.test() 卡方独立检验
+fisher.test() fisher精确检验，不可2*2列联
+mantelhaen.test() Cochran-Mantel-Haenszel卡方检验，三层
+```
+检验是否独立，若不独立，利用vcd中`assocstats()`进行相关性度量。
+### 相关
+`cor()`函数可以计算这三种相关系数,而`cov()`函数可用来计算协方差。    
+ggm包中pcor()可以计算偏方差(控制一些变量后研究两变量之间的相互关系)    
+
+相关性显著性检验`cor.test(x, y, alternative = , method = )`alternative则用来指定进行双侧检验或单侧检验(取值
+为"two.side"、"less"或"greater"),而method 用以指定要计算的相关类型("pearson"、"kendall" 或 "spearman" )。当研究的假设为总体的相关系数小于0时,请使用alternative="less" 。    
+
+psych包`corr.test`可以一次性对多个相关关系进行检验。    
+### t检验
+独立样本t.test() 非独立t.test(y1, y2, paired=TRUE)
+### 组建差异的非参数检验
+## 回归
+```
+lm() 拟合线性回归模型
+myfit <- lm(formula, data)
+其中formula指要拟合的模型形式例如Y ~ X1 + X2 + ... + Xk
+例如fit2 <- lm(weight ~ height + I(height^2), data=women)，I函数内内容为一般表达，因为^有其他意思，防止其他调用。
+
+```
+以下函数应用于lm()返回对象
+```
+summary() 展示拟合模型的详细结果
+coefficients() 列出拟合模型的模型参数(截距项和斜率)
+confint()  提供模型参数的置信区间(默认 95%)
+fitted() 列出拟合模型的预测值
+residuals() 列出拟合模型的残差值
+anova() 生成一个拟合模型的方差分析表,或者比较两个或更多拟合模型的方差分析表
+vcov() 列出模型参数的协方差矩阵
+AIC() 输出赤池信息统计量
+plot() 生成评价拟合模型的诊断图
+predict() 用拟合模型对新的数据集预测响应变量值
+
+```
+
+回归问题实例
+```
+states <- as.data.frame(state.x77[,c("Murder", "Population","Illiteracy", "Income", "Frost")]) # 生成数据框
+cor(states)
+library(car)
+scatterplotMatrix(states, spread=FALSE, smoother.args=list(lty=2),
+main="Scatter Plot Matrix") # 相关性分析及可视化
+fit <- lm(Murder ~ Population + Illiteracy + Income + Frost,data=states) #多元回归预测
+```
+
+### R表达式中常用符号
+```
+~ 分隔符号,左边为响应变量,右边为解释变量。例如,要通过 x、z 和 w 预测 y,代码为 y ~ x + z + w
++ 分隔预测变量
+: 表示预测变量的交互项。例如,要通过 x、z 及 x 与 z 的交互项预测 y,代码为 y ~ x + z + x:z
+* 表示所有可能交互项的简洁方式。代码 y~ x * z * w 可展开为 y ~ x + z + w + x:z + x:w + z:w +
+x:z:w
+^ 表示交互项达到某个次数。代码 y ~ (x + z + w)^2 可展开为 y ~ x + z + w + x:z + x:w + z:w
+. 表示包含除因变量外的所有变量。例如,若一个数据框包含变量 x、y、z 和 w,代码 y ~ .可展开为 y ~
+x + z + w
+- 减号,表示从等式中移除某个变量。例如, y ~ (x + z + w)^2 – x:w 可展开为 y ~ x + z + w +
+x:z + z:w
+-1 删除截距项。例如,表达式 y ~ x - 1 拟合 y 在 x 上的回归,并强制直线通过原点
+I() 从算术的角度来解释括号中的元素。例如, y ~ x + (z + w)^2 将展开为 y ~ x + z + w + z:w。
+相反, 代码 y ~ x + I((z + w)^2)将展开为 y ~ x + h,h 是一个由 z 和 w 的平方和创建的新变量
+function 可以在表达式中用的数学函数。例如,log(y) ~ x + z + w 表示通过 x、z 和 w 来预测 log(y)
+
+```
+### 回归诊断
+基础方法
+```
+fit <- lm(weight ~ height, data=women)
+par(mfrow=c(2,2))
+plot(fit) # Q-Q为45度直线，R vs F 没有关联、S-L为水平线周围随机分布，R vs L查看离群值和强影响值
+```
+进阶(car包)
+```
+正态性 Q-Q qqPlot(fit, labels=row.names(states), id.method="identify",simulate=TRUE, main="Q-Q Plot")
+相关性检验  durbinWatsonTest(fit)
+线性 library(car) crPlots(fit)
+同方差性library(car) ncvTest(fit)计分检验不显著则满足  spreadLevelPlot(fit)
+多重共线性 sqrt(vif(fit)) >2 表示存在共线性
+```
+综合判断
+```
+library(gvlma)
+gvmodel <- gvlma(fit)
+summary(gvmodel) # 在Decision中显示是否通过
+```
+### 异常观测值
+```
+outlierTest(fit) 可以显示点名称以及离群点概率p，若不显著，则无离群点，否则删除该离群点后需在此判断是否有其他离群值
+
+hat.plot <- function(fit) {
+    p <- length(coefficients(fit))
+    n <- length(fitted(fit))
+    plot(hatvalues(fit), main="Index Plot of Hat Values")
+    abline(h=c(2,3)*p/n, col="red", lty=2)
+    identify(1:n, hatvalues(fit), names(hatvalues(fit)))
+    }
+    hat.plot(fit) # 判断高杠杆值点
+
+cutoff <- 4/(nrow(states)-length(fit$coefficients)-2)
+    plot(fit, which=4, cook.levels=cutoff)
+    abline(h=cutoff, lty=2, col="red") # 判断强影响点
+
+library(car)
+    influencePlot(fit, main="Influence Plot",
+    sub="Circle size is proportional to Cook's distance")
+# 综合判断。纵坐标-离群点,水平轴-高杠杆值(通常为预测值的组合)。圆圈大小与影响成比例,圆圈很大的点可能是对模型参数的估计造成的不成比例影响的强影响点
+```
+### 选择最佳回归模型
+#### 对两模型的选择
+```
+fit1 <- lm(Murder ~ Population + Illiteracy + Income + Frost,
+data=states)
+fit2 <- lm(Murder ~ Population + Illiteracy, data=states)
+```
+俩嵌套模型采用anova()。当显示添加变量后显著则可添加变量，通用AIC()。AIC越小模型越好。
+#### 大量变量中选择预测变量
+MASS包中的stepAIC()根据AIC逐步进行变量删除和增添。能够保证单次最优但不一定为整体最优    
+leaps包中regsubsets()实现全子集回归。略了。    
+根据相对权重选择
+```
+# 计算预测变量的相对权重
+relweights <- function(fit,...){
+R <- cor(fit$model)
+nvar <- ncol(R)
+rxx <- R[2:nvar, 2:nvar]
+rxy <- R[2:nvar, 1]
+svd <- eigen(rxx)
+evec <- svd$vectors
+ev <- svd$values
+delta <- diag(sqrt(ev))
+lambda <- evec %*% delta %*% t(evec)
+lambdasq <- lambda ^ 2
+beta <- solve(lambda) %*% rxy
+rsquare <- colSums(beta ^ 2)
+rawwgt <- lambdasq %*% beta ^ 2
+import <- (rawwgt / rsquare) * 100
+import <- as.data.frame(import)
+row.names(import) <- names(fit$model[2:nvar])
+names(import) <- "Weights"
+import <- import[order(import),1, drop=FALSE]
+dotchart(import$Weights, labels=row.names(import),
+xlab="% of R-Square", pch=19,
+main="Relative Importance of Predictor Variables",
+sub=paste("Total R-Square=", round(rsquare, digits=3)),
+...)
+return(import)
+}
+```
+
+### k折交叉验证
+bootstrap包中的crossval()函数可以实现k重交叉验证。
+$R^2$的K折交叉验证函数
+```
+shrinkage <- function(fit, k=10){
+    require(bootstrap)
+    theta.fit <- function(x,y){lsfit(x,y)}
+    theta.predict <- function(fit,x){cbind(1,x)%*%fit$coef}
+    x <- fit$model[,2:ncol(fit$model)]
+    y <- fit$model[,1]
+    results <- crossval(x, y, theta.fit, theta.predict, ngroup=k)
+    r2 <- cor(y, fit$fitted.values)^2
+    r2cv <- cor(y, results$cv.fit)^2
+    cat("Original R-square =", r2, "\n")
+    cat(k, "Fold Cross-Validated R-square =", r2cv, "\n")
+    cat("Change =", r2-r2cv, "\n")
+    }
+
+```
+用来检验该回归函数的泛化能力。
+## 方差分析
+### ANOVA模型拟合
+利用aov()函数，`aov(formula, data=dataframe)`
+```
+单因素 ANOVA y ~ A
+含单个协变量的单因素 ANCOVA  y ~ x + A
+双因素 ANOVA  y ~ A * B
+含两个协变量的双因素 ANCOVA  y ~ x1 + x2 + A*B
+随机化区组  y ~ B + A(B 是区组因子)
+单因素组内 ANOVA  y ~ A + Error(Subject/A)
+含单个组内因子(W)和单个组间因子(B)的重复测量 ANOVA  y ~ B * W + Error(Subject/W)
+```
+R默认采用序惯型，例如对y ~ A + B + A:B,R中的ANOVA表的结果将评价:    
+ A对 y的影响;    
+ 控制A时,B对y的影响;    
+ 控制A和B的主效应时,A与B的交互效应。    
+### 单因素方差分析
+课本上有一个非常完整的例子，可以参考
+```
+aggregate(response, by=list(trt), FUN=mean) 依照治疗方式不同给出各组均值和方差
+aggregate(response, by=list(trt), FUN=sd)
+fit <- aov(response ~ trt)
+summary(fit) 检验组间差异绘制各组均值和置信区间
+library(gplots)
+plotmeans(response ~ trt, xlab="Treatment", ylab="Response",
+main="Mean Plot\nwith 95% CI")
+detach(cholesterol)
+```
+
+多重比较，细究哪组与其他组别不同。multcomp包中的glht()函数提供了多重均值比较更为全面的方法,既适用于线性模型(如本章各例),也适用于广义线性模型(见第13章).
+
+```
+library(multcomp)
+par(mar=c(5,4,6,2)) # 增大图形上部面积完整显示图片
+tuk <- glht(fit, linfct=mcp(trt="Tukey"))
+plot(cld(tuk, level=.05),col="lightgrey") # 最终结果有相同字母的差异不显著
+```
+### 单因素协方差
+课本具有完整的例子，可参考。
+### 双因素方差
+数据集为喂食材料和剂量影响鼠牙齿长度
+```
+attach(ToothGrowth)
+table(supp, dose)
+ggregate(len, by=list(supp, dose), FUN=mean)
+aggregate(len, by=list(supp, dose), FUN=sd)
+# 以上标准流程
+dose <- factor(dose) 将其转化为分组因子变量
+fit <- aov(len ~ supp*dose) 
+summary(fit)
+
+```
+结果可视化
+```
+interaction.plot(dose, supp, len, type="b", # 自、自、因
+    col=c("red","blue"), pch=c(16, 18),
+    main = "Interaction between Dose and Supplement Type")
+
+```
+### 重复测量方差分析
+### 多元方差分析
+使用`fit <- manova(y ~ shelf)`，`summary(fit)`对组间差异进行多元检验，显著可对每一个变量做分析`summary.aov(fit)`
+
+## 功效分析
+作为统计咨询师,我经常会被问到这样一个问题:“我的研究到底需要多少个受试者呢?”或者换个说法 “对于我的研究,现有x个可用的受试者,这样的研究值得做吗?”这类问题都可用通过功效分析(power analysis)来解决,它在实验设计中占有重要地位。
+本章利用pwr包做功效分析：    
+对于每个函数,用户可以设定四个量(样本大小、显著性水平、功效和效应值)中的三个量，第四个将由软件计算出来 
+```
+pwr.2p.test() 两比例(n 相等)
+pwr.2p2n.test() 两比例(n 不相等)
+pwr.anova.test() 平衡的单因素 ANOVA
+pwr.chisq.test() 卡方检验
+pwr.f2.test() 广义线性模型
+pwr.p.test() 比例(单样本)
+pwr.r.test() 相关系数
+pwr.t.test() t 检验(单样本、两样本、配对)
+pwr.t2n.test() t 检验(n 不相等的两样本)
+```
+#### t检验
+`pwr.t.test(n=, d=, sig.level=, power=, type=, alternative=)`d为效应值$d = \frac{u_1 - u_2}{\sigma}$。sig.level为显著性水平，默认0.05,power为功效水平(有power可能性检验到目标效应值),type指检验类型:双样本t检验("two.sample") 、单样本t检验( "one.sample")或相依样本t检验("paired")。默认为双样本t检验。"alternative" 指统计检验是双侧检验( "two.sided" )还是单侧检验( "less" 或"greater")。默认为双侧检验。
+
+对于求出power过小或者sig.level、n过大都对我们实验收益不利
+
+#### 方差分析
+pwr.anova.test()函数可以对平衡单因素方差分析进行功效分析。格式为:`pwr.anova.test(k=, n=, f=, sig.level=, power=)`
+效应值衡量$\sqrt{\sum p_i * (u_i - u)^2 /\sigma^2}$
+
+#### 相关性分析
+pwr.r.test()函数可以对相关性分析进行功效分析。格式如下:`pwr.r.test(n=, r=, sig.level=, power=, alternative=)`    
+例`pwr.r.test(r=.25, sig.level=.05, power=.90, alternative="greater") #显著性水平0.05,单边检验，总体相关性分界0.25,如果H0错误有90%信心拒绝H0`
+
+#### 线性模型
+对于线性模型(比如多元回归),pwr.f2.test()函数可以完成相应的功效分析,格式为:`pwr.f2.test(u=, v=, f2=, sig.level=, power=)`
+#### 比例检验
+当比较两个比例时,可使用pwr.2p.test()函数进行功效分析。格式为:`pwr.2p.test(h=, n=, sig.level=, power=)`，效应值使用函数ES.h(p1, p2)，当两组n不同使用`pwr.2p2n.test(h=, n1=, n2=, sig.level=, power=)`,h为效应值。    
+例如
+```
+pwr.2p.test(h=ES.h(.65, .6), sig.level=.05, power=.9,
+    alternative="greater")
+# 对于两种药物治愈65%和60%可信性进行检验，需要有90%概率得到新药更有效并且有95%把握不会得到错误结论，由于只关心更好，单边检验
+```
+#### 卡方检验
+略
+#### 新情况中推荐效应值
+功效分析中,预期效应值是最难决定的参数。它通常需要你对主题有一定的了解,并有相应
+的测量经验。例如,过去研究中的数据可以用来计算效应值,这能为后面深层次的研究提供一些
+参考。
+但是当面对全新的研究情况,没有任何过去的经验可借鉴时,本节提到了一些参考。
+### 绘制功效分析图
+实例
+```
+library(pwr)
+r <- seq(.1,.5,.01) # 相关系数
+nr <- length(r)
+ p <- seq(.4,.9,.1) # 功效
+np <- length(p)
+
+
+samsize <- array(numeric(nr*np), dim=c(nr,np)) # 样本大小
+
+for (i in 1:np){
+    for (j in 1:nr){
+        result <- pwr.r.test(n = NULL, r = r[j],
+        sig.level = .05, power = p[i],
+        alternative = "two.sided")
+        samsize[j,i] <- ceiling(result$n)  # 求出需要的样本数
+    }
+}
+
+
+xrange <- range(r) # 找x范围
+yrange <- round(range(samsize)) # 找y范围
+colors <- rainbow(length(p))
+
+plot(xrange, yrange, type="n",
+xlab="Correlation Coefficient (r)",
+ylab="Sample Size (n)" )  # 绘制框架
+
+
+for (i in 1:np){
+lines(r, samsize[,i], type="l", lwd=2, col=colors[i])
+} # 添加功效曲线
+
+
+abline(v=0, h=seq(0,yrange[2],50), lty=2, col="grey89") 
+abline(h=0, v=seq(xrange[1],xrange[2],.02), lty=2, col="gray89") #网格线
+
+
+title("Sample Size Estimation for Correlation Studies\n
+Sig=0.05 (Two-tailed)")
+legend("topright", title="Power", as.character(p),
+fill=colors)
+# 注释
+```
+## 中级绘图
+### 散点——散点图矩阵、高密度散点图、三维散点图、旋转散点图、气泡图
+### 折线图
+### 相关图
+### 马赛克图
+##  重抽样与自助法
+    这一章我主要是随便看看了解一下，因为在机器学习部分已经有接触。
+## 主成分分析和因子分析
+    问题面向主要为：当数据变量过多时，盲目分析会增大工作量，主成分分析和探索
+    性因子分析是两种用来探索和简化多变量复杂关系的常用方法。
+    主成分分析(PCA)是一种数据降维技巧,它能将大量相关变量转化为一组很少的不相
+    关变量,这些无关变量称为主成分。例如,使用PCA可将30个相关(很可能冗余)的环
+    境变量转化为5个无关的成分变量,并且尽可能地保留原始数据集的信息。
+    探索性因子分析(EFA)是一系列用来发现一组变量的潜在结构的方法。寻找一组更小
+    的、潜在的或隐藏的结构来解释已观测到的、显式的变量间的关系。
+    这两种方法需要大量的样本以支撑结果，但究竟多大样本量能够保证尚未知。
+    目前,数据分析师常使用经验法则:“因子分析需要5~10倍于变量数的样本数。
+
+###  R 中的主成分和因子分析
+R的基础安装包提供了PCA和EFA的函数,分别为princomp()和factanal()。    
+```
+psych包中有用的因子分析函数
+
+principal()  含多种可选的方差旋转方法的主成分分析
+fa()  可用主轴、最小残差、加权最小平方或最大似然法估计的因子分析
+fa.parallel()  含平行分析的碎石图
+factor.plot()  绘制因子分析或主成分分析的结果
+fa.diagram()  绘制因子分析或主成分的载荷矩阵
+scree()  因子分析和主成分分析的碎石图
+```
+
+#### 基本流程
+>(1) 数据预处理。PCA和EFA都根据观测变量间的相关性来推导结果。用户可以输入原始数
+>据矩阵或者相关系数矩阵到principal()和fa()函数中。若输入初始数据,相关系数矩阵将会
+>被自动计算,在计算前请确保数据中没有缺失值。
+>(2) 选择因子模型。判断是PCA(数据降维)还是EFA(发现潜在结构)更符合你的研究目
+>标。如果选择EFA方法,你还需要选择一种估计因子模型的方法(如最大似然估计)。
+>(3) 判断要选择的主成分/因子数目。
+>(4) 选择主成分/因子。
+>(5) 旋转主成分/因子。
+>(6) 解释结果。
+>(7) 计算主成分或因子得分。
+
+### 主成分分析
+#### 判断主成分的个数
+**主要为以下三种法则**
+
+* 最常见的是基于特征值的方法，特征值大的优先选择，并且一般主成分选择特征值大于1的部分(Kaiser-Harris准则)。    
+* Cattell碎石检验则绘制了特征值与主成分数的图形。在图形变化最大处之上的主成分都可保留    
+* 依据与初始矩阵相同大小的随机数据矩阵来判断要提取的特征值。若基于真实数据的某个特征值大于一组随机数据矩阵相应的平均特征值,那么该主成分可以保留
+
+利用fa.parallel()函数,你可以同时对三种特征值判别准则进行评价。y=1以上、虚线(随机矩阵均值)以上、最大折点以上可选择为主成分。
+```
+fa.parallel(USJudgeRatings[,-1], # 导入数据框 
+    fa="pc", #fa : 显示主成分（fa=“pc”）或主轴因子分析（fa=“fa”）或主成分和主因子（fa=“both”）的特征值 
+    n.iter=100,
+    show.legend=FALSE, main="Scree plot with parallel analysis")+
+    abline(h=1) #y=1水平线
+```
+
+
+
+
+
+
+
 
