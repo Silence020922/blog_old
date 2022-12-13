@@ -220,6 +220,26 @@ find /mnt/usr/lib -size 0
 ```
 pacman --sysroot /mnt -S package
 ```
+## KDE no intput\output devices found(No sound)
+[information](https://wiki.archlinuxcn.org/wiki/Advanced_Linux_Sound_Architecture?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DAdvanced_Linux_Sound_Architecture_%28%25E7%25AE%2580%25E4%25BD%2593%25E4%25B8%25AD%25E6%2596%2587%29%26redirect%3Dno#%E8%A7%A3%E9%99%A4%E5%90%84%E5%A3%B0%E9%81%93%E7%9A%84%E9%9D%99%E9%9F%B3)
+```
+sudo pacman -S alsa-utils # 包含alsamixer amixer等声音管理命令
+aplay -l # 输出当前可用声卡,若只包含HDMI则先执行步骤2
+sudo vim /etc/asound.conf #若已存在则无需创建
+# 在文件中添加以下内容
+  defaults.pcm.card 1
+  defaults.pcm.device 0
+  defaults.ctl.card 1 # 根据实际情况选择card和device符号，退出并保存文件
+sudo amixer scontrols # 检查输出是否包含"Master"
+sudo amixer sset Master unmute # 取消主音量静音
+
+```
+步骤2
+```
+sudo pacman -S sof-firmware alsa-ucm-conf 
+sudo dmesg | grep -E 'snd|sof' 
+reboot
+```
 ## 其他问题
 ### error:GPGME error:No data
 无法更新包并出现如上代码，尝试
@@ -227,7 +247,7 @@ pacman --sysroot /mnt -S package
 rm -r /var/lib/pacman/sync/
 ```
 再次更新
-### PackageName: signature from "User <email@archlinux.org>" is invalid
+### PackageName: signature from "User \<email@archlinux.org \>" is invalid
 显示如下错误报告
 >error: PackageName: signature from "User <email@archlinux.org>" is invalid    
 >error: failed to commit transaction (invalid or corrupted package (PGP signature))    
