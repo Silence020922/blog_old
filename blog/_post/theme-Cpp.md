@@ -179,7 +179,8 @@ int main(int argc, char const *argv[])
 单击F5进行测试，可根据error进一步调试。
 ## C语言学习
 ### C语言类型
-$$ 数据=\left\{
+$$
+数据=\left\{
 \begin{matrix}
  数值
  \left\{

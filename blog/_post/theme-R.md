@@ -1058,11 +1058,74 @@ fa.parallel(USJudgeRatings[,-1], # 导入数据框
     show.legend=FALSE, main="Scree plot with parallel analysis")+
     abline(h=1) #y=1水平线
 ```
+#### 提取主成分
+在判断主成分个数后，我们依据个数提取主成分
+```
+principal(r, nfactors=, rotate=, scores=)
 
+r是相关系数矩阵或原始数据矩阵;
+nfactors设定主成分数(默认为1)
+rotate指定旋转的方法，"none","varimax"正交旋转
+scores设定是否需要计算主成分得分(默认不需要),scores = "TRUE"
+                    当scores = TRUE时,主成分得分存储在principal()函数返回对象的scores元素中。
+```
+例如
+```
+> library(psych)
+> pc <- principal(USJudgeRatings[,-1], nfactors=1)
+> pc
 
+Principal Components Analysis
+Call: principal(r = USJudgeRatings[, -1], nfactors=1)
+Standardized loadings based upon correlation matrix
+     PC1   h2    u2  #PC1 代表主成分1和其他因素相关性
+INTG 0.92 0.84 0.157 #h2主成分对每个变量的方差解释度。
+DMNR 0.91 0.83 0.166 #u2栏指成分唯一性,即方差无法被主成分解释的比例(1-h)
+DILG 0.97 0.94 0.061
+CFMG 0.96 0.93 0.072
+DECI 0.96 0.92 0.076
+PREP 0.98 0.97 0.030
+FAMI 0.98 0.95 0.047
+ORAL 1.00 0.99 0.009
+WRIT 0.99 0.98 0.020
+PHYS 0.89 0.80 0.201
+RTEN 0.99 0.97 0.028
+                PC1
+SS loadings 10.13 
+Proportion Var 0.92 # 最后,Proportion Var行表示的是每个主成分对整个数据集的解释程度
 
+[......已删除额外输出......]
 
+```
+### 探索性因子分析
+#### 判断需提取的公共因子数
+同样fa.parallel(),此时注意    
+* fa="both",因子图形将会同时展示主成分和公共因子分析结果    
+* 对于EFA,Kaiser-Harris准则的特征值数大于0而不是1    
+* 若此时两种分析方法得到数量不一致选用大的
 
+#### 提取公共因子
+fa(r, nfactors=, n.obs=, rotate=, scores=, fm=)
+```
+r是相关系数矩阵或者原始数据矩阵;
+nfactors设定提取的因子数(默认为1) ;
+n.obs是观测数(输入相关系数矩阵时需要填写) ;
+rotate设定旋转的方法(默认互变异数最小法) ; rotate="promax"斜交旋转，rotate="varimax"正交旋转
+scores设定是否计算因子得分(默认不计算) ;
+fm设定因子化方法(默认极小残差法) 。 
+                包括最大似然法( ml)、主轴迭代法(pa)、加权最小二乘
+                法(wls)、广义加权最小二乘法(gls)和最小残差法(minres)。
 
-
+```
+#### 绘制可视化图形
+使用 factor.plot()或fa.diagram()函数,你可以绘制正交或者斜交结果的图形。来看
+以下代码:
+```
+factor.plot(fa.promax,labels=rownames(fa.promax$loadings))
+```
+通过如下代码可以生成箭线图。
+```
+fa.diagram(fa.promax, simple=FALSE)
+```
+## 分类问题处理
 
