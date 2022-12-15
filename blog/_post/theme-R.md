@@ -42,26 +42,34 @@ setwd("C:/Users/ASUS/Desktop/R")  #调整工作目录到我的文件所在地址
 getwd()
 list_new <- list()   
 file_name <- list.files("zuoye2")
-dir <- paste("./zuoye2/",file_name,sep="") #通过粘结将文件名配置为当前目录下可直接调用
+dir <- paste("./zuoye2/",file_name,sep="") 
+        #通过粘结将文件名配置为当前目录下可直接调用
 n <- length(dir)
 for (i in 1:n){
-    sec_file = list.files(dir[i],pattern = "^sfnwmrda.*rest_1") #利用正则表达式优先导入sfnwmrda开头且包含rest_1的文件
-    if (length(sec_file) == 0){         #在sec_file无导入文件的情况下再次导入sfnwmrda开头且包含rest_1的文件
+    sec_file = list.files(dir[i],pattern = "^sfnwmrda.*rest_1") 
+        #利用正则表达式优先导入sfnwmrda开头且包含rest_1的文件
+    if (length(sec_file) == 0){         
+        #在sec_file无导入文件的情况下再次导入sfnwmrda开头且包含rest_1的文件
         sec_file = list.files(dir[i],pattern = "^sfnwmrda.*rest_2")
     }
-    if(length(sec_file) == 0){      #当这两种文件都未找到直接输出并结束任务
-        print(paste("The folder ",dir[i]," has no file that meets the requirements"))
+    if(length(sec_file) == 0){      
+        #当这两种文件都未找到直接输出并结束任务
+        print(paste("The folder ",dir[i],
+        " has no file that meets the requirements"))
     }
     else{       #否则我们求文件中数据矩阵的均值
     file = paste(dir[i],"/",sec_file,sep = "")
     data = read.table(file)     #数据的导入
-    A<-as.matrix(data)  #接下来五行是将数据由矩阵文本转化为数据文本并除掉一些不必要的行列
+    A<-as.matrix(data)  
+    #接下来五行是将数据由矩阵文本转化为数据文本并除掉一些不必要的行列
     A<-A[-1,] # 接下来三行是针对该数据特征将标题等文本信息去除
     A<-A[,-1]
     A<-A[,-1]
-    B <- apply(A,2,as.numeric)   #之后对题目要求理解出现问题，再三考虑后决定采用下两行而将首次代码注释掉。
+    B <- apply(A,2,as.numeric)   
+    #之后对题目要求理解出现问题，再三考虑后决定采用下两行而将首次代码注释掉。
      list_new[[(length(list_new))+ 1]]<- B}
-     ans <- Reduce("+",list_new)/length(list_new) #Reduce代替apply可实现保留结果连续求值
+     ans <- Reduce("+",list_new)/length(list_new) 
+     #Reduce代替apply可实现保留结果连续求值
     # ans = mean(B)
     # print(paste("The average of the data ",file," is ",ans))}
 }
@@ -101,7 +109,9 @@ function2 <-function(groupV,s){  # 将p值转化为标签*
     }
 labelA <- c();labelB <- c();labelA_B <- c() # 用于存储标签属性
 pd <- position_dodge(0.1)
-labelA <- function2(dataA,labelA);labelB <- function2(dataB,labelB);labelA_B <- function1(groupPvlue,labelA_B) # 生成标签
+labelA <- function2(dataA,labelA)
+labelB <- function2(dataB,labelB)
+labelA_B <- function1(groupPvlue,labelA_B) # 生成标签
 pic1 <- ggplot(dataA, aes(XX, y, colour=group, group = group),angle = 45) +  # 绘制图(A)
     geom_errorbar(aes(ymin=low, ymax=up), width=.2, position=pd) +
     geom_point(aes(colour = group, shape = factor(group)),position=pd, size = 3) +
@@ -123,6 +133,102 @@ pic2 <- ggplot(dataB, aes(XX, y, colour=group, group = group),angle = 45) + # �
     geom_label(aes(XX + .02,y + 1,label = labelA_B[8:14]),data = dataB[1:7,1:6])
 pic <- ggarrange(pic1,pic2) # 组合展示
 ggsave(pic,file = 'pic_name.pdf',width = 20,height = 10) #保存
+```
+## 基本命令
+### 包
+函数.libPaths()能够显示库所在的位置, 函数library()则可以显示库中有哪些包。    
+安装好以后,它们必须被载入到会话中才能使用。命令 search()可以告诉你哪些包已加载并
+可使用    
+使用命令install.packages(" ")来下载和安装    
+update.packages()可以更新已经安装的包。
+## 创建数据集
+### 数据结构
+R将实例标识符称为 rownames (行名),将类别型(包括名义型和有序型)变量称为因子(factors)。    
+R拥有许多用于存储数据的对象类型,包括标量、向量、矩阵、数组、数据框和列表。    
+#### 向量
+向量是用于存储数值型、字符型或逻辑型数据的一维数组。执行组合功能的函数c()可用来
+创建向量。    
+通过在方括号中给定元素所处位置的数值,我们可以访问向量中的元素。
+```
+> a <- c("k", "j", "h", "a", "c", "m")
+> a[c(1, 3, 5)]
+[1] "k" "h" "c"
+```
+#### 矩阵
+矩阵是一个二维数组,只是每个元素都拥有相同的模式(数值型、字符型或逻辑型)。可通
+过函数matrix()创建矩阵。一般使用格式为:
+```
+myymatrix <- matrix(vector, nrow=number_of_rows, ncol=number_of_columns,
+byrow=logical_value, dimnames=list(
+char_vector_rownames, char_vector_colnames))
+```
+其中vector包含了矩阵的元素,nrow和ncol用以指定行和列的维数, dimnames包含了可选
+的、以字符型向量表示的行名和列名。选项byrow则表明矩阵应当按行填充( byrow=TRUE)
+还是按列填充( byrow=FALSE),默认情况下按列填充。
+例
+```
+> x <- matrix(1:10, nrow=2)
+> x
+    [,1] [,2] [,3] [,4] [,5]
+[1,] 1    3     5    7   9
+[2,] 2    4     6    8   10
+> x[1, c(4,5)]
+[1] 7 9
+
+```
+#### 数组
+数组(array)与矩阵类似,但是维度可以大于2。数组可通过array函数创建,形式如下:
+myarray <- array(vector, dimensions, dimnames)
+
+例
+```
+> dim1 <- c("A1", "A2")
+> > dim2 dim3 <- <- c("B1", c("C1", "B2", "C2", "B3")
+ "C3", "C4")
+> z <- array(1:24, c(2, 3, 4), dimnames=list(dim1, dim2, dim3))
+> z
+, , C1
+    B1 B2 B3
+A1 1 3 5
+A2 2 4 6
+
+, , C2
+    B1 B2 B3
+A1 7 9 11
+A2 8 10 12
+
+, , C3
+    B1 B2 B3
+A1 13 15 17
+A2 14 16 18
+
+, , C4
+    B1 B2 B3
+A1 19 21 23
+A2 20 22 24
+
+z[1.2.3] = 15
+```
+#### 数据框
+数据框可通过函数data.frame()创建:`mydata <- data.frame(col1, col2, col3,...)`     
+其中的列向量col1、col2、col3等可为任何类型(如字符型、数值型或逻辑型)。每一列的名称可由函数names指定。代码清单2-4清晰地展示了相应用法。       
+使用数据框中的某一变量可以用`data$value`,但每一次都输入数据框名和$十分低效，使用函数attach()和detach()或单独使用函数with()来简化代码。
+```
+attach(data) 
+# 使得中间变量优先从数据data中搜索
+detach()
+with(mtcars, {
+print(summary(mpg)) # 花括号中的语句都会优先使用mtcars数据框中的变量
+plot(mpg, disp)
+plot(mpg, wt)
+})
+
+```
+**实例标式符**    
+在病例数据中,病人编号(patientID)用于区分数据集中不同的个体。在R中,实例标识符可通过数据框操作函数中的rowname选项指定。例如,语句:
+```
+patientdata <- data.frame(patientID, age, diabetes,
+status, row.names=patientID) #将patientID指定为R中标记各类打印输出和图形中实例名称所用的变量。
 ```
 ## 初级绘图
 ### 绘图参数
@@ -694,7 +800,8 @@ psych包`corr.test`可以一次性对多个相关关系进行检验。
 lm() 拟合线性回归模型
 myfit <- lm(formula, data)
 其中formula指要拟合的模型形式例如Y ~ X1 + X2 + ... + Xk
-例如fit2 <- lm(weight ~ height + I(height^2), data=women)，I函数内内容为一般表达，因为^有其他意思，防止其他调用。
+例如fit2 <- lm(weight ~ height + I(height^2),data=women)
+# I函数内内容为一般表达，因为^有其他意思，防止其他调用。
 
 ```
 以下函数应用于lm()返回对象
@@ -714,12 +821,15 @@ predict() 用拟合模型对新的数据集预测响应变量值
 
 回归问题实例
 ```
-states <- as.data.frame(state.x77[,c("Murder", "Population","Illiteracy", "Income", "Frost")]) # 生成数据框
+states <- as.data.frame(
+    state.x77[,c("Murder", "Population","Illiteracy", "Income", "Frost")]) 
+    # 生成数据框
 cor(states)
 library(car)
 scatterplotMatrix(states, spread=FALSE, smoother.args=list(lty=2),
 main="Scatter Plot Matrix") # 相关性分析及可视化
-fit <- lm(Murder ~ Population + Illiteracy + Income + Frost,data=states) #多元回归预测
+fit <- lm(Murder ~ Population + Illiteracy + Income + Frost,data=states) 
+#多元回归预测
 ```
 
 ### R表达式中常用符号
@@ -741,15 +851,18 @@ function 可以在表达式中用的数学函数。例如,log(y) ~ x + z + w 表
 
 ```
 ### 回归诊断
-基础方法
+**基础方法**    
+Q-Q为45度直线，R vs F 没有关联、S-L为水平线周围随机分布，R vs L查看离群值和强影响值
 ```
 fit <- lm(weight ~ height, data=women)
 par(mfrow=c(2,2))
-plot(fit) # Q-Q为45度直线，R vs F 没有关联、S-L为水平线周围随机分布，R vs L查看离群值和强影响值
+plot(fit) 
 ```
-进阶(car包)
+
+**进阶(car包)**
 ```
-正态性 Q-Q qqPlot(fit, labels=row.names(states), id.method="identify",simulate=TRUE, main="Q-Q Plot")
+正态性 Q-Q qqPlot(fit, labels=row.names(states), id.
+    method="identify",simulate=TRUE, main="Q-Q Plot")
 相关性检验  durbinWatsonTest(fit)
 线性 library(car) crPlots(fit)
 同方差性library(car) ncvTest(fit)计分检验不显著则满足  spreadLevelPlot(fit)
@@ -763,7 +876,8 @@ summary(gvmodel) # 在Decision中显示是否通过
 ```
 ### 异常观测值
 ```
-outlierTest(fit) 可以显示点名称以及离群点概率p，若不显著，则无离群点，否则删除该离群点后需在此判断是否有其他离群值
+outlierTest(fit) 
+#显示点名称以及离群点概率p，不显著则无离群点，否则删除该离群点后需在此判断是否有其他离群值
 
 hat.plot <- function(fit) {
     p <- length(coefficients(fit))
@@ -781,7 +895,8 @@ cutoff <- 4/(nrow(states)-length(fit$coefficients)-2)
 library(car)
     influencePlot(fit, main="Influence Plot",
     sub="Circle size is proportional to Cook's distance")
-# 综合判断。纵坐标-离群点,水平轴-高杠杆值(通常为预测值的组合)。圆圈大小与影响成比例,圆圈很大的点可能是对模型参数的估计造成的不成比例影响的强影响点
+# 综合判断。纵坐标-离群点,水平轴-高杠杆值(通常为预测值的组合)。圆圈大小与影响成比例,
+圆圈很大的点可能是对模型参数的估计造成的不成比例影响的强影响点
 ```
 ### 选择最佳回归模型
 #### 对两模型的选择
@@ -884,6 +999,34 @@ plot(cld(tuk, level=.05),col="lightgrey") # 最终结果有相同字母的差异
 ```
 ### 单因素协方差
 课本具有完整的例子，可参考。
+```
+> data(litter, package="multcomp")
+> attach(litter)
+> table(dose)
+dose
+0 5 50 500
+20 19 18 17
+> aggregate(weight, by=list(dose), FUN=mean)
+  Group.1  x
+1   0  32.3
+2   5 29.3
+3   50 29.9
+4   500 29.6
+> fit <- aov(weight ~ gesttime + dose)
+> summary(fit)
+         Df  Sum Sq  Mean Sq  F value Pr(>F)
+gesttime  1  134.30  134.30    8.0493 0.005971 **
+dose      3  137.12  45.71     2.7394 0.049883 *
+Residuals 69 1151.27 16.69
+---
+Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+```
+利用table()函数,可以看到每种剂量下所产的幼崽数并不相同:0剂量时(未用药)产崽
+20个,500剂量时产崽17个。再用aggregate()函数获得各组均值,可以发现未用药组幼崽体重
+均值最高(32.3)。ANCOVA的F检验表明:(a)怀孕时间与幼崽出生体重相关;(b)控制怀孕时间,
+药物剂量与出生体重相关。控制怀孕时间,确实发现每种药物剂量下幼崽出生体重均值不同。
+
 ### 双因素方差
 数据集为喂食材料和剂量影响鼠牙齿长度
 ```
@@ -944,14 +1087,14 @@ pwr.r.test()函数可以对相关性分析进行功效分析。格式如下:`pwr
 ```
 pwr.2p.test(h=ES.h(.65, .6), sig.level=.05, power=.9,
     alternative="greater")
-# 对于两种药物治愈65%和60%可信性进行检验，需要有90%概率得到新药更有效并且有95%把握不会得到错误结论，由于只关心更好，单边检验
+# 对于两种药物治愈65%和60%可信性进行检验，需要有90%概率得到新药更有效并且有95%把握
+不会得到错误结论，由于只关心更好，单边检验
 ```
 #### 卡方检验
 略
 #### 新情况中推荐效应值
 功效分析中,预期效应值是最难决定的参数。它通常需要你对主题有一定的了解,并有相应
-的测量经验。例如,过去研究中的数据可以用来计算效应值,这能为后面深层次的研究提供一些
-参考。
+的测量经验。例如,过去研究中的数据可以用来计算效应值,这能为后面深层次的研究提供一些参考。
 但是当面对全新的研究情况,没有任何过去的经验可借鉴时,本节提到了一些参考。
 ### 绘制功效分析图
 实例
@@ -1053,7 +1196,8 @@ scree()  因子分析和主成分分析的碎石图
 利用fa.parallel()函数,你可以同时对三种特征值判别准则进行评价。y=1以上、虚线(随机矩阵均值)以上、最大折点以上可选择为主成分。
 ```
 fa.parallel(USJudgeRatings[,-1], # 导入数据框 
-    fa="pc", #fa : 显示主成分（fa=“pc”）或主轴因子分析（fa=“fa”）或主成分和主因子（fa=“both”）的特征值 
+    fa="pc", #fa : 显示主成分（fa=“pc”）或主轴因子分析（fa=“fa”）或主成分
+    和主因子（fa=“both”）的特征值 
     n.iter=100,
     show.legend=FALSE, main="Scree plot with parallel analysis")+
     abline(h=1) #y=1水平线
@@ -1067,7 +1211,7 @@ r是相关系数矩阵或原始数据矩阵;
 nfactors设定主成分数(默认为1)
 rotate指定旋转的方法，"none","varimax"正交旋转
 scores设定是否需要计算主成分得分(默认不需要),scores = "TRUE"
-                    当scores = TRUE时,主成分得分存储在principal()函数返回对象的scores元素中。
+            当scores = TRUE时,主成分得分存储在principal()函数返回对象的scores元素中。
 ```
 例如
 ```

@@ -31,7 +31,7 @@ VMware公司为macO平台推出非商用软件。
 3.[VirtualBox](https://www.virtualbox.org/wiki/Downloads)甲骨文公司发行的通用虚拟机管理系统，支持 Windows 和 macOS,且遵循GPLv2开源。    
 ## 文件存储结构
 ![概况](https://surplus-1311636487.cos.ap-beijing.myqcloud.com/file-name.png)
-# 装机命令(基于pacman)
+# 装机命令
 **本文待更新，最近由于一些原因将manjaro替换为Arch linux，具体装机可参考[这篇文章](https://arch.icekylin.online/)。**
 ## 利用neofetch查看本机信息
 	贪图方便可将其设置为终端自行启动，例如本人使用zsh，可自行书写配置文件neofetch于~/.Myconfig中后于.zshrc添加相关路径。
@@ -44,7 +44,7 @@ VMware公司为macO平台推出非商用软件。
 Enter a selection (default=all): 1-10 15 #选择序号1-10和15
 Enter a selection (default=all): ^5-8 ^2 #除却5-8和2其余全体
 ```
-**示例**        
+**必备软件**        
 1.安装输入法
 ```
 sudo pacman -S fcitx5-im # 输入法基包组
@@ -182,6 +182,99 @@ pacman -U http://www.example.com/repo/example.pkg.tar.zst
 # 配置(Configuration)
 pacman具体配置文件应存在于/etc/pacman.conf,对起进行相应的配置可实现并行下载、显示新旧版本、跳过升级指定包组文件等功能,but在我的Manjaro上没有找到对应的配置文件,只看到了pacman-mirror.conf以及pacman.d,paman,conf等,有待学习。
 
+### vscode + tex
+参考[Texlive安装](https://wiki.archlinux.org/title/TeX_Live)和[vscode配置](https://huangno1.github.io/arhlinux_vscode_latex_install_configuration/)    
+我的个人配置文件如下：
+```
+{
+    // ...
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "xelatex",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "tools": [
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "xelatex->bibtex->xelatex*2",
+            "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "pdflatex->bibtex->pdflatex*2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "xelatex",
+            "command": "/usr/bin/xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-shell-escape",
+                "%DOC%.tex"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "command": "/usr/bin/pdflatex",
+            "args": [
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "%DOC%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "/usr/bin/bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.autoClean.run": "onBuilt", //删除掉除了pdf和gz后缀外的其他文件
+    "latex-workshop.latex.clean.fileTypes": [
+      "*.aux",
+      "*.bbl",
+      "*.blg",
+      "*.idx",
+      "*.ind",
+      "*.lof",
+      "*.lot",
+      "*.out",
+      "*.toc",
+      "*.acn",
+      "*.acr",
+      "*.alg",
+      "*.glg",
+      "*.glo",
+      "*.gls",
+      "*.ist",
+      "*.fls",
+      "*.log",
+      "*.fdb_latexmk",
+    ],
+}
+
+
+```
 # 故障排除(Troubleshooting)
 ## 任务提交失败
 ### 文件冲突(conflicting files)
@@ -240,25 +333,6 @@ sudo pacman -S sof-firmware alsa-ucm-conf
 sudo dmesg | grep -E 'snd|sof' 
 reboot
 ```
-## 其他问题
-### error:GPGME error:No data
-无法更新包并出现如上代码，尝试
-```
-rm -r /var/lib/pacman/sync/
-```
-再次更新
-### PackageName: signature from "User \<email@archlinux.org \>" is invalid
-显示如下错误报告
->error: PackageName: signature from "User <email@archlinux.org>" is invalid    
->error: failed to commit transaction (invalid or corrupted package (PGP signature))    
->Errors occured, no packages were upgraded.     
-
-利用
-```
-sudo ntpd -qg 
-sudo hwclock -w
-```
-矫正系统时间后重试
 
 # 日用命令
 ## 文档与文件管理

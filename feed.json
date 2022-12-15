@@ -69,13 +69,6 @@
             "date_modified": "2022-11-17T00:00:00.000Z"
         },
         {
-            "id": "http://shangxiaojin.xyz/post/2022/10/22/theme-notfound.html",
-            "url": "http://shangxiaojin.xyz/post/2022/10/22/theme-notfound.html",
-            "title": "爬虫初步",
-            "summary": "linklist.append(link)\n    dictionary = dict(zip(thinglist, linklist))\n    for i,j in dictionary.items():\n        print(i,j)",
-            "date_modified": "2022-10-22T00:00:00.000Z"
-        },
-        {
             "id": "http://shangxiaojin.xyz/post/2019/10/19/theme-poem-0.html",
             "url": "http://shangxiaojin.xyz/post/2019/10/19/theme-poem-0.html",
             "title": "蝶恋花",
