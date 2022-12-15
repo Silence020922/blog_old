@@ -224,11 +224,138 @@ plot(mpg, wt)
 })
 
 ```
+#### 列表
+某个列表中可能是若干向量、矩阵、数据框,甚至其他列表的组合。可以使用函数list() 创
+建列表:`mylist <- list(object1, object2, ...)`    
+例
+```
+> g <- "My First List"
+> h <- c(25, 26, 18, 39)
+> j <- matrix(1:10, nrow=5)
+> k <- c("one", "two", "three")
+> mylist <- list(title=g, ages=h, j, k)
+> mylist
+$title
+[1] "My First List"
+
+$ages
+[1] 25 26 18 39
+
+[[3]]
+    [,1] [,2]
+[1,] 1   6
+[2,] 2   7
+[3,] 3   8
+[4,] 4   9
+[5,] 5  10
+
+[[4]]
+[1] "one" "two" "three"
+
+> mylist[[2]]
+[1] 25 26 18 39
+
+> mylist[["ages"]]
+[[1] 25 26 18 39
+
+```
+### R的注释问题
+❑R不提供多行注释或块注释功能。你必须以#作为多行注释每行的开始。出于调试目的,
+你也可以把想让解释器忽略的代码放到语句if(FALSE){... }中。将FALSE改为TRUE
+即允许这块代码执行。
+### 数据的输入
+#### 利用键盘输入
+`edit()`
+```
+mydata <- data.frame(age=numeric(0),
+gender=character(0), weight=numeric(0)) 
+    #numeric(0)的赋值语句将创建一个指定模式但不含实际数据的变量。
+mydata <- edit(mydata)
+    #edit()会自动调用一个允许手动输入数据的文本编辑器,作用副本文件
+
+```
+#### 从带分隔符的文本文件导入数据
+使用read.table()从带分隔符的文本文件中导入数据。读入一个表格格式的文件并将其保存为一个数据框。表格的每一行分别出现在文件中每一行。
+```
+mydataframe <- read.table(file, options)
+```
+read.table选项
+选项|描述
+---|-----
+header|一个表示文件是否在第一行包含了变量名的逻辑型变量
+sep|分开数据值的分隔符。默认是 sep="",这表示了一个或多个空格、制表符、换行或回车。使用 sep=","来读取用逗号来分隔行内数据的文件,使用 sep="\t"来读取使用制表符来分割行内数据的文件
+row.names|一个用于指定一个或多个行标记符的可选参数
+col.names|如果数据文件的第一行不包括变量名(header=FASLE),你可以用 col.names 去指定一个包含变量名的字符向量。如果 header=FALSE 以及 col.names 选项被省略了,变量会被分别命名为 V1、V2,以此类推
+na.strings|可选的用于表示缺失值的字符向量。比如说,na.strings=c("-9", "?")把-9 和?值在读取数据的时候转换成 NA
+skip|读取数据前跳过的行的数目。这个选项在跳过头注释的时候比较有用
+text|一个指定文字进行处理的字符串。如果 text 被设置了, file 应该被留空。
+stringsAsFactors|一个逻辑变量,标记处字符向量是否需要转化成因子。默认为TRUE
+#### 导入excel数据
+```
+library(xlsx)
+read.xlsx(file, n)
+```
+#### 导入SPSS数据
+```
+library(Hmisc)
+mydataframe <- spss.get("mydata.sav", use.value.labels=TRUE)
+```
+这段代码中,mydata.sav是要导入的SPSS数据文件,use.value.labels=TRUE表示让函数将带有值标签的变量导入为R中水平对应相同的因子,mydataframe是导入后的R数据框。
+#### 导入SAS数据
+```
+library(sas7bdat)
+mydata <- read.sas7bdat("C:/mydata/clients.sas7bdat")
+```
+#### 导入Stata 数据
+```
+library(foreign)
+mydataframe <- read.dta("mydata.dta")
+```
 **实例标式符**    
 在病例数据中,病人编号(patientID)用于区分数据集中不同的个体。在R中,实例标识符可通过数据框操作函数中的rowname选项指定。例如,语句:
 ```
 patientdata <- data.frame(patientID, age, diabetes,
 status, row.names=patientID) #将patientID指定为R中标记各类打印输出和图形中实例名称所用的变量。
+```
+### 数据集的标注
+#### 值标签
+```
+> mydata
+  age gender weight
+1  25      m    166
+2  30      f    115
+3  18      f    120
+
+> mydata$gender <- factor(mydata$gender,
+    levels = c('m','f'),
+     labels = c("male", "female"))
+
+> mydata
+  age gender weight
+1  25   male    166
+2  30 female    115
+3  18 female    120
+
+```
+###  处理数据对象的实用函数
+```
+length(object) 显示对象中元素/成分的数量
+dim(object) 显示某个对象的维度
+str(object) 显示某个对象的结构
+class(object) 显示某个对象的类或类型
+mode(object) 显示某个对象的模式
+names(object) 显示某对象中各成分的名称
+c(object, object,...) 将对象合并入一个向量
+cbind(object, object, ...) 按列合并对象
+rbind(object, object, ...) 按行合并对象
+object 输出某个对象
+head(object) 列出某个对象的开始部分
+tail(object) 列出某个对象的最后部分
+ls() 显示当前的对象列表
+rm(object, object, ...) 删除一个或更多个对象。
+    语句 rm(list = ls())将删除当前工作环境中的几乎所有对象
+newobject <- edit(object) 编辑对象并另存为 newobject
+fix(object) 直接编辑对象
 ```
 ## 初级绘图
 ### 绘图参数
@@ -1272,4 +1399,6 @@ factor.plot(fa.promax,labels=rownames(fa.promax$loadings))
 fa.diagram(fa.promax, simple=FALSE)
 ```
 ## 分类问题处理
+### 数据准备
+
 
