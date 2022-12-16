@@ -30,7 +30,7 @@
             "id": "http://shangxiaojin.xyz/post/2022/10/17/theme-r.html",
             "url": "http://shangxiaojin.xyz/post/2022/10/17/theme-r.html",
             "title": "R实战入门",
-            "summary": "首先需要说明的是，严格来讲并没有完全复刻示例图片，但个人已将认为比较重要的\n>数据详尽的表示了出来，最终效果图可以查看这里",
+            "summary": "数据准备\n  逻辑回归\n  决策树\n    条件推断树\n  随机森林\n    原理\n    实例\n  支持向量机(SVM)\n  模型性能评价",
             "date_modified": "2022-10-17T00:00:00.000Z"
         },
         {

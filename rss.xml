@@ -4,7 +4,7 @@
         <title>殇晓瑾</title>
         <link>http://shangxiaojin.xyz</link>
         <description>一个00后的在校大学生 -- 喜爱魔[术]、数[学]、运[动]、游[戏]的新人（拥有一个喜欢在[斗地主]里破产的女朋友）</description>
-        <lastBuildDate>Fri, 16 Dec 2022 04:55:36 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 16 Dec 2022 04:59:26 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
         <atom:link href="http://shangxiaojin.xyz/feed.atom" rel="self" type="application/rss+xml"/>
@@ -39,8 +39,15 @@ scratch是一门有趣且上手简单的编程语言。其界面包括积木区�
             <link>http://shangxiaojin.xyz/post/2022/10/17/theme-r.html</link>
             <guid>http://shangxiaojin.xyz/post/2022/10/17/theme-r.html</guid>
             <pubDate>Mon, 17 Oct 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[首先需要说明的是，严格来讲并没有完全复刻示例图片，但个人已将认为比较重要的
->数据详尽的表示了出来，最终效果图可以查看这里]]></description>
+            <description><![CDATA[数据准备
+  逻辑回归
+  决策树
+    条件推断树
+  随机森林
+    原理
+    实例
+  支持向量机(SVM)
+  模型性能评价]]></description>
         </item>
         <item>
             <title><![CDATA[vim入门]]></title>
