@@ -1400,5 +1400,167 @@ fa.diagram(fa.promax, simple=FALSE)
 ```
 ## 分类问题处理
 ### 数据准备
+```
+loc <- "http://archive.ics.uci.edu/ml/machine-learning-databases/"
+ds <- "breast-cancer-wisconsin/breast-cancer-wisconsin.data"
+url <- paste(loc, ds, sep="")
+    # 做连接指向数据
 
+breast <- read.table(url, sep=",", header=FALSE, na.strings="?")
+names(breast) <- c("ID", "clumpThickness", "sizeUniformity",
+    "shapeUniformity", "maginalAdhesion",
+    "singleEpithelialCellSize", "bareNuclei",
+    "blandChromatin", "normalNucleoli", "mitosis", "class")
+# 为数据重新进行行命名
 
+df <- breast[-1] #去掉第一行ID
+df$class <- factor(df$class, levels=c(2,4),
+    labels=c("benign", "malignant")) #2 = 良性 4 = 恶性
+
+set.seed(1234)
+train <- sample(nrow(df), 0.7*nrow(df)) #sample从nrow(df)随机取70%
+df.train <- df[train,]
+df.validate <- df[-train,] #留出法测试集
+table(df.train$class) #列联表统计频数
+table(df.validate$class)
+```
+### 逻辑回归
+R中的基本函数glm()可用于拟合逻辑回归模型(具体见回归)
+```
+fit.logit <- glm(class~., data=df.train, family=binomial())
+summary(fit.logit)
+prob <- predict(fit.logit, df.validate, type="response") 
+ # predict()函数默认输出肿瘤为恶性的对数概率,指定参数type="response"即
+    可得到预测肿瘤恶性的概率，大于0.5则划分为恶性
+logit.pred <- factor(prob > .5, levels=c(FALSE, TRUE),
+    labels=c("benign", "malignant"))
+logit.perf <- table(df.validate$class, logit.pred,
+   dnn=c("Actual", "Predicted")) #评估的准确性
+logit.perf
+Predicted
+Actual   benign malignant
+benign    118      2
+malignant  4       76
+```
+### 决策树
+R中的rpart包支持rpart()函数构造决策树, prune() 函数对决策树进行剪枝。下面给出
+判别细胞为良性或恶性的决策树算法实现。
+```
+> library(rpart)
+> set.seed(1234)
+> dtree <- rpart(class ~ ., data=df.train, method="class",
+    parms=list(split="information"))#生成树，之后可以summary(dtree)查看若过大剪枝
+#剪枝依据
+>dtree$cptable
+    CP    nsplit rel error xerror xstd
+复杂度参数  分支数      误差  10折误差 交叉验证标准差
+
+# 我们选择最小10折误差加减交叉标准差的范围内的分支数对应的cp值，可以用plotcp(dtree)
+#这里我们选了0.0125
+>dtree.pruned <- prune(dtree, cp=.0125)
+
+# 绘制决策树
+library(rpart.plot)
+prp(dtree.pruned, type = 2, extra = 104,
+fallen.leaves = TRUE, main="Decision Tree")
+
+dtree.pred <- predict(dtree.pruned, df.validate, type="class")
+dtree.perf <- table(df.validate$class, dtree.pred,
+    dnn=c("Actual", "Predicted")) # 测试
+```
+#### 条件推断树
+不需要剪枝，更加自动化
+```
+library(party)
+fit.ctree <- ctree(class~., data=df.train)
+plot(fit.ctree, main="Conditional Inference Tree")
+> ctree.pred <- predict(fit.ctree, df.validate, type="response")
+> ctree.perf <- table(df.validate$class, ctree.pred,
+    dnn=c("Actual", "Predicted"))
+> ctree.perf
+        Predicted
+Actual benign malignant
+benign  122       7
+malignant 3       78
+```
+### 随机森林
+#### 原理
+(1) 从训练集中随机有放回地抽取N个样本单元,生成大量决策树。    
+(2) 在每一个节点随机抽取m< M个变量,将其作为分割该节点的候选变量。每一个节点处的变量数应一致。    
+(3) 完整生成所有决策树,无需剪枝(最小节点为1)。    
+(4) 终端节点的所属类别由节点对应的众数类别决定。    
+(5) 对于新的观测点,用所有的树对其进行分类,其类别由多数决定原则生成。    
+randomForest包中的randomForest()函数可用于生成随机森林。函数默认生成500棵树,
+并且默认在每个节点处抽取sqrt(M)个变量,最小节点为1。
+#### 实例
+```
+library(randomForest)
+set.seed(1234)
+
+fit.forest <- randomForest(class~., data=df.train,
+    na.action=na.roughfix, #将NA替换为对应列中位数
+    importance=TRUE) #显示重要性
+importance(fit.forest)type1-MeanDecreaseAccuracy 2-MeanDecreaseGini
+
+forest.pred <- predict(fit.forest, df.validate)
+forest.perf <- table(df.validate$class, forest.pred,
+    dnn=c("Actual", "Predicted"))
+```
+### 支持向量机(SVM)
+硬软间隔概念    
+SVM可以通过R中kernlab包的ksvm()函数和 e1071包中的 svm()函数实现。ksvm()功能更强大,但svm()相对更简单。代码清单17-6给出了通过svm()函数对威斯康星州乳腺癌数据建立SVM模型的一个示例。
+```
+library(e1071)  
+set.seed(1234)
+fit.svm <- svm(class~., data=df.train)
+    # svm默认对变量执行标准化
+svm.pred <- predict(fit.svm, na.omit(df.validate))
+svm.perf <- table(na.omit(df.validate)$class,
+svm.pred, dnn=c("Actual", "Predicted"))
+```
+使用svm有两个参数可能影响结果，gamma和cost。gamma控制分割超平面的形状。gamma(>0)越大,通常导致支持向量越多。成本参数cost代表犯错的成本。较大可能过拟合。
+svm()函数默认设置gamma为预测变量个数的倒数,成本参数为1。。在建模时,我们可以尝试变动参数值建立不同的模型,但利用格点搜索法可能更有效。可以通过 tune.svm()对每个参数设置一个候选范围,tune.svm()函
+数对每一个参数组合生成一个SVM模型,并输出在每一个参数组合上的表现。
+```
+set.seed(1234)
+tuned <- tune.svm(class~., data=df.train,
+    gamma=10^(-6:1),cost=10^(-10:10))
+tuned
+    best parameters:
+        amma cost
+        0.01    1
+fit.svm <- svm(class~., data=df.train, gamma=.01, cost=1)
+svm.pred <- predict(fit.svm, na.omit(df.validate))
+svm.perf <- table(na.omit(df.validate)$class,
+svm.pred, dnn=c("Actual", "Predicted"))
+```
+### 模型性能评价
+指标：
+```
+敏感度  正类的样本单元被成功预测的概率,也叫正例覆盖率(true positive)或召回率(recall)
+特异性 负类的样本单元被成功预测的概率,也叫负例覆盖率(true negative)
+正例命中率 被预测为正类的样本单元中,预测正确的样本单元占比,也叫精确度(precision)
+负例命中率 被预测为负类的样本单元中,预测正确的样本单元占比
+准确率 被正确分类的样本单元所占比重,也叫ACC
+```
+性能评估函数
+```
+performance <- function(table, n=2){
+if(!all(dim(table) == c(2,2)))
+    stop("Must be a 2 x 2 table")
+tn = table[1,1]
+fp = table[1,2]
+fn = table[2,1]
+tp = table[2,2]
+sensitivity = tp/(tp+fn)
+specificity = tn/(tn+fp)
+ppp = tp/(tp+fp)
+npp = tn/(tn+fn)
+hitrate = (tp+tn)/(tp+tn+fp+fn)
+result <- paste("Sensitivity = ", round(sensitivity, n) ,
+"\nSpecificity = ", round(specificity, n),
+"\nPositive Predictive Value = ", round(ppp, n),
+"\nNegative Predictive Value = ", round(npp, n),
+"\nAccuracy = ", round(hitrate, n), "\n", sep="")
+cat(result)}
+```
