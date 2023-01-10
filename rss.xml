@@ -4,7 +4,7 @@
         <title>殇晓瑾</title>
         <link>http://shangxiaojin.xyz</link>
         <description>一个00后的在校大学生 -- 喜爱魔[术]、数[学]、运[动]、游[戏]的新人（拥有一个喜欢在[斗地主]里破产的女朋友）</description>
-        <lastBuildDate>Sat, 31 Dec 2022 01:40:28 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 10 Jan 2023 04:57:54 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
         <atom:link href="http://shangxiaojin.xyz/feed.atom" rel="self" type="application/rss+xml"/>
@@ -35,6 +35,17 @@ scratch是一门有趣且上手简单的编程语言。其界面包括积木区�
 命令]]></description>
         </item>
         <item>
+            <title><![CDATA[vim入门]]></title>
+            <link>http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html</link>
+            <guid>http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html</guid>
+            <pubDate>Mon, 10 Oct 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[nG 光标定位到第 n 行的行首
+> gg 光标定位到第一行的行首
+> G 光标定位到最后一行的行首
+> H 光标定位到当前屏幕的第一行行首
+> L 光标移动到当前屏幕的尾部]]></description>
+        </item>
+        <item>
             <title><![CDATA[R实战入门]]></title>
             <link>http://shangxiaojin.xyz/post/2022/10/17/theme-r.html</link>
             <guid>http://shangxiaojin.xyz/post/2022/10/17/theme-r.html</guid>
@@ -50,17 +61,12 @@ scratch是一门有趣且上手简单的编程语言。其界面包括积木区�
   模型性能评价]]></description>
         </item>
         <item>
-            <title><![CDATA[vim入门]]></title>
-            <link>http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html</link>
-            <guid>http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html</guid>
-            <pubDate>Mon, 10 Oct 2022 00:00:00 GMT</pubDate>
-        </item>
-        <item>
             <title><![CDATA[differential privacy]]></title>
             <link>http://shangxiaojin.xyz/post/2022/10/07/theme-differential-privacy.html</link>
             <guid>http://shangxiaojin.xyz/post/2022/10/07/theme-differential-privacy.html</guid>
             <pubDate>Fri, 07 Oct 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[一种原理是淡化个体标志化信息，也就是常说的匿名化处理。基本思路如将身份证、姓名等信息直接删除；通过扰动和泛化的方式使得一个身份证号对应多个样本；将数据集纵向分割后按需公布等。此类操作隐私保护程度低，且在部分问题会遇到N-P hard问题。]]></description>
+            <description><![CDATA[3. 发起查询,将v发送至服务器A,同时将v'发送至服务器B
+>4. 返回结果,v'-v可发出明确信号。]]></description>
             <enclosure url="https://ask.qcloudimg.com/http-save/yehe-1268449/iiahnqe1z8.jpeg?imageView2/2/w/1620">
             </enclosure>
         </item>
@@ -71,41 +77,18 @@ scratch是一门有趣且上手简单的编程语言。其界面包括积木区�
             <pubDate>Mon, 07 Nov 2022 00:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[linux 入门]]></title>
-            <link>http://shangxiaojin.xyz/post/2022/09/29/theme-linux.html</link>
-            <guid>http://shangxiaojin.xyz/post/2022/09/29/theme-linux.html</guid>
-            <pubDate>Thu, 29 Sep 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[Red Hat Linux 是美国的 Red Hat 公司发行的一个发行版，第一个版本发布于 1994 年 11 月 3 日，也是一个历史悠久的发行版。它曾经也广为使用，但在 2003 年 Red Hat 公司停止了对它的维护，转而将精力都投身于其企业版 Red Hat Enterprise Linux（简称 RHEL）上，Red Hat Linux 自此完结，而商业市场导向的 RHEL 维护至今。
-在 Red Hat Linux 在停止官方更新后，由社群启动的 Fedora 项目接管了其源代码并构筑了自己的更新，演变成了如今的 Fedora 发行版。Fedora 是一套功能完备且更新迅速的系统，且本身计划也受到了 Red Hat 公司的赞助，成为了公司测试新技术的平台。
-虽然 RHEL 是一个收费的、商业化的系统，但是其遵循 GNU 通用公共许可证，因此会开放源代码。编译这些源代码可以重新得到一个可以使用的操作系统，即一个新的发行版：CentOS（Community Enterprise Operating System，社区版企业操作系统）。因为 CentOS 几乎完全编译自 RHEL 的代码，所以其也像 RHEL 一样具有企业级别的稳定性，适合在要求高度稳定的服务器上运行。]]></description>
-            <enclosure url="https://surplus-1311636487.cos.ap-beijing.myqcloud.com/file-name.png">
-            </enclosure>
-        </item>
-        <item>
             <title><![CDATA[推荐系统对群体意见演化的影响]]></title>
             <link>http://shangxiaojin.xyz/post/2022/11/17/theme-networkx.html</link>
             <guid>http://shangxiaojin.xyz/post/2022/11/17/theme-networkx.html</guid>
             <pubDate>Thu, 17 Nov 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[说起来就是一时兴起，花了大概有两天的时间跑了点数据，搞了一个小模型。
+    被高中辅修心理的班主任拿捏过，当然会对这方面感兴趣一点。在这个小模型
+    里，主要研究的是个体意见的平衡演化过程，由于个人计算机，处理能力一般
+    ，所以尽量少点，少迭代。
+    要说写这个有什么用，真没用，可能就是想验证一下我认为的常理是否正确吧，
+    由于一些原因，暂时不考虑开源，但详细的思考建模过程将在下一个专题介绍。]]></description>
             <enclosure url="https://surplus-1311636487.cos.ap-beijing.myqcloud.com/recommend.jpg">
             </enclosure>
-        </item>
-        <item>
-            <title><![CDATA[蝶恋花]]></title>
-            <link>http://shangxiaojin.xyz/post/2019/10/19/theme-poem-0.html</link>
-            <guid>http://shangxiaojin.xyz/post/2019/10/19/theme-poem-0.html</guid>
-            <pubDate>Sat, 19 Oct 2019 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[如梦令-归醉]]></title>
-            <link>http://shangxiaojin.xyz/post/2021/03/18/theme-poem-1.html</link>
-            <guid>http://shangxiaojin.xyz/post/2021/03/18/theme-poem-1.html</guid>
-            <pubDate>Thu, 18 Mar 2021 00:00:00 GMT</pubDate>
-            <description><![CDATA[几盏清茶又醉
-月半辗转未寐
-才道不关心
-梦里无限拭泪
-还睡、还睡
-也怕醒时滋味]]></description>
         </item>
         <item>
             <title><![CDATA[社交网络的平衡演化(the evolution  of social relation)]]></title>
@@ -114,34 +97,10 @@ scratch是一门有趣且上手简单的编程语言。其界面包括积木区�
             <pubDate>Mon, 21 Nov 2022 00:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[《蛤蟆先生去看心理医生》、《人间处方》、《啊2.0》、《我是猫》摘录]]></title>
+            <title><![CDATA[那年翻过的书]]></title>
             <link>http://shangxiaojin.xyz/post/2022/07/18/theme-reading.html</link>
             <guid>http://shangxiaojin.xyz/post/2022/07/18/theme-reading.html</guid>
             <pubDate>Mon, 18 Jul 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[‘父母状态’更像是一个法官，这个法官一直在控诉别人，给他们定罪，然后顺理成章地惩罚他们。‘父母状态’包含了自出生起，我们从父母那里学到的所有价值观喝道德观，还包含了对生活的评判标准，让我们借此判断是非对错。
-没有一种批判比自我批判更强烈，没有一个法官比我们自己更严苛。
-‘成人自我状态’指我们用理性而不是情绪化的方式来行事。它让我们能应对此时此地正在发生的现实状况。
-我们在另外两种状态时，像父母或儿童一样行事，几乎不需要去思考，因为我们知道要做什么、说什么、就好像在演戏一样。
-*就好像出演一个我们最喜欢、最了解的角色，台词和动作都烂熟于心。比方说，有个角色叫生气鬼，生气鬼很懂得如何表达愤怒，遇到适合他的剧目，他能一字不差地说出台词，而且他经常遇到这样的场景，是不是很奇怪？他能不假思索地切换到愤怒的语调和音高，自动筛选出合适的用词，他的整个姿态都在表达愤怒。总之，他演的‘生气鬼’近乎完美，而关键在于，甚至都不用动脑子！就好像为了这场演出他排练了一辈子，而频繁地出演这个角色也使得他每一次表演都更传神。
-我认为没有人能‘让’我们产生什么感受，除非他们永蛮力胁迫你。说到底，是我们‘选择’了自己的感受。我们选择了愤怒，选择了悲伤。
-每一个生命一定都得经历开始、中间和结束这三个阶段。而开始的阶段会显著地影响后来的阶段。因此你对世界的看法是在人生的最初阶段里形成的。
-当你有恐惧感时，焦虑的念头就会跑到你的意识层面，让你没办法放松。就好像它们在你心里拉响警报，告诉你大事不好了，希望你能做点什么。]]></description>
-            <enclosure url="https://surplus-1311636487.cos.ap-beijing.myqcloud.com/人生坐标.jpg">
-            </enclosure>
-        </item>
-        <item>
-            <title><![CDATA[《乖，摸摸头》摘录]]></title>
-            <link>http://shangxiaojin.xyz/post/2022/11/30/theme-reding2.html</link>
-            <guid>http://shangxiaojin.xyz/post/2022/11/30/theme-reding2.html</guid>
-            <pubDate>Wed, 30 Nov 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[椰子姑娘漂流记
-这是一个普通人的传奇，十三年的长跑后，当下他们遇到的对方，都是最好的自己。]]></description>
-        </item>
-        <item>
-            <title><![CDATA[歌单分享]]></title>
-            <link>http://shangxiaojin.xyz/post/2022/05/06/theme-sharing-2.html</link>
-            <guid>http://shangxiaojin.xyz/post/2022/05/06/theme-sharing-2.html</guid>
-            <pubDate>Fri, 06 May 2022 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[双节+恋爱300days]]></title>
@@ -165,6 +124,17 @@ scratch是一门有趣且上手简单的编程语言。其界面包括积木区�
             <link>http://shangxiaojin.xyz/post/2022/07/12/theme-travel-yantai.html</link>
             <guid>http://shangxiaojin.xyz/post/2022/07/12/theme-travel-yantai.html</guid>
             <pubDate>Tue, 12 Jul 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[linux 入门]]></title>
+            <link>http://shangxiaojin.xyz/post/2022/09/29/theme-linux.html</link>
+            <guid>http://shangxiaojin.xyz/post/2022/09/29/theme-linux.html</guid>
+            <pubDate>Thu, 29 Sep 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Red Hat Linux 是美国的 Red Hat 公司发行的一个发行版，第一个版本发布于 1994 年 11 月 3 日，也是一个历史悠久的发行版。它曾经也广为使用，但在 2003 年 Red Hat 公司停止了对它的维护，转而将精力都投身于其企业版 Red Hat Enterprise Linux（简称 RHEL）上，Red Hat Linux 自此完结，而商业市场导向的 RHEL 维护至今。
+在 Red Hat Linux 在停止官方更新后，由社群启动的 Fedora 项目接管了其源代码并构筑了自己的更新，演变成了如今的 Fedora 发行版。Fedora 是一套功能完备且更新迅速的系统，且本身计划也受到了 Red Hat 公司的赞助，成为了公司测试新技术的平台。
+虽然 RHEL 是一个收费的、商业化的系统，但是其遵循 GNU 通用公共许可证，因此会开放源代码。编译这些源代码可以重新得到一个可以使用的操作系统，即一个新的发行版：CentOS（Community Enterprise Operating System，社区版企业操作系统）。因为 CentOS 几乎完全编译自 RHEL 的代码，所以其也像 RHEL 一样具有企业级别的稳定性，适合在要求高度稳定的服务器上运行。]]></description>
+            <enclosure url="https://surplus-1311636487.cos.ap-beijing.myqcloud.com/file-name.png">
+            </enclosure>
         </item>
     </channel>
 </rss>
