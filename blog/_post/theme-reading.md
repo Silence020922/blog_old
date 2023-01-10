@@ -1,6 +1,6 @@
 ---
-date: 2022-07-18
-title: 那年翻过的书
+date: 2023-01-01
+title: 那些年翻过的书
 category: share
 ---
 ## 数学类读物
