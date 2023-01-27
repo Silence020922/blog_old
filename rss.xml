@@ -4,7 +4,7 @@
         <title>殇晓瑾</title>
         <link>http://shangxiaojin.xyz</link>
         <description>一个00后的在校大学生 -- 喜爱魔[术]、数[学]、运[动]、游[戏]的新人（拥有一个喜欢在[斗地主]里破产的女朋友）</description>
-        <lastBuildDate>Tue, 10 Jan 2023 10:56:54 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 27 Jan 2023 02:43:59 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
         <atom:link href="http://shangxiaojin.xyz/feed.atom" rel="self" type="application/rss+xml"/>
@@ -17,12 +17,6 @@
 scratch是一门有趣且上手简单的编程语言。其界面包括积木区、编码区、舞台。积木区包括各种模块。我觉得小孩子自己学会使用这个软件是有困难的，尤其是对每个指令的理解还需要老师的指导。当然，在有人指导的情况下，6岁左右的孩子可以照着例子完整地还原一个能运行的程序。这个过程并不需要孩子认识英文或汉字，是培养孩子数学思维、创意表达和兴趣激发很好的方式。而对于二到三年级的孩子就可以学着灵活运用指令，自己设计编程作品了。通过scratch主要培养孩子的编程逻辑，且无需代码基础。当然，在这里也有一些实例。]]></description>
             <enclosure url="https://pic1.zhimg.com/80/v2-b040dc2bb679cea471ce66282e92c808_720w.webp">
             </enclosure>
-        </item>
-        <item>
-            <title><![CDATA[济南可玩点介绍]]></title>
-            <link>http://shangxiaojin.xyz/post/2022/07/20/theme-jnan.html</link>
-            <guid>http://shangxiaojin.xyz/post/2022/07/20/theme-jnan.html</guid>
-            <pubDate>Wed, 20 Jul 2022 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[python 入门]]></title>
@@ -50,10 +44,21 @@ scratch是一门有趣且上手简单的编程语言。其界面包括积木区�
   模型性能评价]]></description>
         </item>
         <item>
+            <title><![CDATA[济南可玩点介绍]]></title>
+            <link>http://shangxiaojin.xyz/post/2022/07/20/theme-jnan.html</link>
+            <guid>http://shangxiaojin.xyz/post/2022/07/20/theme-jnan.html</guid>
+            <pubDate>Wed, 20 Jul 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
             <title><![CDATA[vim入门]]></title>
             <link>http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html</link>
             <guid>http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html</guid>
             <pubDate>Mon, 10 Oct 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[vim具有四个基本模式，分别为
+>1. 正常模式(normal mode)
+>2. 可视模式(Visual mode)
+>3. 插入模式(insert mode)
+>4. 命令模式（command mode)]]></description>
         </item>
         <item>
             <title><![CDATA[differential privacy]]></title>
@@ -65,21 +70,25 @@ scratch是一门有趣且上手简单的编程语言。其界面包括积木区�
             </enclosure>
         </item>
         <item>
-            <title><![CDATA[html入门]]></title>
-            <link>http://shangxiaojin.xyz/post/2022/11/07/theme-html.html</link>
-            <guid>http://shangxiaojin.xyz/post/2022/11/07/theme-html.html</guid>
-            <pubDate>Mon, 07 Nov 2022 00:00:00 GMT</pubDate>
-        </item>
-        <item>
             <title><![CDATA[linux 入门]]></title>
             <link>http://shangxiaojin.xyz/post/2022/09/29/theme-linux.html</link>
             <guid>http://shangxiaojin.xyz/post/2022/09/29/theme-linux.html</guid>
             <pubDate>Thu, 29 Sep 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[Red Hat Linux 是美国的 Red Hat 公司发行的一个发行版，第一个版本发布于 1994 年 11 月 3 日，也是一个历史悠久的发行版。它曾经也广为使用，但在 2003 年 Red Hat 公司停止了对它的维护，转而将精力都投身于其企业版 Red Hat Enterprise Linux（简称 RHEL）上，Red Hat Linux 自此完结，而商业市场导向的 RHEL 维护至今。
-在 Red Hat Linux 在停止官方更新后，由社群启动的 Fedora 项目接管了其源代码并构筑了自己的更新，演变成了如今的 Fedora 发行版。Fedora 是一套功能完备且更新迅速的系统，且本身计划也受到了 Red Hat 公司的赞助，成为了公司测试新技术的平台。
-虽然 RHEL 是一个收费的、商业化的系统，但是其遵循 GNU 通用公共许可证，因此会开放源代码。编译这些源代码可以重新得到一个可以使用的操作系统，即一个新的发行版：CentOS（Community Enterprise Operating System，社区版企业操作系统）。因为 CentOS 几乎完全编译自 RHEL 的代码，所以其也像 RHEL 一样具有企业级别的稳定性，适合在要求高度稳定的服务器上运行。]]></description>
+            <description><![CDATA[2020 年 12 月，CentOS 社区在其博客中宣布未来的重点转向 CentOS Stream，这是一个全新的滚动发行版。在此之前，RHEL 的上游为 Fedora，而 CentOS 的上游为 RHEL；在推出 CentOS Stream 之后，它就成为了 RHEL 的上游发行版。与此同时，CentOS 8 的支持期限被缩短至 2021 年底，且不再推出新的非 Stream 的 CentOS 版本。不满于该决定的人们也组织了新的社区，推出了诸如 AlmaLinux、Rocky Linux 等发行版。]]></description>
             <enclosure url="https://surplus-1311636487.cos.ap-beijing.myqcloud.com/file-name.png">
             </enclosure>
+        </item>
+        <item>
+            <title><![CDATA[那些年翻过的书]]></title>
+            <link>http://shangxiaojin.xyz/post/2023/01/01/theme-reading.html</link>
+            <guid>http://shangxiaojin.xyz/post/2023/01/01/theme-reading.html</guid>
+            <pubDate>Sun, 01 Jan 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[社交网络的平衡演化(the evolution  of social relation)]]></title>
+            <link>http://shangxiaojin.xyz/post/2022/11/21/theme-psychology.html</link>
+            <guid>http://shangxiaojin.xyz/post/2022/11/21/theme-psychology.html</guid>
+            <pubDate>Mon, 21 Nov 2022 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[推荐系统对群体意见演化的影响]]></title>
@@ -90,16 +99,10 @@ scratch是一门有趣且上手简单的编程语言。其界面包括积木区�
             </enclosure>
         </item>
         <item>
-            <title><![CDATA[社交网络的平衡演化(the evolution  of social relation)]]></title>
-            <link>http://shangxiaojin.xyz/post/2022/11/21/theme-psychology.html</link>
-            <guid>http://shangxiaojin.xyz/post/2022/11/21/theme-psychology.html</guid>
-            <pubDate>Mon, 21 Nov 2022 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[那些年翻过的书]]></title>
-            <link>http://shangxiaojin.xyz/post/2023/01/01/theme-reading.html</link>
-            <guid>http://shangxiaojin.xyz/post/2023/01/01/theme-reading.html</guid>
-            <pubDate>Sun, 01 Jan 2023 00:00:00 GMT</pubDate>
+            <title><![CDATA[烟台游参考]]></title>
+            <link>http://shangxiaojin.xyz/post/2022/07/12/theme-travel-yantai.html</link>
+            <guid>http://shangxiaojin.xyz/post/2022/07/12/theme-travel-yantai.html</guid>
+            <pubDate>Tue, 12 Jul 2022 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[双节+恋爱300days]]></title>
@@ -110,6 +113,15 @@ scratch是一门有趣且上手简单的编程语言。其界面包括积木区�
             </enclosure>
         </item>
         <item>
+            <title><![CDATA[html入门]]></title>
+            <link>http://shangxiaojin.xyz/post/2022/11/07/theme-html.html</link>
+            <guid>http://shangxiaojin.xyz/post/2022/11/07/theme-html.html</guid>
+            <pubDate>Mon, 07 Nov 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[按理来说在看爬虫的时候应该有点html基础，但当时只要会看一点就行，现在有个想做的东西得借助一下html/css，干脆翻一遍看看。参考这里。将使用菜鸟在线编辑器直接练习，不再额外写冗余的学习记录。
+HTML属性参考
+HTML文本相关标签]]></description>
+        </item>
+        <item>
             <title><![CDATA[submodular function 初步]]></title>
             <link>http://shangxiaojin.xyz/post/2022/10/12/theme-submodular.html</link>
             <guid>http://shangxiaojin.xyz/post/2022/10/12/theme-submodular.html</guid>
@@ -117,12 +129,6 @@ scratch是一门有趣且上手简单的编程语言。其界面包括积木区�
             <description><![CDATA[万物存在于均衡之间]]></description>
             <enclosure url="https://surplus-1311636487.cos.ap-beijing.myqcloud.com/10086-3.png">
             </enclosure>
-        </item>
-        <item>
-            <title><![CDATA[烟台游参考]]></title>
-            <link>http://shangxiaojin.xyz/post/2022/07/12/theme-travel-yantai.html</link>
-            <guid>http://shangxiaojin.xyz/post/2022/07/12/theme-travel-yantai.html</guid>
-            <pubDate>Tue, 12 Jul 2022 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
