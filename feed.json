@@ -12,13 +12,6 @@
             "date_modified": "2022-07-20T00:00:00.000Z"
         },
         {
-            "id": "http://shangxiaojin.xyz/post/2022/10/17/theme-r.html",
-            "url": "http://shangxiaojin.xyz/post/2022/10/17/theme-r.html",
-            "title": "R实战入门",
-            "summary": "R这门语言是一门专业课，在这里使用的参考书目是《R语言实战(第二版)》",
-            "date_modified": "2022-10-17T00:00:00.000Z"
-        },
-        {
             "id": "http://shangxiaojin.xyz/post/2022/09/30/theme-python.html",
             "url": "http://shangxiaojin.xyz/post/2022/09/30/theme-python.html",
             "title": "python 入门",
@@ -26,47 +19,44 @@
             "date_modified": "2022-09-30T00:00:00.000Z"
         },
         {
+            "id": "http://shangxiaojin.xyz/post/2022/10/17/theme-r.html",
+            "url": "http://shangxiaojin.xyz/post/2022/10/17/theme-r.html",
+            "title": "R实战入门",
+            "summary": "数据准备\n  逻辑回归\n  决策树\n    条件推断树\n  随机森林\n    原理\n    实例\n  支持向量机(SVM)\n  模型性能评价",
+            "date_modified": "2022-10-17T00:00:00.000Z"
+        },
+        {
             "id": "http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html",
             "url": "http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html",
             "title": "vim入门",
-            "summary": "nG 光标定位到第 n 行的行首\n> gg 光标定位到第一行的行首\n> G 光标定位到最后一行的行首\n> H 光标定位到当前屏幕的第一行行首\n> L 光标移动到当前屏幕的尾部",
             "date_modified": "2022-10-10T00:00:00.000Z"
         },
         {
             "id": "http://shangxiaojin.xyz/post/2022/10/07/theme-differential-privacy.html",
             "url": "http://shangxiaojin.xyz/post/2022/10/07/theme-differential-privacy.html",
             "title": "differential privacy",
-            "summary": "3. 发起查询,将v发送至服务器A,同时将v'发送至服务器B\n>4. 返回结果,v'-v可发出明确信号。",
+            "summary": "一种原理是淡化个体标志化信息，也就是常说的匿名化处理。基本思路如将身份证、姓名等信息直接删除；通过扰动和泛化的方式使得一个身份证号对应多个样本；将数据集纵向分割后按需公布等。此类操作隐私保护程度低，且在部分问题会遇到N-P hard问题。",
             "image": "https://ask.qcloudimg.com/http-save/yehe-1268449/iiahnqe1z8.jpeg?imageView2/2/w/1620",
             "date_modified": "2022-10-07T00:00:00.000Z"
+        },
+        {
+            "id": "http://shangxiaojin.xyz/post/2022/11/07/theme-html.html",
+            "url": "http://shangxiaojin.xyz/post/2022/11/07/theme-html.html",
+            "title": "html入门",
+            "date_modified": "2022-11-07T00:00:00.000Z"
         },
         {
             "id": "http://shangxiaojin.xyz/post/2022/09/29/theme-linux.html",
             "url": "http://shangxiaojin.xyz/post/2022/09/29/theme-linux.html",
             "title": "linux 入门",
-            "summary": "在这里一开始使用的是deepin-wine-qq\nyay -S deepin-wine-qq\n其界面与常见QQ相似，同样具有QQ所具有的功能",
+            "summary": "Red Hat Linux 是美国的 Red Hat 公司发行的一个发行版，第一个版本发布于 1994 年 11 月 3 日，也是一个历史悠久的发行版。它曾经也广为使用，但在 2003 年 Red Hat 公司停止了对它的维护，转而将精力都投身于其企业版 Red Hat Enterprise Linux（简称 RHEL）上，Red Hat Linux 自此完结，而商业市场导向的 RHEL 维护至今。\n在 Red Hat Linux 在停止官方更新后，由社群启动的 Fedora 项目接管了其源代码并构筑了自己的更新，演变成了如今的 Fedora 发行版。Fedora 是一套功能完备且更新迅速的系统，且本身计划也受到了 Red Hat 公司的赞助，成为了公司测试新技术的平台。\n虽然 RHEL 是一个收费的、商业化的系统，但是其遵循 GNU 通用公共许可证，因此会开放源代码。编译这些源代码可以重新得到一个可以使用的操作系统，即一个新的发行版：CentOS（Community Enterprise Operating System，社区版企业操作系统）。因为 CentOS 几乎完全编译自 RHEL 的代码，所以其也像 RHEL 一样具有企业级别的稳定性，适合在要求高度稳定的服务器上运行。",
             "image": "https://surplus-1311636487.cos.ap-beijing.myqcloud.com/file-name.png",
             "date_modified": "2022-09-29T00:00:00.000Z"
-        },
-        {
-            "id": "http://shangxiaojin.xyz/post/2022/10/23/theme-cpp.html",
-            "url": "http://shangxiaojin.xyz/post/2022/10/23/theme-cpp.html",
-            "title": "C&Cpp",
-            "summary": "{\n            \"name\": \"(gdb) Launch\", // 配置名称，将会在启动配置的下拉菜单中显示\n            \"type\": \"cppdbg\",       // 配置类型，这里只能为cppdbg\n            \"request\": \"launch\",    // 请求配置类型，可以为launch（启动）或attach（附加）\n            \"program\": \"${workspaceFolder}/${fileBasenameNoExtension}.exe\",// 这里配合tasks文件生成的路经进行使用\n            \"args\": [],             // 程序调试时传递给程序的命令行参数，一般设为空即可\n            \"stopAtEntry\": false,   // 设为true时程序将暂停在程序入口处，一般设置为false\n            \"cwd\": \"${workspaceFolder}\", // 调试程序时的工作目录，一般为${workspaceFolder}即代码所在目录\n            \"environment\": [],\n            \"externalConsole\": true, // 调试时是否显示控制台窗口，一般设置为true显示控制台\n            \"MIMode\": \"gdb\",",
-            "image": "https://pic1.zhimg.com/80/v2-b040dc2bb679cea471ce66282e92c808_720w.webp",
-            "date_modified": "2022-10-23T00:00:00.000Z"
-        },
-        {
-            "id": "http://shangxiaojin.xyz/post/2023/01/01/theme-reading.html",
-            "url": "http://shangxiaojin.xyz/post/2023/01/01/theme-reading.html",
-            "title": "那些年翻过的书",
-            "date_modified": "2023-01-01T00:00:00.000Z"
         },
         {
             "id": "http://shangxiaojin.xyz/post/2022/11/17/theme-networkx.html",
             "url": "http://shangxiaojin.xyz/post/2022/11/17/theme-networkx.html",
             "title": "推荐系统对群体意见演化的影响",
-            "summary": "说起来就是一时兴起，花了大概有两天的时间跑了点数据，搞了一个小模型。\n    被高中辅修心理的班主任拿捏过，当然会对这方面感兴趣一点。在这个小模型\n    里，主要研究的是个体意见的平衡演化过程，由于个人计算机，处理能力一般\n    ，所以尽量少点，少迭代。\n    要说写这个有什么用，真没用，可能就是想验证一下我认为的常理是否正确吧，\n    由于一些原因，暂时不考虑开源，但详细的思考建模过程将在下一个专题介绍。",
             "image": "https://surplus-1311636487.cos.ap-beijing.myqcloud.com/recommend.jpg",
             "date_modified": "2022-11-17T00:00:00.000Z"
         },
@@ -77,24 +67,17 @@
             "date_modified": "2022-11-21T00:00:00.000Z"
         },
         {
+            "id": "http://shangxiaojin.xyz/post/2023/01/01/theme-reading.html",
+            "url": "http://shangxiaojin.xyz/post/2023/01/01/theme-reading.html",
+            "title": "那些年翻过的书",
+            "date_modified": "2023-01-01T00:00:00.000Z"
+        },
+        {
             "id": "http://shangxiaojin.xyz/post/2022/09/10/theme-sharing-life-3.html",
             "url": "http://shangxiaojin.xyz/post/2022/09/10/theme-sharing-life-3.html",
             "title": "双节+恋爱300days",
             "image": "https://surplus-1311636487.cos.ap-beijing.myqcloud.com/retouch_2022071201075019.jpg",
             "date_modified": "2022-09-10T00:00:00.000Z"
-        },
-        {
-            "id": "http://shangxiaojin.xyz/post/2022/07/12/theme-travel-yantai.html",
-            "url": "http://shangxiaojin.xyz/post/2022/07/12/theme-travel-yantai.html",
-            "title": "烟台游参考",
-            "date_modified": "2022-07-12T00:00:00.000Z"
-        },
-        {
-            "id": "http://shangxiaojin.xyz/post/2022/11/07/theme-html.html",
-            "url": "http://shangxiaojin.xyz/post/2022/11/07/theme-html.html",
-            "title": "html入门",
-            "summary": "按理来说在看爬虫的时候应该有点html基础，但当时只要会看一点就行，现在有个想做的东西得借助一下html/css，干脆翻一遍看看。参考这里。将使用菜鸟在线编辑器直接练习，不再额外写冗余的学习记录。\nHTML属性参考\nHTML文本相关标签",
-            "date_modified": "2022-11-07T00:00:00.000Z"
         },
         {
             "id": "http://shangxiaojin.xyz/post/2022/10/12/theme-submodular.html",
@@ -103,6 +86,20 @@
             "summary": "万物存在于均衡之间",
             "image": "https://surplus-1311636487.cos.ap-beijing.myqcloud.com/10086-3.png",
             "date_modified": "2022-10-12T00:00:00.000Z"
+        },
+        {
+            "id": "http://shangxiaojin.xyz/post/2022/07/12/theme-travel-yantai.html",
+            "url": "http://shangxiaojin.xyz/post/2022/07/12/theme-travel-yantai.html",
+            "title": "烟台游参考",
+            "date_modified": "2022-07-12T00:00:00.000Z"
+        },
+        {
+            "id": "http://shangxiaojin.xyz/post/2022/10/23/theme-cpp.html",
+            "url": "http://shangxiaojin.xyz/post/2022/10/23/theme-cpp.html",
+            "title": "C&Cpp",
+            "summary": "最近接触了一下scratch和Animate，简单谈谈我的想法。\nscratch是一门有趣且上手简单的编程语言。其界面包括积木区、编码区、舞台。积木区包括各种模块。我觉得小孩子自己学会使用这个软件是有困难的，尤其是对每个指令的理解还需要老师的指导。当然，在有人指导的情况下，6岁左右的孩子可以照着例子完整地还原一个能运行的程序。这个过程并不需要孩子认识英文或汉字，是培养孩子数学思维、创意表达和兴趣激发很好的方式。而对于二到三年级的孩子就可以学着灵活运用指令，自己设计编程作品了。通过scratch主要培养孩子的编程逻辑，且无需代码基础。当然，在这里也有一些实例。",
+            "image": "https://pic1.zhimg.com/80/v2-b040dc2bb679cea471ce66282e92c808_720w.webp",
+            "date_modified": "2022-10-23T00:00:00.000Z"
         }
     ]
 }

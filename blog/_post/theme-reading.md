@@ -32,7 +32,9 @@ category: share
 * 实变函数与泛函分析下——*郭大钧*：课本    
 * Numerical Analysis——*Richard L.Burden*:课本    
 * 点集拓扑讲义——*熊金城*：课本，应该是国内拓扑的独苗？    
-* Topology——*James R. Munkres*：搭配上书作为课本使用    
+* Topology——*James R. Munkres*：搭配上书作为课本使用     
+* 应用时间序列分析——*王振龙*：课本    
+* 应用时间序列分析——*何书元*：个人参考数目     
 * 数学女孩一、二—：无事消遣的一本小书    
 ## 计算机类读物
 * 运筹学——*刘桂真*：课本    

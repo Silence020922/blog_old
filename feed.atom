@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://shangxiaojin.xyz</id>
     <title>殇晓瑾</title>
-    <updated>2023-02-26T12:18:32.358Z</updated>
+    <updated>2023-03-05T02:22:20.487Z</updated>
     <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
     <link rel="alternate" href="http://shangxiaojin.xyz"/>
     <link rel="self" href="http://shangxiaojin.xyz/feed.atom"/>
@@ -13,14 +13,6 @@
         <link href="http://shangxiaojin.xyz/post/2022/07/20/theme-jnan.html">
         </link>
         <updated>2022-07-20T00:00:00.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[R实战入门]]></title>
-        <id>http://shangxiaojin.xyz/post/2022/10/17/theme-r.html</id>
-        <link href="http://shangxiaojin.xyz/post/2022/10/17/theme-r.html">
-        </link>
-        <updated>2022-10-17T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[R这门语言是一门专业课，在这里使用的参考书目是《R语言实战(第二版)》]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[python 入门]]></title>
@@ -34,16 +26,27 @@
 命令]]></summary>
     </entry>
     <entry>
+        <title type="html"><![CDATA[R实战入门]]></title>
+        <id>http://shangxiaojin.xyz/post/2022/10/17/theme-r.html</id>
+        <link href="http://shangxiaojin.xyz/post/2022/10/17/theme-r.html">
+        </link>
+        <updated>2022-10-17T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[数据准备
+  逻辑回归
+  决策树
+    条件推断树
+  随机森林
+    原理
+    实例
+  支持向量机(SVM)
+  模型性能评价]]></summary>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[vim入门]]></title>
         <id>http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html</id>
         <link href="http://shangxiaojin.xyz/post/2022/10/10/theme-vim.html">
         </link>
         <updated>2022-10-10T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[nG 光标定位到第 n 行的行首
-> gg 光标定位到第一行的行首
-> G 光标定位到最后一行的行首
-> H 光标定位到当前屏幕的第一行行首
-> L 光标移动到当前屏幕的尾部]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[differential privacy]]></title>
@@ -51,8 +54,14 @@
         <link href="http://shangxiaojin.xyz/post/2022/10/07/theme-differential-privacy.html">
         </link>
         <updated>2022-10-07T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[3. 发起查询,将v发送至服务器A,同时将v'发送至服务器B
->4. 返回结果,v'-v可发出明确信号。]]></summary>
+        <summary type="html"><![CDATA[一种原理是淡化个体标志化信息，也就是常说的匿名化处理。基本思路如将身份证、姓名等信息直接删除；通过扰动和泛化的方式使得一个身份证号对应多个样本；将数据集纵向分割后按需公布等。此类操作隐私保护程度低，且在部分问题会遇到N-P hard问题。]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[html入门]]></title>
+        <id>http://shangxiaojin.xyz/post/2022/11/07/theme-html.html</id>
+        <link href="http://shangxiaojin.xyz/post/2022/11/07/theme-html.html">
+        </link>
+        <updated>2022-11-07T00:00:00.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[linux 入门]]></title>
@@ -60,34 +69,9 @@
         <link href="http://shangxiaojin.xyz/post/2022/09/29/theme-linux.html">
         </link>
         <updated>2022-09-29T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[在这里一开始使用的是deepin-wine-qq
-yay -S deepin-wine-qq
-其界面与常见QQ相似，同样具有QQ所具有的功能]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[C&Cpp]]></title>
-        <id>http://shangxiaojin.xyz/post/2022/10/23/theme-cpp.html</id>
-        <link href="http://shangxiaojin.xyz/post/2022/10/23/theme-cpp.html">
-        </link>
-        <updated>2022-10-23T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[{
-            "name": "(gdb) Launch", // 配置名称，将会在启动配置的下拉菜单中显示
-            "type": "cppdbg",       // 配置类型，这里只能为cppdbg
-            "request": "launch",    // 请求配置类型，可以为launch（启动）或attach（附加）
-            "program": "${workspaceFolder}/${fileBasenameNoExtension}.exe",// 这里配合tasks文件生成的路经进行使用
-            "args": [],             // 程序调试时传递给程序的命令行参数，一般设为空即可
-            "stopAtEntry": false,   // 设为true时程序将暂停在程序入口处，一般设置为false
-            "cwd": "${workspaceFolder}", // 调试程序时的工作目录，一般为${workspaceFolder}即代码所在目录
-            "environment": [],
-            "externalConsole": true, // 调试时是否显示控制台窗口，一般设置为true显示控制台
-            "MIMode": "gdb",]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[那些年翻过的书]]></title>
-        <id>http://shangxiaojin.xyz/post/2023/01/01/theme-reading.html</id>
-        <link href="http://shangxiaojin.xyz/post/2023/01/01/theme-reading.html">
-        </link>
-        <updated>2023-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Red Hat Linux 是美国的 Red Hat 公司发行的一个发行版，第一个版本发布于 1994 年 11 月 3 日，也是一个历史悠久的发行版。它曾经也广为使用，但在 2003 年 Red Hat 公司停止了对它的维护，转而将精力都投身于其企业版 Red Hat Enterprise Linux（简称 RHEL）上，Red Hat Linux 自此完结，而商业市场导向的 RHEL 维护至今。
+在 Red Hat Linux 在停止官方更新后，由社群启动的 Fedora 项目接管了其源代码并构筑了自己的更新，演变成了如今的 Fedora 发行版。Fedora 是一套功能完备且更新迅速的系统，且本身计划也受到了 Red Hat 公司的赞助，成为了公司测试新技术的平台。
+虽然 RHEL 是一个收费的、商业化的系统，但是其遵循 GNU 通用公共许可证，因此会开放源代码。编译这些源代码可以重新得到一个可以使用的操作系统，即一个新的发行版：CentOS（Community Enterprise Operating System，社区版企业操作系统）。因为 CentOS 几乎完全编译自 RHEL 的代码，所以其也像 RHEL 一样具有企业级别的稳定性，适合在要求高度稳定的服务器上运行。]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[推荐系统对群体意见演化的影响]]></title>
@@ -95,12 +79,6 @@ yay -S deepin-wine-qq
         <link href="http://shangxiaojin.xyz/post/2022/11/17/theme-networkx.html">
         </link>
         <updated>2022-11-17T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[说起来就是一时兴起，花了大概有两天的时间跑了点数据，搞了一个小模型。
-    被高中辅修心理的班主任拿捏过，当然会对这方面感兴趣一点。在这个小模型
-    里，主要研究的是个体意见的平衡演化过程，由于个人计算机，处理能力一般
-    ，所以尽量少点，少迭代。
-    要说写这个有什么用，真没用，可能就是想验证一下我认为的常理是否正确吧，
-    由于一些原因，暂时不考虑开源，但详细的思考建模过程将在下一个专题介绍。]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[社交网络的平衡演化(the evolution  of social relation)]]></title>
@@ -110,11 +88,26 @@ yay -S deepin-wine-qq
         <updated>2022-11-21T00:00:00.000Z</updated>
     </entry>
     <entry>
+        <title type="html"><![CDATA[那些年翻过的书]]></title>
+        <id>http://shangxiaojin.xyz/post/2023/01/01/theme-reading.html</id>
+        <link href="http://shangxiaojin.xyz/post/2023/01/01/theme-reading.html">
+        </link>
+        <updated>2023-01-01T00:00:00.000Z</updated>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[双节+恋爱300days]]></title>
         <id>http://shangxiaojin.xyz/post/2022/09/10/theme-sharing-life-3.html</id>
         <link href="http://shangxiaojin.xyz/post/2022/09/10/theme-sharing-life-3.html">
         </link>
         <updated>2022-09-10T00:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[submodular function 初步]]></title>
+        <id>http://shangxiaojin.xyz/post/2022/10/12/theme-submodular.html</id>
+        <link href="http://shangxiaojin.xyz/post/2022/10/12/theme-submodular.html">
+        </link>
+        <updated>2022-10-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[万物存在于均衡之间]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[烟台游参考]]></title>
@@ -124,21 +117,12 @@ yay -S deepin-wine-qq
         <updated>2022-07-12T00:00:00.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[html入门]]></title>
-        <id>http://shangxiaojin.xyz/post/2022/11/07/theme-html.html</id>
-        <link href="http://shangxiaojin.xyz/post/2022/11/07/theme-html.html">
+        <title type="html"><![CDATA[C&Cpp]]></title>
+        <id>http://shangxiaojin.xyz/post/2022/10/23/theme-cpp.html</id>
+        <link href="http://shangxiaojin.xyz/post/2022/10/23/theme-cpp.html">
         </link>
-        <updated>2022-11-07T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[按理来说在看爬虫的时候应该有点html基础，但当时只要会看一点就行，现在有个想做的东西得借助一下html/css，干脆翻一遍看看。参考这里。将使用菜鸟在线编辑器直接练习，不再额外写冗余的学习记录。
-HTML属性参考
-HTML文本相关标签]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[submodular function 初步]]></title>
-        <id>http://shangxiaojin.xyz/post/2022/10/12/theme-submodular.html</id>
-        <link href="http://shangxiaojin.xyz/post/2022/10/12/theme-submodular.html">
-        </link>
-        <updated>2022-10-12T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[万物存在于均衡之间]]></summary>
+        <updated>2022-10-23T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[最近接触了一下scratch和Animate，简单谈谈我的想法。
+scratch是一门有趣且上手简单的编程语言。其界面包括积木区、编码区、舞台。积木区包括各种模块。我觉得小孩子自己学会使用这个软件是有困难的，尤其是对每个指令的理解还需要老师的指导。当然，在有人指导的情况下，6岁左右的孩子可以照着例子完整地还原一个能运行的程序。这个过程并不需要孩子认识英文或汉字，是培养孩子数学思维、创意表达和兴趣激发很好的方式。而对于二到三年级的孩子就可以学着灵活运用指令，自己设计编程作品了。通过scratch主要培养孩子的编程逻辑，且无需代码基础。当然，在这里也有一些实例。]]></summary>
     </entry>
 </feed>
