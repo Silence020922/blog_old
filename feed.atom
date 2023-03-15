@@ -2,11 +2,20 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://shangxiaojin.xyz</id>
     <title>殇晓瑾</title>
-    <updated>2023-03-05T02:22:20.487Z</updated>
+    <updated>2023-03-15T02:10:56.542Z</updated>
     <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
     <link rel="alternate" href="http://shangxiaojin.xyz"/>
     <link rel="self" href="http://shangxiaojin.xyz/feed.atom"/>
     <subtitle>一个00后的在校大学生 -- 喜爱魔[术]、数[学]、运[动]、游[戏]的新人（拥有一个喜欢在[斗地主]里破产的女朋友）</subtitle>
+    <entry>
+        <title type="html"><![CDATA[C&Cpp]]></title>
+        <id>http://shangxiaojin.xyz/post/2022/10/23/theme-cpp.html</id>
+        <link href="http://shangxiaojin.xyz/post/2022/10/23/theme-cpp.html">
+        </link>
+        <updated>2022-10-23T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[最近接触了一下scratch和Animate，简单谈谈我的想法。
+scratch是一门有趣且上手简单的编程语言。其界面包括积木区、编码区、舞台。积木区包括各种模块。我觉得小孩子自己学会使用这个软件是有困难的，尤其是对每个指令的理解还需要老师的指导。当然，在有人指导的情况下，6岁左右的孩子可以照着例子完整地还原一个能运行的程序。这个过程并不需要孩子认识英文或汉字，是培养孩子数学思维、创意表达和兴趣激发很好的方式。而对于二到三年级的孩子就可以学着灵活运用指令，自己设计编程作品了。通过scratch主要培养孩子的编程逻辑，且无需代码基础。当然，在这里也有一些实例。]]></summary>
+    </entry>
     <entry>
         <title type="html"><![CDATA[济南可玩点介绍]]></title>
         <id>http://shangxiaojin.xyz/post/2022/07/20/theme-jnan.html</id>
@@ -115,14 +124,5 @@
         <link href="http://shangxiaojin.xyz/post/2022/07/12/theme-travel-yantai.html">
         </link>
         <updated>2022-07-12T00:00:00.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[C&Cpp]]></title>
-        <id>http://shangxiaojin.xyz/post/2022/10/23/theme-cpp.html</id>
-        <link href="http://shangxiaojin.xyz/post/2022/10/23/theme-cpp.html">
-        </link>
-        <updated>2022-10-23T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[最近接触了一下scratch和Animate，简单谈谈我的想法。
-scratch是一门有趣且上手简单的编程语言。其界面包括积木区、编码区、舞台。积木区包括各种模块。我觉得小孩子自己学会使用这个软件是有困难的，尤其是对每个指令的理解还需要老师的指导。当然，在有人指导的情况下，6岁左右的孩子可以照着例子完整地还原一个能运行的程序。这个过程并不需要孩子认识英文或汉字，是培养孩子数学思维、创意表达和兴趣激发很好的方式。而对于二到三年级的孩子就可以学着灵活运用指令，自己设计编程作品了。通过scratch主要培养孩子的编程逻辑，且无需代码基础。当然，在这里也有一些实例。]]></summary>
     </entry>
 </feed>
