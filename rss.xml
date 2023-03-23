@@ -4,7 +4,7 @@
         <title>殇晓瑾</title>
         <link>http://shangxiaojin.xyz</link>
         <description>一个00后的在校大学生 -- 喜爱魔[术]、数[学]、运[动]、游[戏]的新人（拥有一个喜欢在[斗地主]里破产的女朋友）</description>
-        <lastBuildDate>Fri, 17 Mar 2023 01:32:22 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 23 Mar 2023 03:49:12 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
         <atom:link href="http://shangxiaojin.xyz/feed.atom" rel="self" type="application/rss+xml"/>
@@ -17,12 +17,6 @@
 scratch是一门有趣且上手简单的编程语言。其界面包括积木区、编码区、舞台。积木区包括各种模块。我觉得小孩子自己学会使用这个软件是有困难的，尤其是对每个指令的理解还需要老师的指导。当然，在有人指导的情况下，6岁左右的孩子可以照着例子完整地还原一个能运行的程序。这个过程并不需要孩子认识英文或汉字，是培养孩子数学思维、创意表达和兴趣激发很好的方式。而对于二到三年级的孩子就可以学着灵活运用指令，自己设计编程作品了。通过scratch主要培养孩子的编程逻辑，且无需代码基础。当然，在这里也有一些实例。]]></description>
             <enclosure url="https://pic1.zhimg.com/80/v2-b040dc2bb679cea471ce66282e92c808_720w.webp">
             </enclosure>
-        </item>
-        <item>
-            <title><![CDATA[济南可玩点介绍]]></title>
-            <link>http://shangxiaojin.xyz/post/2022/07/20/theme-jnan.html</link>
-            <guid>http://shangxiaojin.xyz/post/2022/07/20/theme-jnan.html</guid>
-            <pubDate>Wed, 20 Jul 2022 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[python 入门]]></title>
@@ -123,6 +117,12 @@ scratch是一门有趣且上手简单的编程语言。其界面包括积木区�
             <link>http://shangxiaojin.xyz/post/2022/07/12/theme-travel-yantai.html</link>
             <guid>http://shangxiaojin.xyz/post/2022/07/12/theme-travel-yantai.html</guid>
             <pubDate>Tue, 12 Jul 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[济南可玩点介绍]]></title>
+            <link>http://shangxiaojin.xyz/post/2022/07/20/theme-jnan.html</link>
+            <guid>http://shangxiaojin.xyz/post/2022/07/20/theme-jnan.html</guid>
+            <pubDate>Wed, 20 Jul 2022 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
